@@ -1,0 +1,144 @@
+package ru.tpo.mirtesen.pages
+
+import org.openqa.selenium.By
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.support.ui.ExpectedConditions
+import org.openqa.selenium.TimeoutException
+
+class AuthPage(driver: WebDriver) : BasePage(driver) {
+
+    companion object {
+        private const val LOGIN_URL = "${MainPage.URL}?auth=login"
+
+        private val EMAIL_LOGIN_TAB = By.xpath(
+            "//button[contains(normalize-space(),'Вход по почте')]" +
+            " | //a[contains(normalize-space(),'Вход по почте')]"
+        )
+
+        private val EMAIL_INPUT = By.xpath(
+            "//input[@name='email' and (" +
+            "@autocomplete='username' or " +
+            "ancestor::form//*[contains(normalize-space(),'Электронная почта')]" +
+            ")]"
+        )
+
+        private val PASSWORD_INPUT = By.xpath(
+            "//input[@name='password' or @type='password']"
+        )
+
+        private val LOGIN_SUBMIT = By.xpath(
+            "//form[.//input[@name='email'] and .//input[@name='password']]" +
+            "//button[contains(normalize-space(),'Войти')]"
+        )
+
+        private val AUTH_FORM = By.xpath(
+            "//*[contains(@class,'auth-form') or contains(normalize-space(),'Вход по почте')]"
+        )
+
+        private val AUTH_ERROR = By.xpath(
+            "//*[contains(normalize-space(),'Неправильный пароль') " +
+            "or contains(normalize-space(),'не зарегистрирован') " +
+            "or contains(normalize-space(),'Введите пароль') " +
+            "or contains(normalize-space(),'Введите e-mail') " +
+            "or contains(normalize-space(),'капча') " +
+            "or contains(normalize-space(),'captcha')]"
+        )
+
+        private val AUTHENTICATED_MARKER = By.xpath(
+            "//a[contains(@href,'/people/') and not(contains(@href,'/search/'))]" +
+            " | //a[contains(@href,'/settings')]" +
+            " | //button[contains(@class,'user') or contains(@class,'profile')]" +
+            " | //button[.//*[name()='svg' or name()='use'] and " +
+            "(contains(@class,'user') or contains(@class,'profile'))]"
+        )
+
+        private val USER_MENU_TRIGGER = By.xpath(
+            "//button[contains(@class,'user') or contains(@class,'profile')]" +
+            " | //a[contains(@href,'/people/') and not(contains(@href,'/search/'))]" +
+            " | //button[.//*[name()='svg' or name()='use']]"
+        )
+
+        private val LOGOUT_ACTION = By.xpath(
+            "//button[contains(normalize-space(),'Выйти') " +
+            "or contains(normalize-space(),'Выход')]" +
+            " | //a[contains(normalize-space(),'Выйти') " +
+            "or contains(normalize-space(),'Выход') " +
+            "or contains(@href,'logout')]"
+        )
+
+        private val LOGOUT_CONFIRM = By.xpath(
+            "//*[contains(@class,'logout-modal')]//button[contains(normalize-space(),'Выйти') " +
+            "or contains(normalize-space(),'Да') " +
+            "or contains(normalize-space(),'ОК') " +
+            "or contains(normalize-space(),'Подтверд')]" +
+            " | //button[contains(@class,'logout-modal__btn')]"
+        )
+    }
+
+    fun open(): AuthPage {
+        openUrl(LOGIN_URL)
+        wait.until(
+            ExpectedConditions.or(
+                ExpectedConditions.presenceOfElementLocated(AUTH_FORM),
+                ExpectedConditions.presenceOfElementLocated(EMAIL_LOGIN_TAB)
+            )
+        )
+        return this
+    }
+
+    fun loginByEmail(email: String, password: String): MainPage {
+        if (isPresent(EMAIL_LOGIN_TAB)) {
+            jsClick(EMAIL_LOGIN_TAB)
+        }
+        type(EMAIL_INPUT, email)
+        type(PASSWORD_INPUT, password)
+        jsClick(LOGIN_SUBMIT)
+        wait.until { isPresent(AUTHENTICATED_MARKER) || hasAuthTokenCookie() || isPresent(AUTH_ERROR) }
+        return MainPage(driver)
+    }
+
+    fun hasLoginForm(): Boolean = isPresent(AUTH_FORM) || isPresent(EMAIL_INPUT)
+
+    fun hasAuthError(): Boolean = isPresent(AUTH_ERROR)
+
+    fun isAuthenticated(): Boolean =
+        !isPresent(AUTH_ERROR) && (isPresent(AUTHENTICATED_MARKER) || hasAuthTokenCookie())
+
+    fun logout(): AuthPage {
+        if (isPresent(USER_MENU_TRIGGER)) {
+            jsClick(USER_MENU_TRIGGER)
+        }
+        if (isPresent(LOGOUT_ACTION)) {
+            jsClick(LOGOUT_ACTION)
+            if (isPresent(LOGOUT_CONFIRM)) {
+                jsClick(LOGOUT_CONFIRM)
+            }
+            waitForLoggedOutState()
+        } else {
+            driver.manage().deleteAllCookies()
+            open()
+        }
+        return this
+    }
+
+    fun isLoggedOut(): Boolean =
+        !hasAuthTokenCookie() && (isPresent(AUTH_FORM) || !isPresent(AUTHENTICATED_MARKER))
+
+    private fun waitForLoggedOutState() {
+        try {
+            wait.until { isLoggedOut() }
+        } catch (e: TimeoutException) {
+            open()
+            wait.until { isLoggedOut() }
+        }
+    }
+
+    private fun hasAuthTokenCookie(): Boolean =
+        driver.manage().cookies.any { cookie ->
+            val name = cookie.name.lowercase()
+            val value = cookie.value.orEmpty()
+            name.contains("jwt") ||
+                name.contains("refresh") ||
+                value.count { it == '.' } >= 2
+        }
+}

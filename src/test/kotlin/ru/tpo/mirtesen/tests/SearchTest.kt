@@ -4,30 +4,35 @@ import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 import ru.tpo.mirtesen.pages.MainPage
+import java.net.URLDecoder
+import java.nio.charset.StandardCharsets
 
 /**
- * UC-1: Поиск публикаций на Миртесен.
+ * UC-2: Поиск публикаций по ключевому слову на Миртесен.
  *
  * Актор: Пользователь.
  * Предусловие: сайт mirtesen.ru доступен.
- * Основной сценарий: пользователь вводит поисковый запрос →
+ * Основной сценарий: пользователь выполняет поиск по ключевому слову →
  *   система показывает список подходящих публикаций →
  *   пользователь выбирает интересующую статью.
  *
  * Тест-кейсы:
- *   TC-01 — поиск по слову «путешествия» возвращает список публикаций
- *   TC-02 — URL страницы результатов содержит поисковый запрос
- *   TC-03 — клик на первую публикацию открывает страницу статьи с заголовком
+ *   TC-05 — поиск по популярному слову возвращает список публикаций
+ *   TC-06 — URL страницы результатов содержит параметр поискового запроса
+ *   TC-07 — клик на первый результат открывает страницу статьи
+ *   TC-08 — пустой поисковый запрос обрабатывается без ошибки сервера
+ *   TC-09 — запрос без результатов обрабатывается корректно
+ *   TC-10 — найденные публикации имеют непустые заголовки
  */
 class SearchTest : BaseTest() {
 
     /**
-     * TC-01: Поиск по слову «путешествия» возвращает список публикаций.
+     * TC-05: Поиск по популярному слову возвращает список публикаций.
      * Предусловие: mirtesen.ru доступен.
      * Шаги: открыть mirtesen.ru → перейти на /search/posts/?q=путешествия.
      * Ожидаемый результат: страница содержит ссылки на статьи (a[href*='.mirtesen.ru/blog/']).
      */
-    @ParameterizedTest(name = "TC-01 Поиск возвращает публикации [{0}]")
+    @ParameterizedTest(name = "UC-2 TC-05 Поиск возвращает публикации [{0}]")
     @MethodSource("browsers")
     fun searchReturnsResults(browser: String) {
         setup(browser)
@@ -38,29 +43,29 @@ class SearchTest : BaseTest() {
     }
 
     /**
-     * TC-02: URL страницы результатов содержит поисковый запрос.
+     * TC-06: URL страницы результатов содержит параметр поискового запроса.
      * Предусловие: mirtesen.ru доступен.
      * Шаги: перейти на /search/posts/?q=природа → считать getCurrentUrl().
-     * Ожидаемый результат: URL содержит «search» и «q=».
+     * Ожидаемый результат: URL содержит путь search и параметр q.
      */
-    @ParameterizedTest(name = "TC-02 Запрос отражён в URL [{0}]")
+    @ParameterizedTest(name = "UC-2 TC-06 Запрос отражён в URL [{0}]")
     @MethodSource("browsers")
     fun searchQueryAppearsInUrl(browser: String) {
         setup(browser)
         val results = MainPage(driver).search("природа")
         results.waitForResults()
         val url = results.getUrl()
-        assertTrue(url.contains("search") && url.contains("q="),
-            "URL должен содержать путь search и поисковый запрос. Текущий URL: $url")
+        assertTrue(url.contains("search") && queryValue(url).isNotBlank(),
+            "URL должен содержать путь search и непустой параметр q. Текущий URL: $url")
     }
 
     /**
-     * TC-03: Клик на первую публикацию открывает страницу статьи с заголовком.
+     * TC-07: Клик на первый результат открывает страницу статьи.
      * Предусловие: результаты поиска «кулинария» содержат публикации.
      * Шаги: поиск «кулинария» → клик на первый результат.
      * Ожидаемый результат: страница статьи содержит непустой заголовок h1.
      */
-    @ParameterizedTest(name = "TC-03 Страница статьи содержит заголовок [{0}]")
+    @ParameterizedTest(name = "UC-2 TC-07 Страница статьи содержит заголовок [{0}]")
     @MethodSource("browsers")
     fun firstResultOpensArticle(browser: String) {
         setup(browser)
@@ -70,5 +75,71 @@ class SearchTest : BaseTest() {
         val article = results.openFirstResult()
         assertTrue(article.hasTitle(),
             "Страница статьи должна содержать непустой заголовок h1")
+    }
+
+    /**
+     * TC-08: Пустой поисковый запрос обрабатывается без ошибки сервера.
+     * Предусловие: mirtesen.ru доступен.
+     * Шаги: перейти на /search/posts/?q=.
+     * Ожидаемый результат: страница поиска загружена, серверная ошибка не отображается.
+     */
+    @ParameterizedTest(name = "UC-2 TC-08 Пустой запрос без ошибки сервера [{0}]")
+    @MethodSource("browsers")
+    fun emptySearchQueryHandledWithoutServerError(browser: String) {
+        setup(browser)
+        val results = MainPage(driver).search("")
+        results.waitForSearchPage()
+
+        assertFalse(results.hasServerError(),
+            "Пустой поисковый запрос не должен приводить к ошибке сервера")
+        assertTrue(results.getUrl().contains("search") && results.getUrl().contains("q="),
+            "URL пустого поиска должен оставаться страницей поиска. Текущий URL: ${results.getUrl()}")
+    }
+
+    /**
+     * TC-09: Запрос без результатов обрабатывается корректно.
+     * Предусловие: mirtesen.ru доступен.
+     * Шаги: выполнить поиск по уникальной строке без ожидаемых совпадений.
+     * Ожидаемый результат: серверная ошибка не отображается, результатов нет или показано сообщение об отсутствии результатов.
+     */
+    @ParameterizedTest(name = "UC-2 TC-09 Запрос без результатов обработан [{0}]")
+    @MethodSource("browsers")
+    fun noResultsSearchHandledCorrectly(browser: String) {
+        setup(browser)
+        val results = MainPage(driver).search("zzzxxyy_no_results_tpo_2026")
+        results.waitForSearchPage()
+
+        assertFalse(results.hasServerError(),
+            "Запрос без результатов не должен приводить к ошибке сервера")
+        assertTrue(results.hasNoResultsMessage() || results.getResultCount() == 0,
+            "Для запроса без совпадений должно быть сообщение или пустой список результатов")
+    }
+
+    /**
+     * TC-10: Найденные публикации имеют непустые заголовки.
+     * Предусловие: результаты поиска «путешествия» содержат публикации.
+     * Шаги: выполнить поиск -> считать заголовки найденных карточек.
+     * Ожидаемый результат: хотя бы у одной найденной публикации есть непустой заголовок.
+     */
+    @ParameterizedTest(name = "UC-2 TC-10 Результаты имеют заголовки [{0}]")
+    @MethodSource("browsers")
+    fun searchResultsHaveNonEmptyTitles(browser: String) {
+        setup(browser)
+        val results = MainPage(driver).search("путешествия")
+        results.waitForResults()
+
+        assertTrue(results.resultsHaveNonEmptyTitles(),
+            "Найденные публикации должны иметь непустые заголовки")
+    }
+
+    private fun queryValue(url: String): String {
+        val queryPart = url.substringAfter("?", "")
+        val rawValue = queryPart
+            .split("&")
+            .firstOrNull { it.startsWith("q=") }
+            ?.substringAfter("q=")
+            ?: ""
+
+        return URLDecoder.decode(rawValue, StandardCharsets.UTF_8)
     }
 }
