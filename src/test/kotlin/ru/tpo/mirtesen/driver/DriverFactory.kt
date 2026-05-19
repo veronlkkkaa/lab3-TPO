@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.firefox.FirefoxOptions
+import java.time.Duration
 
 object DriverFactory {
 
@@ -38,6 +39,7 @@ object DriverFactory {
         opts.setExperimentalOption("useAutomationExtension", false)
         opts.setPageLoadStrategy(PageLoadStrategy.EAGER)
         val driver = ChromeDriver(opts)
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30))
         driver.executeCdpCommand(
             "Page.addScriptToEvaluateOnNewDocument",
             mapOf("source" to """
@@ -59,6 +61,8 @@ object DriverFactory {
         opts.addPreference("useAutomationExtension", false)
         opts.addPreference("intl.accept_languages", "ru-RU, ru, en-US, en")
         opts.setPageLoadStrategy(PageLoadStrategy.EAGER)
-        return FirefoxDriver(opts)
+        val driver = FirefoxDriver(opts)
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30))
+        return driver
     }
 }

@@ -1,6 +1,7 @@
 package ru.tpo.mirtesen.pages
 
 import org.openqa.selenium.By
+import org.openqa.selenium.TimeoutException
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.ui.ExpectedConditions
@@ -57,14 +58,21 @@ class PostEditorPage(driver: WebDriver) : BasePage(driver) {
 
     fun openFromMainPage(): PostEditorPage {
         openUrl(MainPage.URL)
-        jsClick(OPEN_EDITOR)
-        wait.until(
-            ExpectedConditions.or(
-                ExpectedConditions.presenceOfElementLocated(TITLE_INPUT),
-                ExpectedConditions.presenceOfElementLocated(BODY_INPUT),
-                ExpectedConditions.presenceOfElementLocated(AUTH_FORM)
+        if (!isPresent(OPEN_EDITOR)) {
+            return this
+        }
+        try {
+            jsClick(OPEN_EDITOR)
+            wait.until(
+                ExpectedConditions.or(
+                    ExpectedConditions.presenceOfElementLocated(TITLE_INPUT),
+                    ExpectedConditions.presenceOfElementLocated(BODY_INPUT),
+                    ExpectedConditions.presenceOfElementLocated(AUTH_FORM)
+                )
             )
-        )
+        } catch (e: TimeoutException) {
+            return this
+        }
         return this
     }
 

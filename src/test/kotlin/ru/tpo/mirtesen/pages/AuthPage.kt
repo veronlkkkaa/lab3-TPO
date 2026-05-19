@@ -9,6 +9,7 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
 
     companion object {
         private const val LOGIN_URL = "${MainPage.URL}?auth=login"
+        private const val LOGIN_FALLBACK_URL = "${MainPage.URL}login"
 
         private val EMAIL_LOGIN_TAB = By.xpath(
             "//button[contains(normalize-space(),'Вход по почте')]" +
@@ -77,12 +78,33 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
 
     fun open(): AuthPage {
         openUrl(LOGIN_URL)
-        wait.until(
-            ExpectedConditions.or(
-                ExpectedConditions.presenceOfElementLocated(AUTH_FORM),
-                ExpectedConditions.presenceOfElementLocated(EMAIL_LOGIN_TAB)
+        if (waitForLoginForm()) return this
+
+        openUrl(LOGIN_FALLBACK_URL)
+        if (waitForLoginForm()) return this
+
+        throw TimeoutException("Форма авторизации не отрисовалась на mirtesen.ru")
+    }
+
+    private fun waitForLoginForm(): Boolean {
+        return try {
+            wait.until(
+                ExpectedConditions.or(
+                    ExpectedConditions.presenceOfElementLocated(AUTH_FORM),
+                    ExpectedConditions.presenceOfElementLocated(EMAIL_LOGIN_TAB),
+                    ExpectedConditions.presenceOfElementLocated(EMAIL_INPUT)
+                )
             )
-        )
+            true
+        } catch (e: TimeoutException) {
+            false
+        }
+    }
+
+    fun ensureOpened(): AuthPage {
+        if (!hasLoginForm()) {
+            open()
+        }
         return this
     }
 

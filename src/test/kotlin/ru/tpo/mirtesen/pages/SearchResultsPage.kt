@@ -34,8 +34,8 @@ class SearchResultsPage(driver: WebDriver) : BasePage(driver) {
 
         private val SERVER_ERROR = By.xpath(
             "//*[contains(normalize-space(),'Internal Server Error') " +
-            "or contains(normalize-space(),'500') " +
             "or contains(normalize-space(),'Bad Gateway') " +
+            "or contains(normalize-space(),'Service Unavailable') " +
             "or contains(normalize-space(),'Ошибка сервера')]"
         )
     }

@@ -2,7 +2,9 @@ package ru.tpo.mirtesen.pages
 
 import org.openqa.selenium.By
 import org.openqa.selenium.NoSuchElementException
+import org.openqa.selenium.StaleElementReferenceException
 import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.ui.ExpectedConditions
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
@@ -25,7 +27,11 @@ class MainPage(driver: WebDriver) : BasePage(driver) {
             "//a[contains(@href,'.mirtesen.ru/blog/')]//h4" +
             " | //a[contains(@href,'.mirtesen.ru/blog/')]//h3" +
             " | //a[contains(@href,'.mirtesen.ru/blog/')]//b" +
-            " | //a[contains(@href,'.mirtesen.ru/blog/')]//strong"
+            " | //a[contains(@href,'.mirtesen.ru/blog/')]//strong" +
+            " | //article[contains(@class,'post-card')]//*[contains(@class,'title')]" +
+            " | //article[contains(@class,'post-card')]//*[contains(@class,'post-preview__title')]" +
+            " | //article[contains(@class,'post-card')]//h3" +
+            " | //article[contains(@class,'post-card')]//h4"
         )
 
         private val LEFT_MENU = By.xpath("//*[contains(@class,'left-menu')]")
@@ -74,9 +80,9 @@ class MainPage(driver: WebDriver) : BasePage(driver) {
             .any { it.contains(".mirtesen.ru/blog/") }
 
     fun hasPostTitles(): Boolean {
-        val byTag = findAll(POST_TITLES).map { it.text.trim() }.any { it.isNotEmpty() }
+        val byTag = textValues(POST_TITLES).any { it.isNotEmpty() }
         if (byTag) return true
-        return findAll(POST_CARDS).map { it.text.trim() }.any { it.isNotEmpty() }
+        return textValues(POST_CARDS).any { it.isNotEmpty() }
     }
 
     fun openFirstPost(): ArticlePage {
@@ -107,5 +113,14 @@ class MainPage(driver: WebDriver) : BasePage(driver) {
         href.startsWith("//") -> "https:$href"
         href.startsWith("/") -> URL.trimEnd('/') + href
         else -> href
+    }
+
+    private fun textValues(locator: By): List<String> =
+        findAll(locator).mapNotNull { it.safeText() }
+
+    private fun WebElement.safeText(): String? = try {
+        text.trim().ifBlank { getAttribute("textContent")?.trim() }
+    } catch (e: StaleElementReferenceException) {
+        null
     }
 }
