@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="760" viewBox="0 0 920 760">
+  <defs>
+    <style>
+      text { font-family: "Times New Roman", serif; fill: #222; }
+      .title { font-size: 18px; font-weight: 700; }
+      .small { font-size: 15px; }
+      .actor { font-size: 16px; }
+      .system-title { font-size: 17px; font-weight: 700; }
+      .usecase { fill: #eef6ff; stroke: #8ba4b8; stroke-width: 1.5; }
+      .system { fill: #fff; stroke: #333; stroke-width: 1.5; }
+      .actor-line { stroke: #333; stroke-width: 1.5; fill: none; }
+      .link { stroke: #333; stroke-width: 1.4; fill: none; marker-end: url(#arrow); }
+      .include { stroke: #777; stroke-width: 1.2; stroke-dasharray: 7 5; fill: none; marker-end: url(#arrow-gray); }
+      .note { fill: #ffffdd; stroke: #999; stroke-width: 1.2; }
+      .note-fold { fill: #f8f3b8; stroke: #999; stroke-width: 1; }
+      .note-text { font-size: 15px; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#777" />
+    </marker>
+  </defs>
+
+  <text x="265" y="18" class="title">Прецеденты использования сайта https://mirtesen.ru/</text>
+
+  <rect x="255" y="120" width="455" height="560" class="system"/>
+  <text x="405" y="146" class="system-title">Система mirtesen.ru</text>
+
+  <rect x="320" y="20" width="250" height="88" class="note"/>
+  <path d="M548 20 L570 42 L548 42 Z" class="note-fold"/>
+  <text x="332" y="44" class="note-text" font-weight="700">Проверяемые сценарии:</text>
+  <text x="332" y="66" class="note-text">Лента публикаций</text>
+  <text x="332" y="86" class="note-text">Поиск и рубрики</text>
+  <text x="332" y="106" class="note-text">Авторизация и публикации</text>
+
+  <rect x="660" y="490" width="220" height="88" class="note"/>
+  <path d="M858 490 L880 512 L858 512 Z" class="note-fold"/>
+  <text x="672" y="514" class="note-text" font-weight="700">Требования:</text>
+  <text x="672" y="536" class="note-text">XPath-локаторы</text>
+  <text x="672" y="556" class="note-text">Chrome + Firefox</text>
+  <text x="672" y="576" class="note-text">Параллельный запуск</text>
+
+  <rect x="640" y="82" width="230" height="70" class="note"/>
+  <path d="M848 82 L870 104 L848 104 Z" class="note-fold"/>
+  <text x="652" y="106" class="note-text" font-weight="700">Авторизация:</text>
+  <text x="652" y="128" class="note-text">валидный вход</text>
+  <text x="652" y="148" class="note-text">ошибка и выход</text>
+
+  <!-- Use cases -->
+  <ellipse cx="480" cy="205" rx="155" ry="30" class="usecase"/>
+  <text x="355" y="211" class="small">UC-01 Просмотр ленты публикаций</text>
+
+  <ellipse cx="480" cy="295" rx="135" ry="30" class="usecase"/>
+  <text x="375" y="301" class="small">UC-02 Поиск публикаций</text>
+
+  <ellipse cx="480" cy="385" rx="145" ry="30" class="usecase"/>
+  <text x="366" y="391" class="small">UC-03 Авторизация пользователя</text>
+
+  <ellipse cx="480" cy="475" rx="145" ry="30" class="usecase"/>
+  <text x="366" y="481" class="small">UC-04 Создание публикации</text>
+
+  <ellipse cx="480" cy="565" rx="145" ry="30" class="usecase"/>
+  <text x="366" y="571" class="small">UC-05 Навигация по рубрикам</text>
+
+  <!-- Actors -->
+  <text x="70" y="170" class="small">«Person»</text>
+  <circle cx="95" cy="196" r="16" class="actor-line"/>
+  <path d="M95 212 L95 262 M62 232 L128 232 M95 262 L65 315 M95 262 L125 315" class="actor-line"/>
+  <text x="68" y="345" class="actor">Гость</text>
+
+  <text x="48" y="402" class="small">«Person»</text>
+  <circle cx="95" cy="428" r="16" class="actor-line"/>
+  <path d="M95 444 L95 494 M62 464 L128 464 M95 494 L65 547 M95 494 L125 547" class="actor-line"/>
+  <text x="38" y="578" class="actor">Пользователь</text>
+
+  <text x="44" y="628" class="small">«Person»</text>
+  <circle cx="95" cy="654" r="16" class="actor-line"/>
+  <path d="M95 670 L95 720 M62 690 L128 690 M95 720 L65 750 M95 720 L125 750" class="actor-line"/>
+  <text x="26" y="752" class="actor">Зарегистрированный</text>
+  <text x="67" y="772" class="actor">пользователь</text>
+
+  <!-- Associations -->
+  <path d="M128 232 L330 205" class="link"/>
+  <path d="M128 232 L350 295" class="link"/>
+  <path d="M128 232 L345 565" class="link"/>
+
+  <path d="M128 464 L330 205" class="link"/>
+  <path d="M128 464 L350 295" class="link"/>
+  <path d="M128 464 L345 565" class="link"/>
+
+  <path d="M128 690 L335 385" class="link"/>
+  <path d="M128 690 L335 475" class="link"/>
+
+  <!-- Includes -->
+  <path d="M480 475 L480 418" class="include"/>
+  <text x="498" y="448" class="small">«include»</text>
+
+  <path d="M480 295 L480 238" class="include"/>
+  <text x="498" y="266" class="small">«include»</text>
+
+  <path d="M480 565 L480 238" class="include"/>
+  <text x="498" y="520" class="small">«include»</text>
+
+  <path d="M625 385 L660 520" class="include"/>
+  <path d="M635 385 L640 118" class="include"/>
+</svg>

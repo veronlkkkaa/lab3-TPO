@@ -1,6 +1,8 @@
 package ru.tpo.mirtesen.pages
 
 import org.openqa.selenium.By
+import org.openqa.selenium.JavascriptExecutor
+import org.openqa.selenium.NoSuchElementException
 import org.openqa.selenium.TimeoutException
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
@@ -35,13 +37,30 @@ class PostEditorPage(driver: WebDriver) : BasePage(driver) {
             "//*[@contenteditable='true' and (" +
             "contains(@class,'mt-lexical-input') " +
             "or contains(@class,'editor') " +
+            "or contains(@class,'ProseMirror') " +
+            "or contains(@class,'DraftEditor') " +
+            "or contains(@class,'public-DraftEditor-content') " +
+            "or contains(@class,'ql-editor') " +
+            "or contains(@data-lexical-editor,'true') " +
             "or contains(@aria-label,'текст') " +
-            "or contains(@aria-label,'Текст')" +
+            "or contains(@aria-label,'Текст') " +
+            "or contains(@placeholder,'текст') " +
+            "or contains(@placeholder,'Текст') " +
+            "or @role='textbox'" +
             ")]" +
+            " | //*[@role='textbox' and @contenteditable='true']" +
+            " | //*[@contenteditable='true' and ancestor::*[" +
+            "contains(@class,'editor') " +
+            "or contains(@class,'post') " +
+            "or contains(@class,'publication') " +
+            "or contains(@class,'form')]]" +
             " | //textarea[contains(@placeholder,'Текст') " +
             "or contains(@placeholder,'текст') " +
             "or contains(@aria-label,'Текст') " +
-            "or contains(@aria-label,'текст')]"
+            "or contains(@aria-label,'текст') " +
+            "or @name='body' " +
+            "or @name='text' " +
+            "or @name='content']"
         )
 
         private val PUBLISH_BUTTON = By.xpath(
@@ -80,7 +99,8 @@ class PostEditorPage(driver: WebDriver) : BasePage(driver) {
         if (isPresent(TITLE_INPUT)) {
             type(TITLE_INPUT, title)
         }
-        val bodyElement = waitVisible(BODY_INPUT)
+        val bodyElement = visibleBodyInput()
+        bodyElement.scrollIntoView()
         bodyElement.click()
         bodyElement.sendKeys(body)
         return this
@@ -99,5 +119,24 @@ class PostEditorPage(driver: WebDriver) : BasePage(driver) {
 
     fun bodyText(): String = findAll(BODY_INPUT).firstOrNull()?.visibleText().orEmpty()
 
-    private fun WebElement.visibleText(): String = text.trim()
+    private fun visibleBodyInput(): WebElement {
+        try {
+            return waitVisible(BODY_INPUT)
+        } catch (e: TimeoutException) {
+            val candidates = findAll(BODY_INPUT).filter { it.isDisplayed }
+            if (candidates.isNotEmpty()) {
+                return candidates.first()
+            }
+            throw NoSuchElementException("Не найдено видимое поле текста публикации")
+        }
+    }
+
+    private fun WebElement.visibleText(): String =
+        text.trim().ifBlank {
+            getAttribute("textContent")?.trim().orEmpty()
+        }
+
+    private fun WebElement.scrollIntoView() {
+        (driver as JavascriptExecutor).executeScript("arguments[0].scrollIntoView({block:'center'});", this)
+    }
 }
