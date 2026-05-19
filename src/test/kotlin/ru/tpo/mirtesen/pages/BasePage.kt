@@ -12,6 +12,12 @@ import java.time.Duration
 
 abstract class BasePage(protected val driver: WebDriver) {
 
+    companion object {
+        private const val NAVIGATION_PAUSE_MS = 800L
+        private val navigationLock = Any()
+        private var lastNavigationAt = 0L
+    }
+
     protected val wait: WebDriverWait = WebDriverWait(driver, Duration.ofSeconds(30))
     protected val shortWait: WebDriverWait = WebDriverWait(driver, Duration.ofSeconds(5))
 
@@ -29,6 +35,7 @@ abstract class BasePage(protected val driver: WebDriver) {
         try {
             openWait.until {
                 try {
+                    throttleNavigation()
                     driver.get(url)
                     true
                 } catch (e: WebDriverException) {
@@ -36,10 +43,7 @@ abstract class BasePage(protected val driver: WebDriver) {
                     if (!isTransientNetworkError(e)) {
                         throw e
                     }
-                    try {
-                        driver.navigate().to("about:blank")
-                    } catch (ignored: WebDriverException) {
-                    }
+                    stopLoading()
                     false
                 }
             }
@@ -77,14 +81,50 @@ abstract class BasePage(protected val driver: WebDriver) {
 
     fun getTitle(): String = driver.title
 
+    private fun throttleNavigation() {
+        synchronized(navigationLock) {
+            val now = System.currentTimeMillis()
+            val elapsed = now - lastNavigationAt
+            if (elapsed in 0 until NAVIGATION_PAUSE_MS) {
+                try {
+                    Thread.sleep(NAVIGATION_PAUSE_MS - elapsed)
+                } catch (e: InterruptedException) {
+                    Thread.currentThread().interrupt()
+                }
+            }
+            lastNavigationAt = System.currentTimeMillis()
+        }
+    }
+
+    private fun stopLoading() {
+        try {
+            (driver as JavascriptExecutor).executeScript("window.stop();")
+        } catch (ignored: WebDriverException) {
+        }
+        try {
+            throttleNavigation()
+            driver.navigate().to("about:blank")
+        } catch (ignored: WebDriverException) {
+        }
+    }
+
     private fun isTransientNetworkError(error: Throwable?): Boolean {
         if (error == null) return false
         val message = error.message.orEmpty().lowercase()
         return message.contains("err_connection_reset") ||
             message.contains("err_connection_refused") ||
+            message.contains("err_connection_closed") ||
+            message.contains("err_empty_response") ||
+            message.contains("err_timed_out") ||
+            message.contains("err_http2_protocol_error") ||
             message.contains("nssfailure") ||
             message.contains("connection reset") ||
             message.contains("connection refused") ||
+            message.contains("connection closed") ||
+            message.contains("empty response") ||
+            message.contains("navigation timed out") ||
+            message.contains("timed out after") ||
+            message.contains("read timed out") ||
             message.contains("timeoutexception") ||
             isTransientNetworkError(error.cause)
     }
