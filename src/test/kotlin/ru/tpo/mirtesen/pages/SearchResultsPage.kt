@@ -16,21 +16,21 @@ class SearchResultsPage(driver: WebDriver) : BasePage(driver) {
             "//a[contains(@href,'.mirtesen.ru/blog/')]//*[self::h3 or self::h4]"
         )
 
-        private val FIRST_RESULT_LINK = By.xpath("(//a[contains(@href,'.mirtesen.ru/blog/')])[1]")
+        private val FIRST_RESULT_LINK = By.xpath(
+            "(//a[contains(@href,'.mirtesen.ru/blog/')])[1]"
+        )
 
         private val NO_RESULTS_MSG = By.xpath(
-            "//*[contains(normalize-space(),'ничего не найдено') " +
-            "or contains(normalize-space(),'Ничего не найдено') " +
-            "or contains(normalize-space(),'Нет результатов')]"
+            "//*[contains(@class,'empty') or contains(@class,'not-found') or contains(@class,'no-results')]" +
+            " | //*[contains(@data-test,'empty') or contains(@data-testid,'empty')]" +
+            " | //*[contains(@data-test,'no-results') or contains(@data-testid,'no-results')]"
         )
 
         private val BODY = By.xpath("//body")
 
         private val SERVER_ERROR = By.xpath(
-            "//*[contains(normalize-space(),'Internal Server Error') " +
-            "or contains(normalize-space(),'Bad Gateway') " +
-            "or contains(normalize-space(),'Service Unavailable') " +
-            "or contains(normalize-space(),'Ошибка сервера')]"
+            "//*[contains(@class,'server-error') or contains(@class,'service-error') or contains(@class,'error-page')]" +
+            " | //*[contains(@data-test,'server-error') or contains(@data-testid,'server-error')]"
         )
     }
 
@@ -77,7 +77,6 @@ class SearchResultsPage(driver: WebDriver) : BasePage(driver) {
                     .mapNotNull { it.safeText() }
                     .filter { it.isNotBlank() }
             } catch (e: StaleElementReferenceException) {
-                // The feed is dynamic; retry by locating elements again.
             }
         }
         return emptyList()

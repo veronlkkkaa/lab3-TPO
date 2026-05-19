@@ -48,7 +48,6 @@
   <text x="652" y="128" class="note-text">валидный вход</text>
   <text x="652" y="148" class="note-text">ошибка и выход</text>
 
-  <!-- Use cases -->
   <ellipse cx="480" cy="205" rx="155" ry="30" class="usecase"/>
   <text x="355" y="211" class="small">UC-01 Просмотр ленты публикаций</text>
 
@@ -64,7 +63,6 @@
   <ellipse cx="480" cy="565" rx="145" ry="30" class="usecase"/>
   <text x="366" y="571" class="small">UC-05 Навигация по рубрикам</text>
 
-  <!-- Actors -->
   <text x="44" y="170" class="small">«Person»</text>
   <circle cx="95" cy="196" r="16" class="actor-line"/>
   <path d="M95 212 L95 262 M62 232 L128 232 M95 262 L65 315 M95 262 L125 315" class="actor-line"/>
@@ -77,7 +75,6 @@
   <text x="26" y="657" class="actor">Зарегистрированный</text>
   <text x="67" y="677" class="actor">пользователь</text>
 
-  <!-- Associations -->
   <path d="M128 232 L330 205" class="link"/>
   <path d="M128 232 L350 295" class="link"/>
   <path d="M128 232 L345 565" class="link"/>
@@ -89,7 +86,6 @@
   <path d="M128 542 L335 475" class="link"/>
   <path d="M128 542 L345 565" class="link"/>
 
-  <!-- Includes -->
   <path d="M480 475 L480 418" class="include"/>
   <text x="498" y="448" class="small">«include»</text>
 

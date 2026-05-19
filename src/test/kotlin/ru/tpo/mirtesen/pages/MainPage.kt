@@ -15,27 +15,36 @@ class MainPage(driver: WebDriver) : BasePage(driver) {
         const val URL = "https://mirtesen.ru/"
 
         private val COOKIE_ACCEPT = By.xpath(
-            "//button[contains(normalize-space(),'Принять') " +
-            "or contains(normalize-space(),'принять') " +
-            "or contains(normalize-space(),'Согласен') " +
-            "or @id='cookie-accept']"
+            "//*[@id='cookie-accept' or @data-testid='cookie-accept' or @data-test='cookie-accept']" +
+            " | //*[contains(@class,'cookie')]" +
+            "//*[self::button or self::a][contains(@class,'accept') or @type='submit']"
         )
 
-        val POST_CARDS: By = By.xpath("//a[contains(@href,'.mirtesen.ru/blog/')]")
+        val POST_CARDS: By = By.xpath(
+            "//article[contains(concat(' ', normalize-space(@class), ' '), ' post-card ')]"
+        )
 
         val POST_TITLES: By = By.xpath(
-            "//a[contains(@href,'.mirtesen.ru/blog/')]//*[self::h3 or self::h4]"
+            "//article[contains(concat(' ', normalize-space(@class), ' '), ' post-card ')]" +
+            "//*[self::h1 or self::h2 or self::h3]" +
+            "[contains(@class,'post-preview__title') or string-length(normalize-space())>0]"
+        )
+
+        private val FIRST_POST_LINK = By.xpath(
+            "//article[contains(concat(' ', normalize-space(@class), ' '), ' post-card ')]" +
+            "//a[contains(@href,'.mirtesen.ru/blog/') or starts-with(@href,'//') and contains(@href,'/blog/')]"
         )
 
         private val LEFT_MENU = By.xpath("//*[contains(@class,'left-menu')]")
 
         private val MY_FEED_LINK = By.xpath(
-            "//*[contains(@class,'left-menu')]//a[contains(normalize-space(),'Моя лента')]"
+            "//*[contains(@class,'left-menu')]//a[" +
+            "contains(@class,'left-menu__item_title-anchor') or @href='https://mirtesen.ru/' or @href='//mirtesen.ru/']"
         )
 
         private val RUBRIC_LINKS = By.xpath(
             "//*[contains(@class,'left-menu')]//a[" +
-            "(contains(@href,'/topic/') or contains(@href,'/tag/')) " +
+            "(contains(@href,'/topic/') or contains(@href,'/tag/') or contains(@href,'topic/')) " +
             "and string-length(normalize-space())>0]"
         )
     }
@@ -60,13 +69,11 @@ class MainPage(driver: WebDriver) : BasePage(driver) {
     fun hasMyFeedLink(): Boolean = isPresent(MY_FEED_LINK)
 
     fun hasRubricLinks(): Boolean =
-        findAll(RUBRIC_LINKS)
-            .mapNotNull { it.getAttribute("href") }
+        hrefValues(RUBRIC_LINKS)
             .any { it.isNotBlank() }
 
     fun postCardsHaveLinks(): Boolean =
-        findAll(POST_CARDS)
-            .mapNotNull { it.getAttribute("href") }
+        hrefValues(FIRST_POST_LINK)
             .any { it.contains(".mirtesen.ru/blog/") }
 
     fun hasPostTitles(): Boolean {
@@ -76,8 +83,7 @@ class MainPage(driver: WebDriver) : BasePage(driver) {
     }
 
     fun openFirstPost(): ArticlePage {
-        val href = findAll(POST_CARDS)
-            .mapNotNull { it.getAttribute("href") }
+        val href = hrefValues(FIRST_POST_LINK)
             .firstOrNull { it.contains(".mirtesen.ru/blog/") }
             ?: throw NoSuchElementException("No post link found on main feed")
         openUrl(normalizePostUrl(href))
@@ -85,8 +91,7 @@ class MainPage(driver: WebDriver) : BasePage(driver) {
     }
 
     fun openFirstRubric(): RubricPage {
-        val href = findAll(RUBRIC_LINKS)
-            .mapNotNull { it.getAttribute("href") }
+        val href = hrefValues(RUBRIC_LINKS)
             .firstOrNull { it.isNotBlank() }
             ?: throw NoSuchElementException("No rubric link found in left menu")
         openUrl(normalizePostUrl(href))
@@ -107,6 +112,16 @@ class MainPage(driver: WebDriver) : BasePage(driver) {
 
     private fun textValues(locator: By): List<String> =
         findAll(locator).mapNotNull { it.safeText() }
+
+    private fun hrefValues(locator: By): List<String> {
+        repeat(3) {
+            try {
+                return findAll(locator).mapNotNull { it.getAttribute("href") }
+            } catch (e: StaleElementReferenceException) {
+            }
+        }
+        return emptyList()
+    }
 
     private fun WebElement.safeText(): String? = try {
         text.trim().ifBlank { getAttribute("textContent")?.trim() }

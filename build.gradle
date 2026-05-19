@@ -23,9 +23,10 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    def manualRegistration = System.getenv('MIRTESEN_MANUAL_REGISTRATION')?.equalsIgnoreCase('true') ?: false
     testLogging {
         events 'passed', 'skipped', 'failed'
         exceptionFormat 'full'
-        showStandardStreams false
+        showStandardStreams manualRegistration
     }
 }

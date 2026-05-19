@@ -7,17 +7,8 @@ import ru.tpo.mirtesen.pages.MainPage
 import java.net.URLDecoder
 import java.nio.charset.StandardCharsets
 
-/**
- * UC-2: Поиск публикаций.
- *
- * Проверяем что поиск работает: находит статьи по слову, отражает запрос в URL,
- * позволяет открыть результат. Отдельно проверяем граничные случаи —
- * пустой запрос и запрос без результатов не должны ронять сервер.
- *
- */
 class SearchTest : BaseTest() {
 
-    // TC-05: ищем «путешествия»  должны появиться результаты, страница не пустая.
     @ParameterizedTest(name = "UC-2 TC-05 Поиск возвращает публикации [{0}]")
     @MethodSource("browsers")
     fun searchReturnsResults(browser: String) {
@@ -28,7 +19,6 @@ class SearchTest : BaseTest() {
             "Поиск по 'путешествия' должен вернуть список публикаций")
     }
 
-    // TC-06: ищем «природа» и смотрим на URL  запрос должен быть виден в адресной строке.
     @ParameterizedTest(name = "UC-2 TC-06 Запрос отражён в URL [{0}]")
     @MethodSource("browsers")
     fun searchQueryAppearsInUrl(browser: String) {
@@ -40,7 +30,6 @@ class SearchTest : BaseTest() {
             "URL должен содержать путь search и непустой параметр q. Текущий URL: $url")
     }
 
-    // TC-07: ищем «кулинария», кликаем на первый результат  должна открыться статья с заголовком.
     @ParameterizedTest(name = "UC-2 TC-07 Страница статьи содержит заголовок [{0}]")
     @MethodSource("browsers")
     fun firstResultOpensArticle(browser: String) {
@@ -53,7 +42,6 @@ class SearchTest : BaseTest() {
             "Страница статьи должна содержать непустой заголовок h1")
     }
 
-    // TC-08: отправляем пустой запрос  сервер не должен упасть с ошибкой 500.
     @ParameterizedTest(name = "UC-2 TC-08 Пустой запрос без ошибки сервера [{0}]")
     @MethodSource("browsers")
     fun emptySearchQueryHandledWithoutServerError(browser: String) {
@@ -67,7 +55,6 @@ class SearchTest : BaseTest() {
             "URL пустого поиска должен оставаться страницей поиска. Текущий URL: ${results.getUrl()}")
     }
 
-    // TC-09: ищем заведомо несуществующую строку —сервер не должен падать, должен показать пустой список или «ничего не найдено».
     @ParameterizedTest(name = "UC-2 TC-09 Запрос без результатов обработан [{0}]")
     @MethodSource("browsers")
     fun noResultsSearchHandledCorrectly(browser: String) {
@@ -81,7 +68,6 @@ class SearchTest : BaseTest() {
             "Для запроса без совпадений должно быть сообщение или пустой список результатов")
     }
 
-    // TC-10: ищем «путешествия» и проверяем что у найденных карточек есть хоть какой-то заголовок.
     @ParameterizedTest(name = "UC-2 TC-10 Результаты имеют заголовки [{0}]")
     @MethodSource("browsers")
     fun searchResultsHaveNonEmptyTitles(browser: String) {

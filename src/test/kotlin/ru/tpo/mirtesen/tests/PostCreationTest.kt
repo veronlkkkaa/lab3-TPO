@@ -7,16 +7,8 @@ import org.junit.jupiter.params.provider.MethodSource
 import ru.tpo.mirtesen.pages.AuthPage
 import ru.tpo.mirtesen.pages.PostEditorPage
 
-/**
- * UC-4: Создание публикации.
- *
- * Проверяем сценарий написания поста: без входа нельзя, после входа редактор открывается,
- * текст вводится. Реальная публикация только если явно разрешено через переменную окружения.
- *
- */
 class PostCreationTest : BaseTest() {
 
-    // TC-15: без входа нажимаем «Написать»  сайт должен либо показать форму входа, либо не открыть редактор вообще.
     @ParameterizedTest(name = "UC-4 TC-15 Создание публикации требует входа [{0}]")
     @MethodSource("browsers")
     fun anonymousUserMustLoginBeforeCreatingPost(browser: String) {
@@ -26,7 +18,6 @@ class PostCreationTest : BaseTest() {
             "Создание публикации должно быть недоступно без авторизации")
     }
 
-    // TC-16: входим, открываем редактор, вводим заголовок и текст и проверяем что редактор принял данные.
     @ParameterizedTest(name = "UC-4 TC-16 Авторизованный пользователь заполняет публикацию [{0}]")
     @MethodSource("browsers")
     fun authorizedUserCanFillPostEditor(browser: String) {
@@ -45,8 +36,6 @@ class PostCreationTest : BaseTest() {
             "Редактор должен принять текст публикации или показать действие публикации")
     }
 
-    // TC-17: заполняем и реально публикуем запись. работает только если задан MIRTESEN_ALLOW_PUBLISH=true,
-    // чтобы случайно не засрать сайт при каждом прогоне тестов.
     @ParameterizedTest(name = "UC-4 TC-17 Публикация тестовой записи [{0}]")
     @MethodSource("browsers")
     fun authorizedUserCanPublishPostWhenExplicitlyAllowed(browser: String) {

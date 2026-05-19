@@ -7,15 +7,8 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 import ru.tpo.mirtesen.pages.AuthPage
 
-/**
- * UC-3: Авторизация на Миртесен.
- *
- * Проверяем базовые сценарий входа, например:  открыть форму, выбрать вход по почте,
- * ввести логин и пароль, убедиться что сайт пустил.
- */
 class AuthTest : BaseTest() {
 
-    // TC-11: открываем страницу входа и смотрим есть ли форма вообще ?
     @ParameterizedTest(name = "UC-3 TC-11 Форма входа доступна [{0}]")
     @MethodSource("browsers")
     fun loginFormIsAvailable(browser: String) {
@@ -24,8 +17,6 @@ class AuthTest : BaseTest() {
         assertTrue(authPage.hasLoginForm(), "Форма авторизации должна быть доступна")
     }
 
-    // TC-12: вводим настоящие логин и пароль. сайт должен пустить без ошибок.
-    // Нужны переменные окружения MIRTESEN_LOGIN и MIRTESEN_PASSWORD, иначе тест пропускается.
     @ParameterizedTest(name = "UC-3 TC-12 Успешная авторизация [{0}]")
     @MethodSource("browsers")
     fun validCredentialsLoginUser(browser: String) {
@@ -41,7 +32,6 @@ class AuthTest : BaseTest() {
             "После входа должны отображаться признаки авторизованной сессии")
     }
 
-    // TC-13: вводим правильный логин, но  неверный пароль. сайт должен показать ошибку и не пустить.
     @ParameterizedTest(name = "UC-3 TC-13 Неверный пароль не авторизует пользователя [{0}]")
     @MethodSource("browsers")
     fun invalidPasswordDoesNotLoginUser(browser: String) {
@@ -56,7 +46,6 @@ class AuthTest : BaseTest() {
         assertFalse(authPage.isAuthenticated(), "Пользователь не должен быть авторизован с неверным паролем")
     }
 
-    // TC-14: входим, затем выходим. проверяем что сессия действительно закончилась.
     @ParameterizedTest(name = "UC-3 TC-14 Пользователь может выйти из аккаунта [{0}]")
     @MethodSource("browsers")
     fun authorizedUserCanLogout(browser: String) {

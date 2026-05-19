@@ -11,11 +11,12 @@ class PostEditorPage(driver: WebDriver) : BasePage(driver) {
 
     companion object {
         private val OPEN_EDITOR = By.xpath(
-            "//button[contains(@class,'left-menu__create-post-btn') and contains(normalize-space(),'Создать пост')]"
+            "//button[contains(@class,'left-menu__create-post-btn')]"
         )
 
         private val TITLE_INPUT = By.xpath(
-            "//*[self::input or self::textarea][@name='title' or contains(@placeholder,'Заголов')]"
+            "//*[self::input or self::textarea][" +
+            "@name='title' or contains(@class,'title') or contains(@data-test,'title') or contains(@data-testid,'title')]"
         )
 
         private val BODY_INPUT = By.xpath(
@@ -23,10 +24,17 @@ class PostEditorPage(driver: WebDriver) : BasePage(driver) {
         )
 
         private val PUBLISH_BUTTON = By.xpath(
-            "//*[self::button or self::a][contains(normalize-space(),'Опубликовать') or contains(normalize-space(),'Сохранить')]"
+            "//*[self::button or self::a][" +
+            "contains(@class,'publish') or contains(@class,'save') " +
+            "or contains(@data-test,'publish') or contains(@data-testid,'publish') " +
+            "or contains(@data-test,'save') or contains(@data-testid,'save') " +
+            "or @type='submit']"
         )
 
-        private val AUTH_FORM = By.xpath("//*[contains(normalize-space(),'Вход по почте')]")
+        private val AUTH_FORM = By.xpath(
+            "//form[.//input[@name='email'] or .//input[@type='password']]" +
+            " | //*[contains(@class,'auth') and (.//input[@name='email'] or .//input[@type='password'])]"
+        )
     }
 
     fun openFromMainPage(): PostEditorPage {

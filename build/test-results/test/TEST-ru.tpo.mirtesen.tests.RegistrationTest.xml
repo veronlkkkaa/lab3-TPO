@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.tpo.mirtesen.tests.RegistrationTest" tests="6" skipped="2" failures="0" errors="0" timestamp="2026-05-19T18:13:36.931Z" hostname="MacBook-Air-mac-4.local" time="44.081">
+  <properties/>
+  <testcase name="manualUserCanRegisterByEmailWithConfirmationCode()" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="0.032">
+    <skipped message="Assumption failed: Для ручной регистрации нужен MIRTESEN_MANUAL_REGISTRATION=true" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Для ручной регистрации нужен MIRTESEN_MANUAL_REGISTRATION=true
+	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
+	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
+	at ru.tpo.mirtesen.tests.RegistrationTest.manualUserCanRegisterByEmailWithConfirmationCode(RegistrationTest.kt:35)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</skipped>
+  </testcase>
+  <testcase name="manualUserCanRegisterWithConfirmationCode()" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="0.034">
+    <skipped message="Assumption failed: Для ручной регистрации нужен MIRTESEN_MANUAL_REGISTRATION=true" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Для ручной регистрации нужен MIRTESEN_MANUAL_REGISTRATION=true
+	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
+	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
+	at ru.tpo.mirtesen.tests.RegistrationTest.manualUserCanRegisterWithConfirmationCode(RegistrationTest.kt:55)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
+	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</skipped>
+  </testcase>
+  <testcase name="UC-6 TC-21 Форма регистрации доступна [chrome]" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="17.161"/>
+  <testcase name="UC-6 TC-22 Форма регистрации по почте доступна [chrome]" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="18.863"/>
+  <testcase name="UC-6 TC-21 Форма регистрации доступна [firefox]" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="21.933"/>
+  <testcase name="UC-6 TC-22 Форма регистрации по почте доступна [firefox]" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="43.431"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[мая 19, 2026 9:13:40 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 19, 2026 9:13:40 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.168. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 19, 2026 9:13:40 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 19, 2026 9:13:40 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.168. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+</testsuite>
