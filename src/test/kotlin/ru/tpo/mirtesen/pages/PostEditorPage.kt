@@ -11,30 +11,19 @@ class PostEditorPage(driver: WebDriver) : BasePage(driver) {
 
     companion object {
         private val OPEN_EDITOR = By.xpath(
-            "//button[contains(normalize-space(),'Написать') " +
-            "or contains(normalize-space(),'Создать публикацию') " +
-            "or contains(normalize-space(),'Создать пост')]" +
-            " | //a[contains(normalize-space(),'Написать') " +
-            "or contains(@href,'/editor') " +
-            "or contains(@href,'/post/add') " +
-            "or contains(@href,'/post/create')]"
+            "//button[contains(@class,'left-menu__create-post-btn') and contains(normalize-space(),'Создать пост')]"
         )
 
         private val TITLE_INPUT = By.xpath(
-            "//input[@name='title' or contains(@placeholder,'Заголов')]" +
-            " | //textarea[@name='title' or contains(@placeholder,'Заголов')]"
+            "//*[self::input or self::textarea][@name='title' or contains(@placeholder,'Заголов')]"
         )
 
         private val BODY_INPUT = By.xpath(
-            "//*[@contenteditable='true']" +
-            " | //textarea[contains(@placeholder,'Текст')]"
+            "//*[@contenteditable='true']"
         )
 
         private val PUBLISH_BUTTON = By.xpath(
-            "//button[contains(normalize-space(),'Опубликовать') " +
-            "or contains(normalize-space(),'Сохранить')]" +
-            " | //a[contains(normalize-space(),'Опубликовать') " +
-            "or contains(normalize-space(),'Сохранить')]"
+            "//*[self::button or self::a][contains(normalize-space(),'Опубликовать') or contains(normalize-space(),'Сохранить')]"
         )
 
         private val AUTH_FORM = By.xpath("//*[contains(normalize-space(),'Вход по почте')]")

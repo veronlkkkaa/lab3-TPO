@@ -86,8 +86,11 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
     }
 
     fun loginByEmail(email: String, password: String): MainPage {
-        if (isPresent(EMAIL_LOGIN_TAB)) {
-            jsClick(EMAIL_LOGIN_TAB)
+        if (!isPresent(EMAIL_INPUT) && isPresent(EMAIL_LOGIN_TAB)) {
+            try {
+                jsClick(EMAIL_LOGIN_TAB)
+            } catch (e: TimeoutException) {
+            }
         }
         type(EMAIL_INPUT, email)
         type(PASSWORD_INPUT, password)

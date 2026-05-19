@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.tpo.mirtesen.tests.FeedTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2026-05-19T16:13:27.220Z" hostname="MacBook-Air-mac-4.local" time="35.833">
+  <properties/>
+  <testcase name="UC-1 TC-03 Карточки содержат ссылки [chrome]" classname="ru.tpo.mirtesen.tests.FeedTest" time="9.95"/>
+  <testcase name="UC-1 TC-01 Лента содержит публикации [chrome]" classname="ru.tpo.mirtesen.tests.FeedTest" time="12.016"/>
+  <testcase name="UC-1 TC-04 Первая публикация открывается [chrome]" classname="ru.tpo.mirtesen.tests.FeedTest" time="12.387"/>
+  <testcase name="UC-1 TC-01 Лента содержит публикации [firefox]" classname="ru.tpo.mirtesen.tests.FeedTest" time="14.381"/>
+  <testcase name="UC-1 TC-03 Карточки содержат ссылки [firefox]" classname="ru.tpo.mirtesen.tests.FeedTest" time="13.56"/>
+  <testcase name="UC-1 TC-04 Первая публикация открывается [firefox]" classname="ru.tpo.mirtesen.tests.FeedTest" time="14.863"/>
+  <testcase name="UC-1 TC-02 Карточки содержат заголовки [chrome]" classname="ru.tpo.mirtesen.tests.FeedTest" time="13.106"/>
+  <testcase name="UC-1 TC-02 Карточки содержат заголовки [firefox]" classname="ru.tpo.mirtesen.tests.FeedTest" time="12.322"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[мая 19, 2026 7:13:29 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 19, 2026 7:13:29 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.168. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 19, 2026 7:13:29 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 19, 2026 7:13:29 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.168. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 19, 2026 7:13:29 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 19, 2026 7:13:29 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.168. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 19, 2026 7:13:43 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 19, 2026 7:13:43 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.168. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+</testsuite>
