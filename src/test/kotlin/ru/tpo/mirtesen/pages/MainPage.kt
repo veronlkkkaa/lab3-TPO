@@ -5,7 +5,6 @@ import org.openqa.selenium.NoSuchElementException
 import org.openqa.selenium.StaleElementReferenceException
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
-import org.openqa.selenium.support.ui.ExpectedConditions
 import java.net.URLEncoder
 import java.nio.charset.StandardCharsets
 
@@ -51,7 +50,7 @@ class MainPage(driver: WebDriver) : BasePage(driver) {
 
     fun open(): MainPage {
         openUrl(URL)
-        try { wait.until(ExpectedConditions.presenceOfElementLocated(POST_CARDS)) } catch (e: Exception) { }
+        try { waitUntil { d -> d.findElements(POST_CARDS).isNotEmpty() } } catch (e: Exception) { }
         dismissDialogs()
         return this
     }

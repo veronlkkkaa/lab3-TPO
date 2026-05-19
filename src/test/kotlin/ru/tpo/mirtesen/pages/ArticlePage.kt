@@ -2,7 +2,6 @@ package ru.tpo.mirtesen.pages
 
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
-import org.openqa.selenium.support.ui.ExpectedConditions
 
 class ArticlePage(driver: WebDriver) : BasePage(driver) {
 
@@ -28,7 +27,7 @@ class ArticlePage(driver: WebDriver) : BasePage(driver) {
     }
 
     fun hasTitle(): Boolean = try {
-        wait.until(ExpectedConditions.presenceOfElementLocated(TITLE))
+        waitUntil { d -> d.findElements(TITLE).isNotEmpty() }
         driver.findElement(TITLE).text.trim().isNotEmpty()
     } catch (e: Exception) {
         false
@@ -37,7 +36,7 @@ class ArticlePage(driver: WebDriver) : BasePage(driver) {
     fun getTitleText(): String = waitVisible(TITLE).text.trim()
 
     fun hasContent(): Boolean = try {
-        wait.until(ExpectedConditions.presenceOfElementLocated(CONTENT))
+        waitUntil { d -> d.findElements(CONTENT).isNotEmpty() }
         true
     } catch (e: Exception) {
         false

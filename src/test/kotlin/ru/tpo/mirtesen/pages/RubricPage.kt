@@ -2,7 +2,6 @@ package ru.tpo.mirtesen.pages
 
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
-import org.openqa.selenium.support.ui.ExpectedConditions
 
 class RubricPage(driver: WebDriver) : BasePage(driver) {
 
@@ -17,12 +16,9 @@ class RubricPage(driver: WebDriver) : BasePage(driver) {
     }
 
     fun waitForPage(): RubricPage {
-        wait.until(
-            ExpectedConditions.or(
-                ExpectedConditions.presenceOfElementLocated(POST_CARDS),
-                ExpectedConditions.presenceOfElementLocated(RUBRIC_MARKER)
-            )
-        )
+        waitUntil { d ->
+            d.findElements(POST_CARDS).isNotEmpty() || d.findElements(RUBRIC_MARKER).isNotEmpty()
+        }
         return this
     }
 

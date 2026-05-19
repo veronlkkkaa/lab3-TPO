@@ -6,50 +6,53 @@ import org.openqa.selenium.TimeoutException
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.WebDriverException
-import org.openqa.selenium.support.ui.ExpectedConditions
-import org.openqa.selenium.support.ui.WebDriverWait
-import java.time.Duration
 
 abstract class BasePage(protected val driver: WebDriver) {
 
+    private val navigationLock = Any()
+    private var lastNavigationAt = 0L
+
     companion object {
         private const val NAVIGATION_PAUSE_MS = 800L
-        private val navigationLock = Any()
-        private var lastNavigationAt = 0L
     }
 
-    protected val wait: WebDriverWait = WebDriverWait(driver, Duration.ofSeconds(30))
-    protected val shortWait: WebDriverWait = WebDriverWait(driver, Duration.ofSeconds(5))
+    protected fun waitUntil(condition: (WebDriver) -> Boolean) {
+        while (!condition(driver)) {
+            awaitNextPoll()
+        }
+    }
 
-    protected fun waitVisible(locator: By): WebElement =
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator))
+    protected fun waitVisible(locator: By): WebElement {
+        waitUntil { d ->
+            val el = d.findElements(locator).firstOrNull() ?: return@waitUntil false
+            el.isDisplayed
+        }
+        return driver.findElements(locator).first { it.isDisplayed }
+    }
 
-    protected fun waitClickable(locator: By): WebElement =
-        wait.until(ExpectedConditions.elementToBeClickable(locator))
+    protected fun waitClickable(locator: By): WebElement {
+        waitUntil { d ->
+            val el = d.findElements(locator).firstOrNull() ?: return@waitUntil false
+            el.isDisplayed && el.isEnabled
+        }
+        return driver.findElements(locator).first { it.isDisplayed && it.isEnabled }
+    }
 
     protected fun openUrl(url: String) {
-        var lastError: WebDriverException? = null
-        val openWait = WebDriverWait(driver, Duration.ofSeconds(75))
-        openWait.pollingEvery(Duration.ofSeconds(2))
-
-        try {
-            openWait.until {
-                try {
-                    throttleNavigation()
-                    driver.get(url)
-                    true
-                } catch (e: WebDriverException) {
-                    lastError = e
-                    if (!isTransientNetworkError(e)) {
-                        throw e
-                    }
-                    stopLoading()
-                    false
+        var success = false
+        while (!success) {
+            try {
+                throttleNavigation()
+                driver.get(url)
+                waitUntil { d ->
+                    (d as JavascriptExecutor)
+                        .executeScript("return document.readyState") == "complete"
                 }
+                success = true
+            } catch (e: WebDriverException) {
+                if (!isTransientNetworkError(e)) throw e
+                stopLoading()
             }
-            return
-        } catch (e: TimeoutException) {
-            throw lastError ?: e
         }
     }
 
@@ -68,12 +71,8 @@ abstract class BasePage(protected val driver: WebDriver) {
         element.sendKeys(value)
     }
 
-    protected fun isPresent(locator: By): Boolean = try {
-        shortWait.until(ExpectedConditions.presenceOfElementLocated(locator))
-        true
-    } catch (e: Exception) {
-        false
-    }
+    protected fun isPresent(locator: By): Boolean =
+        driver.findElements(locator).isNotEmpty()
 
     protected fun findAll(locator: By): List<WebElement> = driver.findElements(locator)
 
@@ -81,16 +80,19 @@ abstract class BasePage(protected val driver: WebDriver) {
 
     fun getTitle(): String = driver.title
 
+    private fun awaitNextPoll() {
+        try {
+            (driver as JavascriptExecutor).executeAsyncScript(
+                "var done = arguments[0]; setTimeout(done, 200);"
+            )
+        } catch (_: WebDriverException) { }
+    }
+
     private fun throttleNavigation() {
         synchronized(navigationLock) {
-            val now = System.currentTimeMillis()
-            val elapsed = now - lastNavigationAt
-            if (elapsed in 0 until NAVIGATION_PAUSE_MS) {
-                try {
-                    Thread.sleep(NAVIGATION_PAUSE_MS - elapsed)
-                } catch (e: InterruptedException) {
-                    Thread.currentThread().interrupt()
-                }
+            val deadline = lastNavigationAt + NAVIGATION_PAUSE_MS
+            while (System.currentTimeMillis() < deadline) {
+                awaitNextPoll()
             }
             lastNavigationAt = System.currentTimeMillis()
         }
@@ -99,13 +101,11 @@ abstract class BasePage(protected val driver: WebDriver) {
     private fun stopLoading() {
         try {
             (driver as JavascriptExecutor).executeScript("window.stop();")
-        } catch (ignored: WebDriverException) {
-        }
+        } catch (ignored: WebDriverException) { }
         try {
             throttleNavigation()
             driver.navigate().to("about:blank")
-        } catch (ignored: WebDriverException) {
-        }
+        } catch (ignored: WebDriverException) { }
     }
 
     private fun isTransientNetworkError(error: Throwable?): Boolean {

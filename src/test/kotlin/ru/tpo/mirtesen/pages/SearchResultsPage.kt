@@ -5,7 +5,6 @@ import org.openqa.selenium.JavascriptExecutor
 import org.openqa.selenium.StaleElementReferenceException
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
-import org.openqa.selenium.support.ui.ExpectedConditions
 
 class SearchResultsPage(driver: WebDriver) : BasePage(driver) {
 
@@ -35,17 +34,14 @@ class SearchResultsPage(driver: WebDriver) : BasePage(driver) {
     }
 
     fun waitForSearchPage() {
-        wait.until(ExpectedConditions.presenceOfElementLocated(BODY))
-        wait.until { getUrl().contains("/search") || getUrl().contains("q=") }
+        waitUntil { d -> d.findElements(BODY).isNotEmpty() }
+        waitUntil { getUrl().contains("/search") || getUrl().contains("q=") }
     }
 
     fun waitForResults() {
-        wait.until(
-            ExpectedConditions.or(
-                ExpectedConditions.presenceOfElementLocated(RESULT_CARDS),
-                ExpectedConditions.presenceOfElementLocated(NO_RESULTS_MSG)
-            )
-        )
+        waitUntil { d ->
+            d.findElements(RESULT_CARDS).isNotEmpty() || d.findElements(NO_RESULTS_MSG).isNotEmpty()
+        }
     }
 
     fun hasResults(): Boolean = findAll(RESULT_CARDS).isNotEmpty()

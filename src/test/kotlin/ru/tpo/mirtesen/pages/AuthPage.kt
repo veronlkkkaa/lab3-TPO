@@ -124,15 +124,13 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
 
     private fun waitForLoginForm(): Boolean {
         return try {
-            wait.until(
-                ExpectedConditions.or(
-                    ExpectedConditions.presenceOfElementLocated(AUTH_FORM),
-                    ExpectedConditions.presenceOfElementLocated(EMAIL_LOGIN_TAB),
-                    ExpectedConditions.presenceOfElementLocated(EMAIL_INPUT)
-                )
-            )
+            waitUntil { d ->
+                d.findElements(AUTH_FORM).isNotEmpty() ||
+                d.findElements(EMAIL_LOGIN_TAB).isNotEmpty() ||
+                d.findElements(EMAIL_INPUT).isNotEmpty()
+            }
             true
-        } catch (e: TimeoutException) {
+        } catch (e: Exception) {
             false
         }
     }
@@ -159,14 +157,14 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
         if (!isPresent(AUTH_FORM) && isPresent(HEADER_REGISTRATION_BUTTON)) {
             jsClick(HEADER_REGISTRATION_BUTTON)
         }
-        wait.until(ExpectedConditions.presenceOfElementLocated(AUTH_FORM))
+        waitUntil { d -> d.findElements(AUTH_FORM).isNotEmpty() }
         return this
     }
 
     fun openEmailRegistration(): AuthPage {
         openRegistration()
         switchToEmailMode()
-        wait.until(ExpectedConditions.presenceOfElementLocated(EMAIL_INPUT))
+        waitUntil { d -> d.findElements(EMAIL_INPUT).isNotEmpty() }
         return this
     }
 
@@ -196,11 +194,9 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
     }
 
     fun waitForRegistrationCodeStep(): Boolean = try {
-        WebDriverWaitFactory.seconds(driver, 90).until {
-            isPresent(CODE_INPUT) || isAuthenticated() || isPresent(AUTH_ERROR)
-        }
+        waitUntil { isPresent(CODE_INPUT) || isAuthenticated() || isPresent(AUTH_ERROR) }
         isPresent(CODE_INPUT)
-    } catch (e: TimeoutException) {
+    } catch (e: Exception) {
         false
     }
 
@@ -215,9 +211,7 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
     }
 
     fun waitForManualRegistrationCompletion() {
-        WebDriverWaitFactory.seconds(driver, 180).until {
-            isAuthenticated() || !isPresent(AUTH_FORM)
-        }
+        waitUntil { isAuthenticated() || !isPresent(AUTH_FORM) }
     }
 
     fun loginByEmail(email: String, password: String): MainPage {
@@ -230,7 +224,7 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
         type(EMAIL_INPUT, email)
         type(PASSWORD_INPUT, password)
         jsClick(LOGIN_SUBMIT)
-        wait.until { isPresent(AUTHENTICATED_MARKER) || hasAuthTokenCookie() || isPresent(AUTH_ERROR) }
+        waitUntil { isPresent(AUTHENTICATED_MARKER) || hasAuthTokenCookie() || isPresent(AUTH_ERROR) }
         return MainPage(driver)
     }
 
@@ -262,12 +256,7 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
         !hasAuthTokenCookie() && (isPresent(AUTH_FORM) || !isPresent(AUTHENTICATED_MARKER))
 
     private fun waitForLoggedOutState() {
-        try {
-            wait.until { isLoggedOut() }
-        } catch (e: TimeoutException) {
-            open()
-            wait.until { isLoggedOut() }
-        }
+        waitUntil { isLoggedOut() }
     }
 
     private fun hasAuthTokenCookie(): Boolean =

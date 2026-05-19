@@ -2,39 +2,40 @@ package ru.tpo.mirtesen.pages
 
 import org.openqa.selenium.By
 import org.openqa.selenium.JavascriptExecutor
-import org.openqa.selenium.TimeoutException
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
-import org.openqa.selenium.support.ui.ExpectedConditions
 
 class PostEditorPage(driver: WebDriver) : BasePage(driver) {
 
     companion object {
         private val OPEN_EDITOR = By.xpath(
-            "//button[contains(@class,'left-menu__create-post-btn')]"
+            "//button[contains(normalize-space(),'Написать') " +
+            "or contains(normalize-space(),'Создать публикацию') " +
+            "or contains(normalize-space(),'Создать пост')]" +
+            " | //a[contains(normalize-space(),'Написать') " +
+            "or contains(@href,'/editor') " +
+            "or contains(@href,'/post/add') " +
+            "or contains(@href,'/post/create')]"
         )
 
         private val TITLE_INPUT = By.xpath(
-            "//*[self::input or self::textarea][" +
-            "@name='title' or contains(@class,'title') or contains(@data-test,'title') or contains(@data-testid,'title')]"
+            "//input[@name='title' or contains(@placeholder,'Заголов')]" +
+            " | //textarea[@name='title' or contains(@placeholder,'Заголов')]"
         )
 
         private val BODY_INPUT = By.xpath(
-            "//*[@contenteditable='true']"
+            "//*[@contenteditable='true']" +
+            " | //textarea[contains(@placeholder,'Текст')]"
         )
 
         private val PUBLISH_BUTTON = By.xpath(
-            "//*[self::button or self::a][" +
-            "contains(@class,'publish') or contains(@class,'save') " +
-            "or contains(@data-test,'publish') or contains(@data-testid,'publish') " +
-            "or contains(@data-test,'save') or contains(@data-testid,'save') " +
-            "or @type='submit']"
+            "//button[contains(normalize-space(),'Опубликовать') " +
+            "or contains(normalize-space(),'Сохранить')]" +
+            " | //a[contains(normalize-space(),'Опубликовать') " +
+            "or contains(normalize-space(),'Сохранить')]"
         )
 
-        private val AUTH_FORM = By.xpath(
-            "//form[.//input[@name='email'] or .//input[@type='password']]" +
-            " | //*[contains(@class,'auth') and (.//input[@name='email'] or .//input[@type='password'])]"
-        )
+        private val AUTH_FORM = By.xpath("//*[contains(normalize-space(),'Вход по почте')]")
     }
 
     fun openFromMainPage(): PostEditorPage {
@@ -42,17 +43,11 @@ class PostEditorPage(driver: WebDriver) : BasePage(driver) {
         if (!isPresent(OPEN_EDITOR)) {
             return this
         }
-        try {
-            jsClick(OPEN_EDITOR)
-            wait.until(
-                ExpectedConditions.or(
-                    ExpectedConditions.presenceOfElementLocated(TITLE_INPUT),
-                    ExpectedConditions.presenceOfElementLocated(BODY_INPUT),
-                    ExpectedConditions.presenceOfElementLocated(AUTH_FORM)
-                )
-            )
-        } catch (e: TimeoutException) {
-            return this
+        jsClick(OPEN_EDITOR)
+        waitUntil { d ->
+            d.findElements(TITLE_INPUT).isNotEmpty() ||
+            d.findElements(BODY_INPUT).isNotEmpty() ||
+            d.findElements(AUTH_FORM).isNotEmpty()
         }
         return this
     }
@@ -84,15 +79,8 @@ class PostEditorPage(driver: WebDriver) : BasePage(driver) {
     fun bodyText(): String = findAll(BODY_INPUT).firstOrNull()?.visibleText().orEmpty()
 
     private fun visibleBodyInput(): WebElement? {
-        try {
-            return waitVisible(BODY_INPUT)
-        } catch (e: TimeoutException) {
-            val candidates = findAll(BODY_INPUT).filter { it.isDisplayed }
-            if (candidates.isNotEmpty()) {
-                return candidates.first()
-            }
-            return null
-        }
+        val candidates = findAll(BODY_INPUT).filter { it.isDisplayed }
+        return candidates.firstOrNull()
     }
 
     private fun WebElement.visibleText(): String =
