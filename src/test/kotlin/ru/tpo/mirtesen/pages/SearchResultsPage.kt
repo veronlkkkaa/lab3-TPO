@@ -13,19 +13,13 @@ class SearchResultsPage(driver: WebDriver) : BasePage(driver) {
         private val RESULT_CARDS = By.xpath("//a[contains(@href,'.mirtesen.ru/blog/')]")
 
         private val RESULT_TITLES = By.xpath(
-            "//a[contains(@href,'.mirtesen.ru/blog/')]//h4" +
-            " | //a[contains(@href,'.mirtesen.ru/blog/')]//h3" +
-            " | //a[contains(@href,'.mirtesen.ru/blog/')]//b" +
-            " | //a[contains(@href,'.mirtesen.ru/blog/')]//strong" +
-            " | //h3[contains(@class,'post-preview__title')]"
+            "//a[contains(@href,'.mirtesen.ru/blog/')]//*[self::h3 or self::h4]"
         )
 
         private val FIRST_RESULT_LINK = By.xpath("(//a[contains(@href,'.mirtesen.ru/blog/')])[1]")
 
         private val NO_RESULTS_MSG = By.xpath(
             "//*[contains(normalize-space(),'ничего не найдено') " +
-            "or contains(normalize-space(),'не найдено') " +
-            "or contains(normalize-space(),'нет результатов') " +
             "or contains(normalize-space(),'Ничего не найдено') " +
             "or contains(normalize-space(),'Нет результатов')]"
         )

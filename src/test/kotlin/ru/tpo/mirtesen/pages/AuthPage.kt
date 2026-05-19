@@ -16,63 +16,40 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
             " | //a[contains(normalize-space(),'Вход по почте')]"
         )
 
-        private val EMAIL_INPUT = By.xpath(
-            "//input[@name='email' and (" +
-            "@autocomplete='username' or " +
-            "ancestor::form//*[contains(normalize-space(),'Электронная почта')]" +
-            ")]"
-        )
+        private val EMAIL_INPUT = By.xpath("//input[@name='email']")
 
-        private val PASSWORD_INPUT = By.xpath(
-            "//input[@name='password' or @type='password']"
-        )
+        private val PASSWORD_INPUT = By.xpath("//input[@type='password']")
 
         private val LOGIN_SUBMIT = By.xpath(
             "//form[.//input[@name='email'] and .//input[@name='password']]" +
             "//button[contains(normalize-space(),'Войти')]"
         )
 
-        private val AUTH_FORM = By.xpath(
-            "//*[contains(@class,'auth-form') or contains(normalize-space(),'Вход по почте')]"
-        )
+        private val AUTH_FORM = By.xpath("//*[contains(normalize-space(),'Вход по почте')]")
 
         private val AUTH_ERROR = By.xpath(
             "//*[contains(normalize-space(),'Неправильный пароль') " +
-            "or contains(normalize-space(),'не зарегистрирован') " +
             "or contains(normalize-space(),'Введите пароль') " +
-            "or contains(normalize-space(),'Введите e-mail') " +
-            "or contains(normalize-space(),'капча') " +
-            "or contains(normalize-space(),'captcha')]"
+            "or contains(normalize-space(),'Введите e-mail')]"
         )
 
         private val AUTHENTICATED_MARKER = By.xpath(
             "//a[contains(@href,'/people/') and not(contains(@href,'/search/'))]" +
-            " | //a[contains(@href,'/settings')]" +
-            " | //button[contains(@class,'user') or contains(@class,'profile')]" +
-            " | //button[.//*[name()='svg' or name()='use'] and " +
-            "(contains(@class,'user') or contains(@class,'profile'))]"
+            " | //button[contains(@class,'profile')]"
         )
 
         private val USER_MENU_TRIGGER = By.xpath(
-            "//button[contains(@class,'user') or contains(@class,'profile')]" +
-            " | //a[contains(@href,'/people/') and not(contains(@href,'/search/'))]" +
-            " | //button[.//*[name()='svg' or name()='use']]"
+            "//button[contains(@class,'profile')]" +
+            " | //a[contains(@href,'/people/') and not(contains(@href,'/search/'))]"
         )
 
         private val LOGOUT_ACTION = By.xpath(
-            "//button[contains(normalize-space(),'Выйти') " +
-            "or contains(normalize-space(),'Выход')]" +
-            " | //a[contains(normalize-space(),'Выйти') " +
-            "or contains(normalize-space(),'Выход') " +
-            "or contains(@href,'logout')]"
+            "//button[contains(normalize-space(),'Выйти')]" +
+            " | //a[contains(normalize-space(),'Выйти')]"
         )
 
         private val LOGOUT_CONFIRM = By.xpath(
-            "//*[contains(@class,'logout-modal')]//button[contains(normalize-space(),'Выйти') " +
-            "or contains(normalize-space(),'Да') " +
-            "or contains(normalize-space(),'ОК') " +
-            "or contains(normalize-space(),'Подтверд')]" +
-            " | //button[contains(@class,'logout-modal__btn')]"
+            "//*[contains(@class,'logout-modal')]//button[contains(normalize-space(),'Выйти')]"
         )
     }
 

@@ -65,33 +65,29 @@
   <text x="366" y="571" class="small">UC-05 Навигация по рубрикам</text>
 
   <!-- Actors -->
-  <text x="70" y="170" class="small">«Person»</text>
+  <text x="44" y="170" class="small">«Person»</text>
   <circle cx="95" cy="196" r="16" class="actor-line"/>
   <path d="M95 212 L95 262 M62 232 L128 232 M95 262 L65 315 M95 262 L125 315" class="actor-line"/>
-  <text x="68" y="345" class="actor">Гость</text>
+  <text x="20" y="345" class="actor">Незарегистрированный</text>
+  <text x="67" y="365" class="actor">пользователь</text>
 
-  <text x="48" y="402" class="small">«Person»</text>
-  <circle cx="95" cy="428" r="16" class="actor-line"/>
-  <path d="M95 444 L95 494 M62 464 L128 464 M95 494 L65 547 M95 494 L125 547" class="actor-line"/>
-  <text x="38" y="578" class="actor">Пользователь</text>
-
-  <text x="44" y="628" class="small">«Person»</text>
-  <circle cx="95" cy="654" r="16" class="actor-line"/>
-  <path d="M95 670 L95 720 M62 690 L128 690 M95 720 L65 750 M95 720 L125 750" class="actor-line"/>
-  <text x="26" y="752" class="actor">Зарегистрированный</text>
-  <text x="67" y="772" class="actor">пользователь</text>
+  <text x="44" y="480" class="small">«Person»</text>
+  <circle cx="95" cy="506" r="16" class="actor-line"/>
+  <path d="M95 522 L95 572 M62 542 L128 542 M95 572 L65 625 M95 572 L125 625" class="actor-line"/>
+  <text x="26" y="657" class="actor">Зарегистрированный</text>
+  <text x="67" y="677" class="actor">пользователь</text>
 
   <!-- Associations -->
   <path d="M128 232 L330 205" class="link"/>
   <path d="M128 232 L350 295" class="link"/>
   <path d="M128 232 L345 565" class="link"/>
+  <path d="M128 232 L335 475" class="link"/>
 
-  <path d="M128 464 L330 205" class="link"/>
-  <path d="M128 464 L350 295" class="link"/>
-  <path d="M128 464 L345 565" class="link"/>
-
-  <path d="M128 690 L335 385" class="link"/>
-  <path d="M128 690 L335 475" class="link"/>
+  <path d="M128 542 L330 205" class="link"/>
+  <path d="M128 542 L350 295" class="link"/>
+  <path d="M128 542 L335 385" class="link"/>
+  <path d="M128 542 L335 475" class="link"/>
+  <path d="M128 542 L345 565" class="link"/>
 
   <!-- Includes -->
   <path d="M480 475 L480 418" class="include"/>

@@ -10,31 +10,20 @@ class ArticlePage(driver: WebDriver) : BasePage(driver) {
         private val TITLE = By.xpath("//h1")
 
         private val CONTENT = By.xpath(
-            "//div[@class='blog_content']" +
-            " | //div[contains(@class,'blog_content')]" +
-            " | //div[contains(@class,'post_body')]" +
-            " | //div[contains(@class,'post-body')]" +
-            " | //div[contains(@class,'post-content')]" +
-            " | //div[contains(@class,'post_content')]" +
-            " | //div[contains(@class,'article-body')]" +
-            " | //div[contains(@class,'article_body')]" +
-            " | //div[contains(@class,'entry-content')]" +
-            " | //article//p[string-length(normalize-space())>50]" +
-            " | //p[string-length(normalize-space())>100]"
+            "//div[contains(@class,'blog_content')]" +
+            " | //article//p[string-length(normalize-space())>50]"
         )
 
         private val AUTHOR = By.xpath("//a[contains(@href,'mirtesen.ru/people/')]")
 
         private val PUBLISH_DATE = By.xpath(
             "//time" +
-            " | //span[contains(@class,'date')]" +
-            " | //span[contains(@class,'time')]"
+            " | //span[contains(@class,'date')]"
         )
 
         private val COMMENTS_SECTION = By.xpath(
             "//div[contains(@class,'comment')]" +
-            " | //section[contains(@id,'comment')]" +
-            " | //div[contains(@id,'comment')]"
+            " | //section[contains(@id,'comment')]"
         )
     }
 

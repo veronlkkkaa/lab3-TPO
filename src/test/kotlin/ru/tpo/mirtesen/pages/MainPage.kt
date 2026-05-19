@@ -24,14 +24,7 @@ class MainPage(driver: WebDriver) : BasePage(driver) {
         val POST_CARDS: By = By.xpath("//a[contains(@href,'.mirtesen.ru/blog/')]")
 
         val POST_TITLES: By = By.xpath(
-            "//a[contains(@href,'.mirtesen.ru/blog/')]//h4" +
-            " | //a[contains(@href,'.mirtesen.ru/blog/')]//h3" +
-            " | //a[contains(@href,'.mirtesen.ru/blog/')]//b" +
-            " | //a[contains(@href,'.mirtesen.ru/blog/')]//strong" +
-            " | //article[contains(@class,'post-card')]//*[contains(@class,'title')]" +
-            " | //article[contains(@class,'post-card')]//*[contains(@class,'post-preview__title')]" +
-            " | //article[contains(@class,'post-card')]//h3" +
-            " | //article[contains(@class,'post-card')]//h4"
+            "//a[contains(@href,'.mirtesen.ru/blog/')]//*[self::h3 or self::h4]"
         )
 
         private val LEFT_MENU = By.xpath("//*[contains(@class,'left-menu')]")
@@ -42,10 +35,7 @@ class MainPage(driver: WebDriver) : BasePage(driver) {
 
         private val RUBRIC_LINKS = By.xpath(
             "//*[contains(@class,'left-menu')]//a[" +
-            "(contains(@href,'/topic/') " +
-            "or contains(@href,'/tag/') " +
-            "or contains(@href,'/popular/') " +
-            "or contains(@href,'/category/')) " +
+            "(contains(@href,'/topic/') or contains(@href,'/tag/')) " +
             "and string-length(normalize-space())>0]"
         )
     }

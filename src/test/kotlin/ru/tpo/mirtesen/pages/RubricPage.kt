@@ -12,7 +12,6 @@ class RubricPage(driver: WebDriver) : BasePage(driver) {
         private val RUBRIC_MARKER = By.xpath(
             "//*[contains(@class,'topic') " +
             "or contains(@class,'rubric') " +
-            "or contains(@class,'left-menu') " +
             "or contains(@class,'post-card')]"
         )
     }
