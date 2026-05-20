@@ -14,10 +14,15 @@ abstract class BasePage(protected val driver: WebDriver) {
 
     companion object {
         private const val NAVIGATION_PAUSE_MS = 800L
+        private const val WAIT_TIMEOUT_MS = 30_000L
     }
 
     protected fun waitUntil(condition: (WebDriver) -> Boolean) {
+        val deadline = System.currentTimeMillis() + WAIT_TIMEOUT_MS
         while (!condition(driver)) {
+            if (System.currentTimeMillis() >= deadline) {
+                throw TimeoutException("Condition was not met within ${WAIT_TIMEOUT_MS}ms")
+            }
             awaitNextPoll()
         }
     }
@@ -45,8 +50,9 @@ abstract class BasePage(protected val driver: WebDriver) {
                 throttleNavigation()
                 driver.get(url)
                 waitUntil { d ->
-                    (d as JavascriptExecutor)
-                        .executeScript("return document.readyState") == "complete"
+                    val readyState = (d as JavascriptExecutor)
+                        .executeScript("return document.readyState")
+                    readyState == "interactive" || readyState == "complete"
                 }
                 success = true
             } catch (e: WebDriverException) {

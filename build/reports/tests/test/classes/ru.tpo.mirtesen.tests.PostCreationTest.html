@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">6</div>
+<div class="counter">2</div>
 <p>tests</p>
 </div>
 </td>
@@ -35,13 +35,13 @@
 </td>
 <td>
 <div class="infoBox" id="ignored">
-<div class="counter">4</div>
+<div class="counter">0</div>
 <p>ignored</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">2m26.30s</div>
+<div class="counter">28.194s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,7 +50,7 @@
 </div>
 </td>
 <td>
-<div class="infoBox skipped" id="successRate">
+<div class="infoBox success" id="successRate">
 <div class="percent">100%</div>
 <p>successful</p>
 </div>
@@ -61,127 +61,12 @@
 <div class="tab-container">
 <ul class="tabLinks">
 <li>
-<a href="#">Ignored tests</a>
-</li>
-<li>
 <a href="#">Tests</a>
 </li>
+<li>
+<a href="#">Standard error</a>
+</li>
 </ul>
-<div class="tab">
-<h2>Ignored tests</h2>
-<div class="test">
-<a name="authorizedUserCanFillPostEditor(String)[1]"></a>
-<h3 class="skipped">UC-4 TC-16 Авторизованный пользователь заполняет публикацию [chrome]</h3>
-<span class="code">
-<pre>Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
-
-org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
-	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
-	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
-	at ru.tpo.mirtesen.tests.PostCreationTest.authorizedUserCanFillPostEditor(PostCreationTest.kt:25)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
-	at java.base/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
-	at java.base/java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:979)
-	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
-	at java.base/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
-	at java.base/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
-	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="authorizedUserCanFillPostEditor(String)[2]"></a>
-<h3 class="skipped">UC-4 TC-16 Авторизованный пользователь заполняет публикацию [firefox]</h3>
-<span class="code">
-<pre>Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
-
-org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
-	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
-	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
-	at ru.tpo.mirtesen.tests.PostCreationTest.authorizedUserCanFillPostEditor(PostCreationTest.kt:25)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
-	at java.base/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
-	at java.base/java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:979)
-	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
-	at java.base/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
-	at java.base/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
-	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="authorizedUserCanPublishPostWhenExplicitlyAllowed(String)[1]"></a>
-<h3 class="skipped">UC-4 TC-17 Публикация тестовой записи [chrome]</h3>
-<span class="code">
-<pre>Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
-
-org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
-	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
-	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
-	at ru.tpo.mirtesen.tests.PostCreationTest.authorizedUserCanPublishPostWhenExplicitlyAllowed(PostCreationTest.kt:44)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
-	at java.base/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
-	at java.base/java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:979)
-	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
-	at java.base/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
-	at java.base/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
-	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="authorizedUserCanPublishPostWhenExplicitlyAllowed(String)[2]"></a>
-<h3 class="skipped">UC-4 TC-17 Публикация тестовой записи [firefox]</h3>
-<span class="code">
-<pre>Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
-
-org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
-	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
-	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
-	at ru.tpo.mirtesen.tests.PostCreationTest.authorizedUserCanPublishPostWhenExplicitlyAllowed(PostCreationTest.kt:44)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
-	at java.base/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
-	at java.base/java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:979)
-	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
-	at java.base/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
-	at java.base/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
-	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
-	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
-	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
-	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
-	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
-	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
-</pre>
-</span>
-</div>
-</div>
 <div class="tab">
 <h2>Tests</h2>
 <table>
@@ -194,42 +79,28 @@ org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGI
 </tr>
 </thead>
 <tr>
-<td class="success">UC-4 TC-15 Создание публикации требует входа [chrome]</td>
-<td class="success">anonymousUserMustLoginBeforeCreatingPost(String)[1]</td>
-<td class="success">1m16.33s</td>
+<td class="success">UC-4 TC-17 Публикация тестовой записи [chrome]</td>
+<td class="success">authorizedUserCanPublishPostWhenExplicitlyAllowed(String)[1]</td>
+<td class="success">13.159s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">UC-4 TC-15 Создание публикации требует входа [firefox]</td>
-<td class="success">anonymousUserMustLoginBeforeCreatingPost(String)[2]</td>
-<td class="success">1m9.95s</td>
+<td class="success">UC-4 TC-17 Публикация тестовой записи [firefox]</td>
+<td class="success">authorizedUserCanPublishPostWhenExplicitlyAllowed(String)[2]</td>
+<td class="success">15.035s</td>
 <td class="success">passed</td>
-</tr>
-<tr>
-<td class="skipped">UC-4 TC-16 Авторизованный пользователь заполняет публикацию [chrome]</td>
-<td class="skipped">authorizedUserCanFillPostEditor(String)[1]</td>
-<td class="skipped">-</td>
-<td class="skipped">ignored</td>
-</tr>
-<tr>
-<td class="skipped">UC-4 TC-16 Авторизованный пользователь заполняет публикацию [firefox]</td>
-<td class="skipped">authorizedUserCanFillPostEditor(String)[2]</td>
-<td class="skipped">-</td>
-<td class="skipped">ignored</td>
-</tr>
-<tr>
-<td class="skipped">UC-4 TC-17 Публикация тестовой записи [chrome]</td>
-<td class="skipped">authorizedUserCanPublishPostWhenExplicitlyAllowed(String)[1]</td>
-<td class="skipped">-</td>
-<td class="skipped">ignored</td>
-</tr>
-<tr>
-<td class="skipped">UC-4 TC-17 Публикация тестовой записи [firefox]</td>
-<td class="skipped">authorizedUserCanPublishPostWhenExplicitlyAllowed(String)[2]</td>
-<td class="skipped">-</td>
-<td class="skipped">ignored</td>
 </tr>
 </table>
+</div>
+<div class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>мая 20, 2026 5:03:22 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 20, 2026 5:03:22 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+</pre>
+</span>
 </div>
 </div>
 <div id="footer">
@@ -239,7 +110,7 @@ org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGI
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.0.0</a> at 19 мая 2026 г., 23:05:29</p>
+<a href="https://www.gradle.org">Gradle 9.0.0</a> at 20 мая 2026 г., 17:03:35</p>
 </div>
 </div>
 </body>

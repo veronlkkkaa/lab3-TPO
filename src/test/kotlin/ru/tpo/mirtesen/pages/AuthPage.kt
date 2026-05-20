@@ -4,13 +4,17 @@ import org.openqa.selenium.By
 import org.openqa.selenium.JavascriptExecutor
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
-import org.openqa.selenium.support.ui.ExpectedConditions
 import org.openqa.selenium.TimeoutException
-import java.time.Duration
+import org.openqa.selenium.WebDriverException
 
 class AuthPage(driver: WebDriver) : BasePage(driver) {
 
     companion object {
+        private const val DEFAULT_WAIT_TIMEOUT_MS = 30_000L
+        private const val REGISTRATION_EMAIL_TIMEOUT_MS = 120_000L
+        private const val REGISTRATION_VALIDATION_TIMEOUT_MS = 10_000L
+        private const val MANUAL_REGISTRATION_TIMEOUT_MS = 300_000L
+
         private const val LOGIN_URL = "${MainPage.URL}?auth=login"
         private const val LOGIN_FALLBACK_URL = "${MainPage.URL}login"
 
@@ -39,17 +43,8 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
             " | //*[contains(@class,'auth-form__form__email')]//input"
         )
 
-        private val PHONE_INPUT = By.xpath(
-            "//input[@name='phone' or @type='tel']" +
-            " | //*[contains(@class,'auth-form__form__phone')]//input"
-        )
-
         private val NAME_INPUT = By.xpath(
             "//input[@name='name' or @name='firstName' or @name='firstname']"
-        )
-
-        private val LAST_NAME_INPUT = By.xpath(
-            "//input[@name='lastname' or @name='lastName' or @name='surname']"
         )
 
         private val PASSWORD_INPUT = By.xpath(
@@ -71,19 +66,25 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
 
         private val AUTH_ERROR = By.xpath(
             "//form[.//input[@name='email'] or .//input[@type='password']]" +
-            "//*[contains(@class,'error') or contains(@class,'invalid') or @role='alert']" +
+            "//*[contains(@class,'label-error') or contains(@class,'form-error') or @role='alert']" +
             " | //*[contains(@class,'auth-form')]" +
-            "//*[contains(@class,'error') or contains(@class,'invalid') or @role='alert']"
+            "//*[contains(@class,'label-error') or contains(@class,'form-error') or @role='alert']"
         )
 
         private val AUTHENTICATED_MARKER = By.xpath(
-            "//a[contains(@href,'/people/') and not(contains(@href,'/search/'))]" +
-            " | //button[contains(@class,'profile')]"
+            "//button[contains(@class,'profile') or contains(@class,'user') or contains(@class,'avatar')]" +
+            " | //*[contains(@class,'header') or contains(@class,'very-top') or contains(@class,'user-menu')]" +
+            "//*[self::button or self::a][" +
+            "contains(@class,'profile') or contains(@class,'user') or contains(@class,'avatar') " +
+            "or contains(@href,'/people/') or contains(@href,'/settings')]"
         )
 
         private val USER_MENU_TRIGGER = By.xpath(
-            "//button[contains(@class,'profile')]" +
-            " | //a[contains(@href,'/people/') and not(contains(@href,'/search/'))]"
+            "//button[contains(@class,'profile') or contains(@class,'user') or contains(@class,'avatar')]" +
+            " | //*[contains(@class,'header') or contains(@class,'very-top') or contains(@class,'user-menu')]" +
+            "//*[self::button or self::a][" +
+            "contains(@class,'profile') or contains(@class,'user') or contains(@class,'avatar') " +
+            "or contains(@href,'/people/') or contains(@href,'/settings')]"
         )
 
         private val LOGOUT_ACTION = By.xpath(
@@ -99,14 +100,25 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
 
         private val AUTH_SUBMIT = By.xpath(
             "//*[contains(@class,'auth-form')]" +
-            "//button[not(@disabled) and (@type='submit' or contains(@class,'auth-form__form__submit') or contains(@class,'btn'))]" +
-            " | //form[.//input]" +
-            "//button[not(@disabled) and (@type='submit' or contains(@class,'btn'))]"
+            "//*[contains(@class,'auth-form__form__submit')]" +
+            "//button[not(@disabled) and contains(@class,'btn-primary')]" +
+            " | //*[contains(@class,'auth-form')]" +
+            "//button[not(@disabled) and @type='submit']"
         )
 
         private val CODE_INPUT = By.xpath(
             "//input[@name='code' or @inputmode='numeric' or contains(@class,'auth-form-input-code-control')]" +
             " | //*[contains(@class,'auth-form__form__input-code')]//input"
+        )
+
+        private val REGISTRATION_EMAIL_SENT = By.xpath(
+            "//*[contains(@class,'auth-form')]" +
+            "//*[contains(@class,'auth-form__form__body') and .//a[starts-with(@href,'mailto:')]]"
+        )
+
+        private val REGISTRATION_EMAIL_SENT_ADDRESS = By.xpath(
+            "//*[contains(@class,'auth-form')]" +
+            "//*[contains(@class,'auth-form__form__body')]//a[starts-with(@href,'mailto:')]"
         )
     }
 
@@ -172,15 +184,6 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
 
     fun hasEmailRegistrationForm(): Boolean = isPresent(AUTH_FORM) && isPresent(EMAIL_INPUT)
 
-    fun fillRegistration(data: RegistrationData): AuthPage {
-        typeIfVisible(NAME_INPUT, data.name)
-        typeIfVisible(LAST_NAME_INPUT, data.lastName)
-        typeIfVisible(EMAIL_INPUT, data.email)
-        typeIfVisible(PHONE_INPUT, data.phone)
-        typeIfVisible(PASSWORD_INPUT, data.password)
-        return this
-    }
-
     fun fillEmailRegistration(name: String, email: String): AuthPage {
         switchToEmailMode()
         typeIfVisible(NAME_INPUT, name)
@@ -188,31 +191,70 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
         return this
     }
 
+    fun fillRegistrationName(name: String): AuthPage {
+        typeVisible(NAME_INPUT, name)
+        return this
+    }
+
+    fun fillRegistrationEmail(email: String): AuthPage {
+        type(EMAIL_INPUT, email)
+        return this
+    }
+
+    fun registrationNameValue(): String = visibleInputValue(NAME_INPUT)
+
+    fun registrationEmailValue(): String = visibleInputValue(EMAIL_INPUT)
+
     fun submitRegistration(): AuthPage {
         jsClick(AUTH_SUBMIT)
         return this
     }
 
-    fun waitForRegistrationCodeStep(): Boolean = try {
-        waitUntil { isPresent(CODE_INPUT) || isAuthenticated() || isPresent(AUTH_ERROR) }
-        isPresent(CODE_INPUT)
-    } catch (e: Exception) {
-        false
+    fun waitForRegistrationEmailSent(): Boolean {
+        waitUntilWithin(REGISTRATION_EMAIL_TIMEOUT_MS) {
+            isPresent(REGISTRATION_EMAIL_SENT) || hasAuthError()
+        }
+        return isPresent(REGISTRATION_EMAIL_SENT)
     }
 
-    fun enterRegistrationCode(code: String): AuthPage {
-        val codeInput = waitVisible(CODE_INPUT)
-        codeInput.clear()
-        codeInput.sendKeys(code)
-        if (isPresent(AUTH_SUBMIT)) {
-            jsClick(AUTH_SUBMIT)
+    fun waitForRegistrationValidationResult(): Boolean {
+        waitUntilWithin(REGISTRATION_VALIDATION_TIMEOUT_MS) {
+            isPresent(REGISTRATION_EMAIL_SENT) || hasAuthError() || hasInvalidRegistrationInput()
+        }
+        return isPresent(REGISTRATION_EMAIL_SENT)
+    }
+
+    fun hasRegistrationEmailSent(): Boolean = isPresent(REGISTRATION_EMAIL_SENT)
+
+    fun hasInvalidRegistrationInput(): Boolean =
+        findAll(NAME_INPUT).any { it.isDisplayed && !it.isValidFormInput() } ||
+            findAll(EMAIL_INPUT).any { it.isDisplayed && !it.isValidFormInput() }
+
+    fun registrationEmailSentAddress(): String =
+        findAll(REGISTRATION_EMAIL_SENT_ADDRESS)
+            .firstOrNull { it.isDisplayed }
+            ?.getAttribute("href")
+            ?.removePrefix("mailto:")
+            ?.trim()
+            .orEmpty()
+
+    fun openRegistrationAcceptUrl(url: String): AuthPage {
+        if (url.isNotBlank()) {
+            openUrl(url)
         }
         return this
     }
 
     fun waitForManualRegistrationCompletion() {
-        waitUntil { isAuthenticated() || !isPresent(AUTH_FORM) }
+        waitUntilWithin(MANUAL_REGISTRATION_TIMEOUT_MS) {
+            hasRegistrationEmailSentScreenGoneAfterConfirmation() || hasAuthError()
+        }
     }
+
+    fun hasRegistrationEmailSentScreenGoneAfterConfirmation(): Boolean =
+        !isPresent(REGISTRATION_EMAIL_SENT) &&
+            !hasAuthError() &&
+            (isAuthenticated() || !isPresent(AUTH_FORM) || driver.currentUrl.contains("/action/accept/"))
 
     fun loginByEmail(email: String, password: String): MainPage {
         if (!isPresent(EMAIL_INPUT) && isPresent(EMAIL_LOGIN_TAB)) {
@@ -224,16 +266,31 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
         type(EMAIL_INPUT, email)
         type(PASSWORD_INPUT, password)
         jsClick(LOGIN_SUBMIT)
-        waitUntil { isPresent(AUTHENTICATED_MARKER) || hasAuthTokenCookie() || isPresent(AUTH_ERROR) }
+        waitUntilWithin(DEFAULT_WAIT_TIMEOUT_MS) {
+            isPresent(AUTHENTICATED_MARKER) || hasAuthTokenCookie() || hasAuthError()
+        }
         return MainPage(driver)
     }
 
     fun hasLoginForm(): Boolean = isPresent(AUTH_FORM) || isPresent(EMAIL_INPUT)
 
-    fun hasAuthError(): Boolean = isPresent(AUTH_ERROR)
+    fun hasAuthError(): Boolean = authErrorText().isNotBlank()
+
+    fun authErrorText(): String =
+        findAll(AUTH_ERROR)
+            .mapNotNull { element ->
+                try {
+                    if (element.isDisplayed) element.visibleText() else null
+                } catch (e: WebDriverException) {
+                    null
+                }
+            }
+            .filter { it.isNotBlank() }
+            .distinct()
+            .joinToString("; ")
 
     fun isAuthenticated(): Boolean =
-        !isPresent(AUTH_ERROR) && (isPresent(AUTHENTICATED_MARKER) || hasAuthTokenCookie())
+        !hasAuthError() && (isPresent(AUTHENTICATED_MARKER) || hasAuthTokenCookie())
 
     fun logout(): AuthPage {
         if (isPresent(USER_MENU_TRIGGER)) {
@@ -262,10 +319,8 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
     private fun hasAuthTokenCookie(): Boolean =
         driver.manage().cookies.any { cookie ->
             val name = cookie.name.lowercase()
-            val value = cookie.value.orEmpty()
             name.contains("jwt") ||
-                name.contains("refresh") ||
-                value.count { it == '.' } >= 2
+                name.contains("refresh")
         }
 
     private fun switchToEmailMode() {
@@ -286,20 +341,43 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
         element.sendKeys(value)
     }
 
+    private fun typeVisible(locator: By, value: String) {
+        val element = waitVisible(locator)
+        element.scrollIntoView()
+        element.clear()
+        element.sendKeys(value)
+    }
+
+    private fun visibleInputValue(locator: By): String =
+        findAll(locator)
+            .firstOrNull { it.isDisplayed }
+            ?.getAttribute("value")
+            ?.trim()
+            .orEmpty()
+
     private fun WebElement.scrollIntoView() {
         (driver as JavascriptExecutor).executeScript("arguments[0].scrollIntoView({block:'center'});", this)
     }
 
-    data class RegistrationData(
-        val name: String?,
-        val lastName: String?,
-        val email: String?,
-        val phone: String?,
-        val password: String?
-    )
-}
+    private fun WebElement.visibleText(): String =
+        text.trim().ifBlank {
+            getAttribute("textContent")?.trim().orEmpty()
+        }
 
-private object WebDriverWaitFactory {
-    fun seconds(driver: WebDriver, seconds: Long) =
-        org.openqa.selenium.support.ui.WebDriverWait(driver, Duration.ofSeconds(seconds))
+    private fun WebElement.isValidFormInput(): Boolean =
+        (driver as JavascriptExecutor).executeScript("return arguments[0].validity.valid;", this) as Boolean
+
+    private fun waitUntilWithin(timeoutMs: Long, condition: () -> Boolean): Boolean {
+        val deadline = System.currentTimeMillis() + timeoutMs
+        while (System.currentTimeMillis() < deadline) {
+            if (condition()) return true
+            try {
+                Thread.sleep(200)
+            } catch (e: InterruptedException) {
+                Thread.currentThread().interrupt()
+                return false
+            }
+        }
+        return condition()
+    }
 }
