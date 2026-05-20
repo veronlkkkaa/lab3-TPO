@@ -62,10 +62,6 @@ abstract class BasePage(protected val driver: WebDriver) {
         }
     }
 
-    protected fun click(locator: By) {
-        waitClickable(locator).click()
-    }
-
     protected fun jsClick(locator: By) {
         val element = waitClickable(locator)
         (driver as JavascriptExecutor).executeScript("arguments[0].click();", element)
@@ -83,8 +79,6 @@ abstract class BasePage(protected val driver: WebDriver) {
     protected fun findAll(locator: By): List<WebElement> = driver.findElements(locator)
 
     fun getUrl(): String = driver.currentUrl
-
-    fun getTitle(): String = driver.title
 
     private fun awaitNextPoll() {
         try {

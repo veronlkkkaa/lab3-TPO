@@ -106,11 +106,6 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
             "//button[not(@disabled) and @type='submit']"
         )
 
-        private val CODE_INPUT = By.xpath(
-            "//input[@name='code' or @inputmode='numeric' or contains(@class,'auth-form-input-code-control')]" +
-            " | //*[contains(@class,'auth-form__form__input-code')]//input"
-        )
-
         private val REGISTRATION_EMAIL_SENT = By.xpath(
             "//*[contains(@class,'auth-form')]" +
             "//*[contains(@class,'auth-form__form__body') and .//a[starts-with(@href,'mailto:')]]"
@@ -157,13 +152,6 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
         }
     }
 
-    fun ensureOpened(): AuthPage {
-        if (!hasLoginForm()) {
-            open()
-        }
-        return this
-    }
-
     fun openRegistration(): AuthPage {
         openUrl(MainPage.URL)
         if (!isPresent(AUTH_FORM) && isPresent(HEADER_REGISTRATION_BUTTON)) {
@@ -179,8 +167,6 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
         waitUntil { d -> d.findElements(EMAIL_INPUT).isNotEmpty() }
         return this
     }
-
-    fun hasRegistrationForm(): Boolean = isPresent(AUTH_FORM)
 
     fun hasEmailRegistrationForm(): Boolean = isPresent(AUTH_FORM) && isPresent(EMAIL_INPUT)
 
@@ -223,8 +209,6 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
         }
         return isPresent(REGISTRATION_EMAIL_SENT)
     }
-
-    fun hasRegistrationEmailSent(): Boolean = isPresent(REGISTRATION_EMAIL_SENT)
 
     fun hasInvalidRegistrationInput(): Boolean =
         findAll(NAME_INPUT).any { it.isDisplayed && !it.isValidFormInput() } ||
