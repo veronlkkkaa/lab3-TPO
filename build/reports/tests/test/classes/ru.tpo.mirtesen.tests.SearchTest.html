@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - SearchTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>SearchTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/ru.tpo.mirtesen.tests.html">ru.tpo.mirtesen.tests</a> &gt; SearchTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">12</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">4m22.01s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard error</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method name</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">UC-2 TC-08 Пустой запрос без ошибки сервера [chrome]</td>
+<td class="success">emptySearchQueryHandledWithoutServerError(String)[1]</td>
+<td class="success">16.872s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">UC-2 TC-08 Пустой запрос без ошибки сервера [firefox]</td>
+<td class="success">emptySearchQueryHandledWithoutServerError(String)[2]</td>
+<td class="success">20.127s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">UC-2 TC-07 Страница статьи содержит заголовок [chrome]</td>
+<td class="success">firstResultOpensArticle(String)[1]</td>
+<td class="success">13.373s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">UC-2 TC-07 Страница статьи содержит заголовок [firefox]</td>
+<td class="success">firstResultOpensArticle(String)[2]</td>
+<td class="success">41.974s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">UC-2 TC-09 Запрос без результатов обработан [chrome]</td>
+<td class="success">noResultsSearchHandledCorrectly(String)[1]</td>
+<td class="success">10.476s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">UC-2 TC-09 Запрос без результатов обработан [firefox]</td>
+<td class="success">noResultsSearchHandledCorrectly(String)[2]</td>
+<td class="success">39.127s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">UC-2 TC-06 Запрос отражён в URL [chrome]</td>
+<td class="success">searchQueryAppearsInUrl(String)[1]</td>
+<td class="success">15.509s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">UC-2 TC-06 Запрос отражён в URL [firefox]</td>
+<td class="success">searchQueryAppearsInUrl(String)[2]</td>
+<td class="success">15.453s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">UC-2 TC-10 Результаты имеют заголовки [chrome]</td>
+<td class="success">searchResultsHaveNonEmptyTitles(String)[1]</td>
+<td class="success">11.117s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">UC-2 TC-10 Результаты имеют заголовки [firefox]</td>
+<td class="success">searchResultsHaveNonEmptyTitles(String)[2]</td>
+<td class="success">18.308s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">UC-2 TC-05 Поиск возвращает публикации [chrome]</td>
+<td class="success">searchReturnsResults(String)[1]</td>
+<td class="success">10.469s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">UC-2 TC-05 Поиск возвращает публикации [firefox]</td>
+<td class="success">searchReturnsResults(String)[2]</td>
+<td class="success">49.200s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>мая 20, 2026 5:18:16 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 20, 2026 5:18:16 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 20, 2026 5:18:23 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 20, 2026 5:18:23 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 20, 2026 5:18:24 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 20, 2026 5:18:24 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 20, 2026 5:18:35 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 20, 2026 5:18:35 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 20, 2026 5:18:35 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 20, 2026 5:18:35 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.0.0</a> at 20 мая 2026 г., 17:20:22</p>
+</div>
+</div>
+</body>
+</html>
