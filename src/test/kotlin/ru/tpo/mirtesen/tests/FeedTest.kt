@@ -7,7 +7,7 @@ import ru.tpo.mirtesen.pages.MainPage
 
 class FeedTest : BaseTest() {
 
-    @ParameterizedTest(name = "UC-1 TC-01 Лента содержит публикации [{0}]")
+    @ParameterizedTest(name = "UC-1 TC-01 Лента содержит публикации")
     @MethodSource("browsers")
     fun feedHasPostCards(browser: String) {
         setup(browser)
@@ -16,7 +16,7 @@ class FeedTest : BaseTest() {
             "Главная страница должна содержать карточки публикаций")
     }
 
-    @ParameterizedTest(name = "UC-1 TC-02 Карточки содержат заголовки [{0}]")
+    @ParameterizedTest(name = "UC-1 TC-02 Карточки содержат заголовки")
     @MethodSource("browsers")
     fun feedCardsHaveTitles(browser: String) {
         setup(browser)
@@ -25,7 +25,7 @@ class FeedTest : BaseTest() {
             "Карточки публикаций должны содержать непустые заголовки")
     }
 
-    @ParameterizedTest(name = "UC-1 TC-03 Карточки содержат ссылки [{0}]")
+    @ParameterizedTest(name = "UC-1 TC-03 Карточки содержат ссылки")
     @MethodSource("browsers")
     fun feedCardsHavePostLinks(browser: String) {
         setup(browser)
@@ -34,7 +34,7 @@ class FeedTest : BaseTest() {
             "Карточки публикаций должны содержать ссылки на публикации")
     }
 
-    @ParameterizedTest(name = "UC-1 TC-04 Первая публикация открывается [{0}]")
+    @ParameterizedTest(name = "UC-1 TC-04 Первая публикация открывается")
     @MethodSource("browsers")
     fun userCanOpenFirstFeedPost(browser: String) {
         setup(browser)

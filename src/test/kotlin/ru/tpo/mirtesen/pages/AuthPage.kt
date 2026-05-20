@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.TimeoutException
 import org.openqa.selenium.WebDriverException
+import org.openqa.selenium.support.ui.WebDriverWait
+import java.time.Duration
 
 class AuthPage(driver: WebDriver) : BasePage(driver) {
 
@@ -19,100 +21,74 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
         private const val LOGIN_FALLBACK_URL = "${MainPage.URL}login"
 
         private val HEADER_LOGIN_BUTTON = By.xpath(
-            "//*[contains(@class,'header-login')]" +
-            "//*[self::button or self::a][contains(@class,'btn-secondary') or contains(@class,'login')]"
+            "//*[contains(@class,'header-login')]//*[contains(@class,'btn-secondary')]"
         )
 
         private val HEADER_REGISTRATION_BUTTON = By.xpath(
-            "//*[contains(@class,'header-login')]" +
-            "//*[self::button or self::a][contains(@class,'btn-primary') or contains(@class,'register')]"
+            "//*[contains(@class,'header-login')]//*[contains(@class,'btn-primary')]"
         )
 
         private val EMAIL_LOGIN_TAB = By.xpath(
-            "(//*[contains(@class,'auth-form')]" +
+            "//*[contains(@class,'auth-form')]" +
             "//*[contains(@class,'auth-form__form__submit-secondary')]" +
-            "//*[self::button or self::a])[1]" +
-            " | //*[self::button or self::a][" +
-            "contains(@class,'email') or contains(@class,'mail') " +
-            "or contains(@data-test,'email') or contains(@data-testid,'email') " +
-            "or contains(@href,'email') or contains(@href,'mail')]"
+            "//*[self::button or self::a]" +
+            " | //*[contains(@class,'auth-form')]" +
+            "//*[self::button or self::a][" +
+            "contains(@class,'email') or contains(@class,'mail') or contains(@href,'email') or contains(@href,'mail')]"
         )
 
         private val EMAIL_INPUT = By.xpath(
-            "//input[@name='email' or @type='email']" +
-            " | //*[contains(@class,'auth-form__form__email')]//input"
+            "//*[contains(@class,'auth-form')]//input[@type='email' or @name='email']"
         )
 
         private val NAME_INPUT = By.xpath(
-            "//input[@name='name' or @name='firstName' or @name='firstname']"
+            "//*[contains(@class,'auth-form')]//input[@name='name']"
         )
 
         private val PASSWORD_INPUT = By.xpath(
-            "//input[@type='password' or @name='password']" +
-            " | //*[contains(@class,'auth-form') and contains(@class,'password')]//input"
+            "//*[contains(@class,'auth-form')]//input[@type='password' or @name='password']"
         )
 
         private val LOGIN_SUBMIT = By.xpath(
-            "//*[contains(@class,'auth-form')]" +
-            "//button[not(@disabled) and (@type='submit' or contains(@class,'auth-form__form__submit'))]" +
-            " | //form[.//input[@name='email' or @type='email'] and .//input[@type='password']]" +
-            "//button[not(@disabled) and (@type='submit' or contains(@class,'btn'))]"
+            "//*[contains(@class,'auth-form__form__submit')]//*[contains(@class,'btn-primary')]"
         )
 
         private val AUTH_FORM = By.xpath(
-            "//form[.//input[@name='email'] or .//input[@type='password']]" +
-            " | //*[contains(@class,'auth-form')]"
+            "//*[contains(@class,'auth-form')]"
         )
 
         private val AUTH_ERROR = By.xpath(
-            "//form[.//input[@name='email'] or .//input[@type='password']]" +
-            "//*[contains(@class,'label-error') or contains(@class,'form-error') or @role='alert']" +
-            " | //*[contains(@class,'auth-form')]" +
+            "//*[contains(@class,'auth-form')]" +
             "//*[contains(@class,'label-error') or contains(@class,'form-error') or @role='alert']"
         )
 
         private val AUTHENTICATED_MARKER = By.xpath(
-            "//button[contains(@class,'profile') or contains(@class,'user') or contains(@class,'avatar')]" +
-            " | //*[contains(@class,'header') or contains(@class,'very-top') or contains(@class,'user-menu')]" +
-            "//*[self::button or self::a][" +
-            "contains(@class,'profile') or contains(@class,'user') or contains(@class,'avatar') " +
-            "or contains(@href,'/people/') or contains(@href,'/settings')]"
+            "//*[contains(@class,'user-menu')]" +
+            " | //*[contains(@class,'header')]//*[contains(@class,'profile') or contains(@class,'avatar')]"
         )
 
         private val USER_MENU_TRIGGER = By.xpath(
-            "//button[contains(@class,'profile') or contains(@class,'user') or contains(@class,'avatar')]" +
-            " | //*[contains(@class,'header') or contains(@class,'very-top') or contains(@class,'user-menu')]" +
-            "//*[self::button or self::a][" +
-            "contains(@class,'profile') or contains(@class,'user') or contains(@class,'avatar') " +
-            "or contains(@href,'/people/') or contains(@href,'/settings')]"
+            "//*[contains(@class,'user-menu')]" +
+            " | //*[contains(@class,'header')]//*[contains(@class,'profile') or contains(@class,'avatar')]"
         )
 
         private val LOGOUT_ACTION = By.xpath(
-            "//*[self::button or self::a][" +
-            "contains(@class,'logout') or contains(@href,'logout') " +
-            "or contains(@data-test,'logout') or contains(@data-testid,'logout')]"
+            "//*[contains(@class,'logout') or contains(@href,'logout')]"
         )
 
         private val LOGOUT_CONFIRM = By.xpath(
-            "//*[contains(@class,'logout-modal') or contains(@class,'logout')]" +
-            "//button[not(@disabled) and (@type='submit' or contains(@class,'btn') or contains(@class,'primary'))]"
+            "//*[contains(@class,'logout-modal')]//*[contains(@class,'btn-primary')]"
         )
 
         private val AUTH_SUBMIT = By.xpath(
-            "//*[contains(@class,'auth-form')]" +
-            "//*[contains(@class,'auth-form__form__submit')]" +
-            "//button[not(@disabled) and contains(@class,'btn-primary')]" +
-            " | //*[contains(@class,'auth-form')]" +
-            "//button[not(@disabled) and @type='submit']"
+            "//*[contains(@class,'auth-form__form__submit')]//*[contains(@class,'btn-primary')]"
         )
 
         private val REGISTRATION_EMAIL_SENT = By.xpath(
-            "//*[contains(@class,'auth-form')]" +
-            "//*[contains(@class,'auth-form__form__body') and .//a[starts-with(@href,'mailto:')]]"
+            "//*[contains(@class,'auth-form__form__body')]//a[starts-with(@href,'mailto:')]"
         )
 
         private val REGISTRATION_EMAIL_SENT_ADDRESS = By.xpath(
-            "//*[contains(@class,'auth-form')]" +
             "//*[contains(@class,'auth-form__form__body')]//a[starts-with(@href,'mailto:')]"
         )
     }
@@ -274,7 +250,7 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
             .joinToString("; ")
 
     fun isAuthenticated(): Boolean =
-        !hasAuthError() && (isPresent(AUTHENTICATED_MARKER) || hasAuthTokenCookie())
+        !hasAuthError() && (!isPresent(AUTH_FORM) || isPresent(AUTHENTICATED_MARKER) || hasAuthTokenCookie())
 
     fun logout(): AuthPage {
         if (isPresent(USER_MENU_TRIGGER)) {
@@ -352,16 +328,14 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
         (driver as JavascriptExecutor).executeScript("return arguments[0].validity.valid;", this) as Boolean
 
     private fun waitUntilWithin(timeoutMs: Long, condition: () -> Boolean): Boolean {
-        val deadline = System.currentTimeMillis() + timeoutMs
-        while (System.currentTimeMillis() < deadline) {
-            if (condition()) return true
-            try {
-                Thread.sleep(200)
-            } catch (e: InterruptedException) {
-                Thread.currentThread().interrupt()
-                return false
-            }
+        return try {
+            WebDriverWait(driver, Duration.ofMillis(timeoutMs))
+                .pollingEvery(Duration.ofMillis(200))
+                .ignoring(WebDriverException::class.java)
+                .until { condition() }
+            true
+        } catch (e: TimeoutException) {
+            condition()
         }
-        return condition()
     }
 }

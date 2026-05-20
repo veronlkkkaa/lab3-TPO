@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1m6.19s</div>
+<div class="counter">1m4.02s</div>
 <p>duration</p>
 </div>
 </td>
@@ -66,15 +66,12 @@
 <li>
 <a href="#">Tests</a>
 </li>
-<li>
-<a href="#">Standard error</a>
-</li>
 </ul>
 <div class="tab">
 <h2>Ignored tests</h2>
 <div class="test">
 <a name="authorizedUserCanFillPostEditor(String)[1]"></a>
-<h3 class="skipped">UC-4 TC-16 Авторизованный пользователь заполняет публикацию [chrome]</h3>
+<h3 class="skipped">UC-4 TC-16 Авторизованный пользователь заполняет публикацию</h3>
 <span class="code">
 <pre>Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 
@@ -102,7 +99,7 @@ org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGI
 </div>
 <div class="test">
 <a name="authorizedUserCanFillPostEditor(String)[2]"></a>
-<h3 class="skipped">UC-4 TC-16 Авторизованный пользователь заполняет публикацию [firefox]</h3>
+<h3 class="skipped">UC-4 TC-16 Авторизованный пользователь заполняет публикацию</h3>
 <span class="code">
 <pre>Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 
@@ -130,7 +127,7 @@ org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGI
 </div>
 <div class="test">
 <a name="authorizedUserCanPublishPostWhenExplicitlyAllowed(String)[1]"></a>
-<h3 class="skipped">UC-4 TC-17 Публикация тестовой записи [chrome]</h3>
+<h3 class="skipped">UC-4 TC-17 Публикация тестовой записи</h3>
 <span class="code">
 <pre>Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 
@@ -158,7 +155,7 @@ org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGI
 </div>
 <div class="test">
 <a name="authorizedUserCanPublishPostWhenExplicitlyAllowed(String)[2]"></a>
-<h3 class="skipped">UC-4 TC-17 Публикация тестовой записи [firefox]</h3>
+<h3 class="skipped">UC-4 TC-17 Публикация тестовой записи</h3>
 <span class="code">
 <pre>Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 
@@ -197,64 +194,42 @@ org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGI
 </tr>
 </thead>
 <tr>
-<td class="success">UC-4 TC-15 Создание публикации требует входа [chrome]</td>
+<td class="success">UC-4 TC-15 Создание публикации требует входа</td>
 <td class="success">anonymousUserMustLoginBeforeCreatingPost(String)[1]</td>
-<td class="success">19.293s</td>
+<td class="success">21.209s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">UC-4 TC-15 Создание публикации требует входа [firefox]</td>
+<td class="success">UC-4 TC-15 Создание публикации требует входа</td>
 <td class="success">anonymousUserMustLoginBeforeCreatingPost(String)[2]</td>
-<td class="success">46.806s</td>
+<td class="success">42.716s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="skipped">UC-4 TC-16 Авторизованный пользователь заполняет публикацию [chrome]</td>
+<td class="skipped">UC-4 TC-16 Авторизованный пользователь заполняет публикацию</td>
 <td class="skipped">authorizedUserCanFillPostEditor(String)[1]</td>
 <td class="skipped">-</td>
 <td class="skipped">ignored</td>
 </tr>
 <tr>
-<td class="skipped">UC-4 TC-16 Авторизованный пользователь заполняет публикацию [firefox]</td>
+<td class="skipped">UC-4 TC-16 Авторизованный пользователь заполняет публикацию</td>
 <td class="skipped">authorizedUserCanFillPostEditor(String)[2]</td>
 <td class="skipped">-</td>
 <td class="skipped">ignored</td>
 </tr>
 <tr>
-<td class="skipped">UC-4 TC-17 Публикация тестовой записи [chrome]</td>
+<td class="skipped">UC-4 TC-17 Публикация тестовой записи</td>
 <td class="skipped">authorizedUserCanPublishPostWhenExplicitlyAllowed(String)[1]</td>
 <td class="skipped">-</td>
 <td class="skipped">ignored</td>
 </tr>
 <tr>
-<td class="skipped">UC-4 TC-17 Публикация тестовой записи [firefox]</td>
+<td class="skipped">UC-4 TC-17 Публикация тестовой записи</td>
 <td class="skipped">authorizedUserCanPublishPostWhenExplicitlyAllowed(String)[2]</td>
 <td class="skipped">-</td>
 <td class="skipped">ignored</td>
 </tr>
 </table>
-</div>
-<div class="tab">
-<h2>Standard error</h2>
-<span class="code">
-<pre>мая 20, 2026 5:17:29 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 5:17:29 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 5:17:30 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 5:17:29 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 5:17:30 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 5:17:29 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 5:17:30 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 5:17:30 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-</pre>
-</span>
 </div>
 </div>
 <div id="footer">
@@ -264,7 +239,7 @@ WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need t
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.0.0</a> at 20 мая 2026 г., 17:20:22</p>
+<a href="https://www.gradle.org">Gradle 9.0.0</a> at 20 мая 2026 г., 20:45:57</p>
 </div>
 </div>
 </body>

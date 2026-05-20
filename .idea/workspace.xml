@@ -13,7 +13,43 @@
       <change beforePath="$PROJECT_DIR$/.gradle/9.0.0/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/9.0.0/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/driver/DriverFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/driver/DriverFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/ArticlePage$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/ArticlePage$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/ArticlePage$hasContent$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/ArticlePage$hasTitle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/ArticlePage$hasTitle$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/ArticlePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/ArticlePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$loginByEmail$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$loginByEmail$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$openEmailRegistration$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$openEmailRegistration$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$openRegistration$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$openRegistration$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$waitForLoggedOutState$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$waitForLoggedOutState$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$waitForLoginForm$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$waitForLoginForm$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$waitForManualRegistrationCompletion$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$waitForManualRegistrationCompletion$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$waitForRegistrationEmailSent$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$waitForRegistrationEmailSent$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$waitForRegistrationValidationResult$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage$waitForRegistrationValidationResult$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/AuthPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/BasePage$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/BasePage$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/BasePage$openUrl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/BasePage$openUrl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/BasePage$waitClickable$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/BasePage$waitVisible$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/BasePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/pages/BasePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/tests/AuthTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/tests/AuthTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/tests/FeedTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/tests/FeedTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/tests/PostCreationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/tests/PostCreationTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/tests/RegistrationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/test/ru/tpo/mirtesen/tests/RegistrationTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.values.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/internal-name-to-source.tab_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/lookups/lookups.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/lookups/lookups.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len" afterDir="false" />
@@ -24,17 +60,32 @@
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/classpath-snapshot/shrunk-classpath-snapshot.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/classpath-snapshot/shrunk-classpath-snapshot.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/local-state/build-history.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/ru.tpo.mirtesen.tests.AuthTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/ru.tpo.mirtesen.tests.FeedTest.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/ru.tpo.mirtesen.tests.PostCreationTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/ru.tpo.mirtesen.tests.RegistrationTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/ru.tpo.mirtesen.tests.RubricNavigationTest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/ru.tpo.mirtesen.tests.SearchTest.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/base-style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/css/style.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/js/report.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/ru.tpo.mirtesen.tests.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-ru.tpo.mirtesen.tests.AuthTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-ru.tpo.mirtesen.tests.FeedTest.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-ru.tpo.mirtesen.tests.PostCreationTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-ru.tpo.mirtesen.tests.RegistrationTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-ru.tpo.mirtesen.tests.RubricNavigationTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-ru.tpo.mirtesen.tests.SearchTest.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ru/tpo/mirtesen/driver/DriverFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ru/tpo/mirtesen/driver/DriverFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ru/tpo/mirtesen/pages/AuthPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ru/tpo/mirtesen/pages/AuthPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ru/tpo/mirtesen/pages/BasePage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ru/tpo/mirtesen/pages/BasePage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ru/tpo/mirtesen/tests/AuthTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ru/tpo/mirtesen/tests/AuthTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ru/tpo/mirtesen/tests/FeedTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ru/tpo/mirtesen/tests/FeedTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ru/tpo/mirtesen/tests/PostCreationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ru/tpo/mirtesen/tests/PostCreationTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/ru/tpo/mirtesen/tests/RegistrationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/ru/tpo/mirtesen/tests/RegistrationTest.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

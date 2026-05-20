@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.tpo.mirtesen.tests.RegistrationTest" tests="8" skipped="1" failures="0" errors="0" timestamp="2026-05-20T14:18:27.909Z" hostname="MacBook-Air-mac-4.local" time="113.985">
+<testsuite name="ru.tpo.mirtesen.tests.RegistrationTest" tests="8" skipped="1" failures="0" errors="0" timestamp="2026-05-20T17:43:51.106Z" hostname="MacBook-Air-mac-4.local" time="126.239">
   <properties/>
-  <testcase name="UC-6 TC-21 Форма регистрации по почте доступна [chrome]" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="18.111"/>
-  <testcase name="UC-6 TC-21 Форма регистрации по почте доступна [firefox]" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="37.484"/>
-  <testcase name="UC-6 TC-23 Некорректные данные регистрации не отправляют форму: name=, email=invalid-name-empty@example.com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="5.787"/>
-  <testcase name="UC-6 TC-23 Некорректные данные регистрации не отправляют форму: name=Тест, email=" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="4.733"/>
-  <testcase name="UC-6 TC-23 Некорректные данные регистрации не отправляют форму: name=Тест, email=not-an-email" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="14.675"/>
-  <testcase name="manualUserCanRegisterByEmailWithConfirmationCode()" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="0.001">
+  <testcase name="UC-6 TC-21 Форма регистрации по почте доступна" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="18.301"/>
+  <testcase name="UC-6 TC-21 Форма регистрации по почте доступна" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="30.531"/>
+  <testcase name="UC-6 TC-23 Некорректные данные регистрации не отправляют форму: name=, email=invalid-name-empty@example.com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="12.623"/>
+  <testcase name="UC-6 TC-23 Некорректные данные регистрации не отправляют форму: name=Тест, email=" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="7.013"/>
+  <testcase name="UC-6 TC-23 Некорректные данные регистрации не отправляют форму: name=Тест, email=not-an-email" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="16.702"/>
+  <testcase name="manualUserCanRegisterByEmailWithConfirmationCode()" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="0.002">
     <skipped message="Assumption failed: Для ручной регистрации нужен MIRTESEN_MANUAL_REGISTRATION=true" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Для ручной регистрации нужен MIRTESEN_MANUAL_REGISTRATION=true
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -20,32 +20,36 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-6 TC-22 Повторная регистрация уже занятого email запрещена [chrome]" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="15.001"/>
-  <testcase name="UC-6 TC-22 Повторная регистрация уже занятого email запрещена [firefox]" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="18.171"/>
+  <testcase name="UC-6 TC-22 Повторная регистрация уже занятого email запрещена [chrome]" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="9.406"/>
+  <testcase name="UC-6 TC-22 Повторная регистрация уже занятого email запрещена [firefox]" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="31.625"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[мая 20, 2026 5:18:28 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+  <system-err><![CDATA[мая 20, 2026 8:43:54 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 5:18:28 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+мая 20, 2026 8:43:54 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 5:18:30 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+мая 20, 2026 8:43:54 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 5:18:30 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+мая 20, 2026 8:43:54 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 5:19:25 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+мая 20, 2026 8:43:54 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 5:19:25 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+мая 20, 2026 8:43:54 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 5:19:30 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+мая 20, 2026 8:44:44 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 5:19:30 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+мая 20, 2026 8:44:44 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 5:19:35 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+мая 20, 2026 8:44:54 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 5:19:35 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+мая 20, 2026 8:44:54 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 5:19:49 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+мая 20, 2026 8:45:01 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 5:19:49 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+мая 20, 2026 8:45:01 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 20, 2026 8:45:17 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 20, 2026 8:45:17 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
 </testsuite>

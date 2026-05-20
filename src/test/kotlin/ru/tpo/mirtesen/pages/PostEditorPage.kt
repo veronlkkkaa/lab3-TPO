@@ -9,89 +9,84 @@ class PostEditorPage(driver: WebDriver) : BasePage(driver) {
 
     companion object {
         private val OPEN_EDITOR = By.xpath(
-            "//*[self::button or self::a][" +
-            "contains(@class,'left-menu__create-post-btn') " +
-            "or contains(@class,'create-post') " +
-            "or contains(@class,'editor') " +
-            "or contains(@href,'/editor') " +
-            "or contains(@href,'/post/add') " +
-            "or contains(@href,'/post/create')]"
-        )
-
-        private val TITLE_INPUT = By.xpath(
-            "//input[@name='title' or contains(@class,'title') or contains(@data-test,'title') or contains(@data-testid,'title')]" +
-            " | //textarea[@name='title' or contains(@class,'title') or contains(@data-test,'title') or contains(@data-testid,'title')]"
+            "//button[contains(concat(' ', normalize-space(@class), ' '), ' left-menu__create-post-btn ')]"
         )
 
         private val BODY_INPUT = By.xpath(
-            "//*[@contenteditable='true']" +
-            " | //textarea[@name='text' or @name='body' or @name='content' " +
-            "or contains(@class,'text') or contains(@class,'body') or contains(@class,'content') " +
-            "or contains(@data-test,'text') or contains(@data-test,'body') or contains(@data-test,'content') " +
-            "or contains(@data-testid,'text') or contains(@data-testid,'body') or contains(@data-testid,'content')]"
+            "//*[contains(concat(' ', normalize-space(@class), ' '), ' plain-post-editor__body ')]" +
+                    "//*[contains(concat(' ', normalize-space(@class), ' '), ' mt-lexical-input ')" +
+                    " and @contenteditable='true'" +
+                    " and @role='textbox']"
         )
 
         private val PUBLISH_BUTTON = By.xpath(
-            "//*[self::button or self::a][not(@disabled) and (" +
-            "contains(@class,'publish') " +
-            "or contains(@class,'save') " +
-            "or contains(@data-test,'publish') " +
-            "or contains(@data-test,'save') " +
-            "or contains(@data-testid,'publish') " +
-            "or contains(@data-testid,'save') " +
-            "or @type='submit')]"
+            "//*[contains(concat(' ', normalize-space(@class), ' '), ' plain-post-editor__footer ')]" +
+                    "//button[contains(concat(' ', normalize-space(@class), ' '), ' save-btn ')" +
+                    " and contains(concat(' ', normalize-space(@class), ' '), ' btn-primary ')]"
         )
 
         private val AUTH_FORM = By.xpath(
-            "//form[.//input[@name='email'] or .//input[@type='password']]" +
-            " | //*[contains(@class,'auth-form')]"
+            "//*[contains(concat(' ', normalize-space(@class), ' '), ' auth-form__form ')]"
         )
     }
 
     fun openFromMainPage(): PostEditorPage {
         openUrl(MainPage.URL)
+
         if (!isPresent(OPEN_EDITOR)) {
             return this
         }
+
         jsClick(OPEN_EDITOR)
+
         waitUntil { d ->
-            d.findElements(TITLE_INPUT).isNotEmpty() ||
             d.findElements(BODY_INPUT).isNotEmpty() ||
-            d.findElements(AUTH_FORM).isNotEmpty()
+                    d.findElements(AUTH_FORM).isNotEmpty()
         }
+
+        return this
+    }
+
+    fun fill(body: String): PostEditorPage {
+        val bodyElement = waitVisible(BODY_INPUT)
+        bodyElement.scrollIntoView()
+        bodyElement.click()
+        bodyElement.sendKeys(body)
         return this
     }
 
     fun fill(title: String, body: String): PostEditorPage {
-        if (isPresent(TITLE_INPUT)) {
-            type(TITLE_INPUT, title)
-        }
-        val bodyElement = visibleBodyInput()
-        if (bodyElement != null) {
-            bodyElement.scrollIntoView()
-            bodyElement.click()
-            bodyElement.sendKeys(body)
-        }
+        val bodyElement = waitVisible(BODY_INPUT)
+        bodyElement.scrollIntoView()
+        bodyElement.click()
+        bodyElement.sendKeys("$title\n$body")
         return this
     }
 
     fun publish(): PostEditorPage {
+        waitUntil { d ->
+            val button = d.findElements(PUBLISH_BUTTON).firstOrNull()
+            button != null && button.isDisplayed && button.isEnabled
+        }
+
         jsClick(PUBLISH_BUTTON)
         return this
     }
 
-    fun hasEditor(): Boolean = isPresent(TITLE_INPUT) || isPresent(BODY_INPUT)
+    fun hasEditor(): Boolean =
+        findAll(BODY_INPUT).any { it.isDisplayed }
 
-    fun hasPublishAction(): Boolean = isPresent(PUBLISH_BUTTON)
+    fun hasPublishAction(): Boolean =
+        findAll(PUBLISH_BUTTON).any { it.isDisplayed && it.isEnabled }
 
-    fun requiresAuth(): Boolean = isPresent(AUTH_FORM)
+    fun requiresAuth(): Boolean =
+        isPresent(AUTH_FORM)
 
-    fun bodyText(): String = findAll(BODY_INPUT).firstOrNull()?.visibleText().orEmpty()
-
-    private fun visibleBodyInput(): WebElement? {
-        val candidates = findAll(BODY_INPUT).filter { it.isDisplayed }
-        return candidates.firstOrNull()
-    }
+    fun bodyText(): String =
+        findAll(BODY_INPUT)
+            .firstOrNull { it.isDisplayed }
+            ?.visibleText()
+            .orEmpty()
 
     private fun WebElement.visibleText(): String =
         text.trim().ifBlank {
@@ -99,6 +94,9 @@ class PostEditorPage(driver: WebDriver) : BasePage(driver) {
         }
 
     private fun WebElement.scrollIntoView() {
-        (driver as JavascriptExecutor).executeScript("arguments[0].scrollIntoView({block:'center'});", this)
+        (driver as JavascriptExecutor).executeScript(
+            "arguments[0].scrollIntoView({block:'center'});",
+            this
+        )
     }
 }

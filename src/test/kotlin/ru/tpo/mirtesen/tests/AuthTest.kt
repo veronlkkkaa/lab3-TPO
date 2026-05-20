@@ -12,7 +12,7 @@ import ru.tpo.mirtesen.pages.AuthPage
 @Execution(ExecutionMode.SAME_THREAD)
 class AuthTest : BaseTest() {
 
-    @ParameterizedTest(name = "UC-3 TC-11 Форма входа доступна [{0}]")
+    @ParameterizedTest(name = "UC-3 TC-11 Форма входа доступна")
     @MethodSource("browsers")
     fun loginFormIsAvailable(browser: String) {
         setup(browser)
@@ -20,7 +20,7 @@ class AuthTest : BaseTest() {
         assertTrue(authPage.hasLoginForm(), "Форма авторизации должна быть доступна")
     }
 
-    @ParameterizedTest(name = "UC-3 TC-12 Успешная авторизация [{0}]")
+    @ParameterizedTest(name = "UC-3 TC-12 Успешная авторизация")
     @MethodSource("browsers")
     fun validCredentialsLoginUser(browser: String) {
         val credentials = TestCredentials.fromEnvironment()
@@ -35,7 +35,7 @@ class AuthTest : BaseTest() {
             "После входа должны отображаться признаки авторизованной сессии")
     }
 
-    @ParameterizedTest(name = "UC-3 TC-13 Неверный пароль не авторизует пользователя [{0}]")
+    @ParameterizedTest(name = "UC-3 TC-13 Неверный пароль не авторизует пользователя")
     @MethodSource("browsers")
     fun invalidPasswordDoesNotLoginUser(browser: String) {
         val login = TestCredentials.loginFromEnvironment()
@@ -52,7 +52,7 @@ class AuthTest : BaseTest() {
         )
     }
 
-    @ParameterizedTest(name = "UC-3 TC-14 Пользователь может выйти из аккаунта [{0}]")
+    @ParameterizedTest(name = "UC-3 TC-14 Пользователь может выйти из аккаунта")
     @MethodSource("browsers")
     fun authorizedUserCanLogout(browser: String) {
         val credentials = TestCredentials.fromEnvironment()

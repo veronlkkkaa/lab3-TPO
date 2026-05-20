@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.tpo.mirtesen.tests.AuthTest" tests="8" skipped="6" failures="0" errors="0" timestamp="2026-05-20T14:17:25.418Z" hostname="MacBook-Air-mac-4.local" time="62.475">
+<testsuite name="ru.tpo.mirtesen.tests.AuthTest" tests="8" skipped="6" failures="0" errors="0" timestamp="2026-05-20T17:42:53.320Z" hostname="MacBook-Air-mac-4.local" time="57.767">
   <properties/>
-  <testcase name="UC-3 TC-14 Пользователь может выйти из аккаунта [chrome]" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.081">
+  <testcase name="UC-3 TC-14 Пользователь может выйти из аккаунта" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.082">
     <skipped message="Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -57,7 +57,7 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-3 TC-14 Пользователь может выйти из аккаунта [firefox]" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.007">
+  <testcase name="UC-3 TC-14 Пользователь может выйти из аккаунта" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.005">
     <skipped message="Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -113,7 +113,7 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-3 TC-13 Неверный пароль не авторизует пользователя [chrome]" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.005">
+  <testcase name="UC-3 TC-13 Неверный пароль не авторизует пользователя" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.005">
     <skipped message="Assumption failed: Нужен MIRTESEN_LOGIN" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужен MIRTESEN_LOGIN
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -169,7 +169,7 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-3 TC-13 Неверный пароль не авторизует пользователя [firefox]" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.004">
+  <testcase name="UC-3 TC-13 Неверный пароль не авторизует пользователя" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.005">
     <skipped message="Assumption failed: Нужен MIRTESEN_LOGIN" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужен MIRTESEN_LOGIN
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -225,7 +225,7 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-3 TC-12 Успешная авторизация [chrome]" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.004">
+  <testcase name="UC-3 TC-12 Успешная авторизация" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.003">
     <skipped message="Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -281,7 +281,7 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-3 TC-12 Успешная авторизация [firefox]" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.004">
+  <testcase name="UC-3 TC-12 Успешная авторизация" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.004">
     <skipped message="Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -337,8 +337,8 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-3 TC-11 Форма входа доступна [chrome]" classname="ru.tpo.mirtesen.tests.AuthTest" time="11.176"/>
-  <testcase name="UC-3 TC-11 Форма входа доступна [firefox]" classname="ru.tpo.mirtesen.tests.AuthTest" time="51.157"/>
+  <testcase name="UC-3 TC-11 Форма входа доступна" classname="ru.tpo.mirtesen.tests.AuthTest" time="13.769"/>
+  <testcase name="UC-3 TC-11 Форма входа доступна" classname="ru.tpo.mirtesen.tests.AuthTest" time="43.869"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

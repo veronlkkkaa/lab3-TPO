@@ -9,7 +9,7 @@ import ru.tpo.mirtesen.pages.PostEditorPage
 
 class PostCreationTest : BaseTest() {
 
-    @ParameterizedTest(name = "UC-4 TC-15 Создание публикации требует входа [{0}]")
+    @ParameterizedTest(name = "UC-4 TC-15 Создание публикации требует входа")
     @MethodSource("browsers")
     fun anonymousUserMustLoginBeforeCreatingPost(browser: String) {
         setup(browser)
@@ -18,7 +18,7 @@ class PostCreationTest : BaseTest() {
             "Создание публикации должно быть недоступно без авторизации")
     }
 
-    @ParameterizedTest(name = "UC-4 TC-16 Авторизованный пользователь заполняет публикацию [{0}]")
+    @ParameterizedTest(name = "UC-4 TC-16 Авторизованный пользователь заполняет публикацию")
     @MethodSource("browsers")
     fun authorizedUserCanFillPostEditor(browser: String) {
         val credentials = TestCredentials.fromEnvironment()
@@ -28,7 +28,7 @@ class PostCreationTest : BaseTest() {
         AuthPage(driver).open().loginByEmail(credentials!!.login, credentials.password)
 
         val title = "Тестовая публикация TPO $browser ${System.currentTimeMillis()}"
-        val body = "Автоматический тест Selenium WebDriver для лабораторной работы TPO."
+        val body = "Привет"
         val editor = PostEditorPage(driver).openFromMainPage().fill(title, body)
 
         assertTrue(editor.hasEditor(), "После авторизации должен открыться редактор публикации")
@@ -36,7 +36,7 @@ class PostCreationTest : BaseTest() {
             "Редактор должен принять текст публикации или показать действие публикации")
     }
 
-    @ParameterizedTest(name = "UC-4 TC-17 Публикация тестовой записи [{0}]")
+    @ParameterizedTest(name = "UC-4 TC-17 Публикация тестовой записи")
     @MethodSource("browsers")
     fun authorizedUserCanPublishPostWhenExplicitlyAllowed(browser: String) {
         val credentials = TestCredentials.fromEnvironment()

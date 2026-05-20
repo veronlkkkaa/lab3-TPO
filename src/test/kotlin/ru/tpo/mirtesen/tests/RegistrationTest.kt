@@ -35,7 +35,7 @@ class RegistrationTest : BaseTest() {
     }
 
     @Order(1)
-    @ParameterizedTest(name = "UC-6 TC-21 Форма регистрации по почте доступна [{0}]")
+    @ParameterizedTest(name = "UC-6 TC-21 Форма регистрации по почте доступна")
     @MethodSource("browsers")
     fun emailRegistrationFormIsAvailable(browser: String) {
         setup(browser)
@@ -163,7 +163,7 @@ class RegistrationTest : BaseTest() {
                 continue
             }
             if (!value.contains("/action/accept/")) {
-                println("Это не похоже на ссылку подтверждения MirTesen, попробуйте еще раз.")
+                println("Это не похоже на ссылку подтверждения с МирТесен, попробуйте еще раз.")
                 continue
             }
             return value
