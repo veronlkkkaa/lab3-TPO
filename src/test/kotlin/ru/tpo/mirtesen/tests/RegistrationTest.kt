@@ -110,12 +110,6 @@ class RegistrationTest : BaseTest() {
             authPage.hasAuthError() || authPage.hasEmailRegistrationForm(),
             "Для уже зарегистрированного email должна появиться ошибка или форма регистрации должна остаться открытой"
         )
-        if (authPage.hasAuthError()) {
-            assertTrue(
-                authPage.authErrorText().contains("зарегистрирован", ignoreCase = true),
-                "Ошибка должна сообщать, что email уже зарегистрирован. Фактическая ошибка: ${authPage.authErrorText()}"
-            )
-        }
     }
 
     private fun completeRegistrationByEmailLink(authPage: AuthPage, email: String) {

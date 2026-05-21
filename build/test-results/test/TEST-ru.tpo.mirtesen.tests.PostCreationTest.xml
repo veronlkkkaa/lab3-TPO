@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.tpo.mirtesen.tests.PostCreationTest" tests="6" skipped="4" failures="0" errors="0" timestamp="2026-05-20T17:42:53.320Z" hostname="MacBook-Air-mac-4.local" time="42.823">
+<testsuite name="ru.tpo.mirtesen.tests.PostCreationTest" tests="6" skipped="4" failures="0" errors="0" timestamp="2026-05-20T18:57:54.963Z" hostname="MacBook-Air-mac-4.local" time="27.672">
   <properties/>
-  <testcase name="UC-4 TC-17 Публикация тестовой записи" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="0.082">
+  <testcase name="UC-4 TC-17 Публикация тестовой записи" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="0.066">
     <skipped message="Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -23,7 +23,7 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-4 TC-17 Публикация тестовой записи" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="0.004">
+  <testcase name="UC-4 TC-17 Публикация тестовой записи" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="0.003">
     <skipped message="Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -45,7 +45,7 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-4 TC-16 Авторизованный пользователь заполняет публикацию" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="0.003">
+  <testcase name="UC-4 TC-16 Авторизованный пользователь заполняет публикацию" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="0.002">
     <skipped message="Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -89,8 +89,8 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-4 TC-15 Создание публикации требует входа" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="21.209"/>
-  <testcase name="UC-4 TC-15 Создание публикации требует входа" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="42.716"/>
+  <testcase name="UC-4 TC-15 Создание публикации требует входа" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="21.297"/>
+  <testcase name="UC-4 TC-15 Создание публикации требует входа" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="27.585"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

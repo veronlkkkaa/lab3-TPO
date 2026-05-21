@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">8</div>
+<div class="counter">6</div>
 <p>tests</p>
 </div>
 </td>
@@ -35,13 +35,13 @@
 </td>
 <td>
 <div class="infoBox" id="ignored">
-<div class="counter">0</div>
+<div class="counter">4</div>
 <p>ignored</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">3m52.72s</div>
+<div class="counter">3m8.01s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,7 +50,7 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
+<div class="infoBox skipped" id="successRate">
 <div class="percent">100%</div>
 <p>successful</p>
 </div>
@@ -61,12 +61,34 @@
 <div class="tab-container">
 <ul class="tabLinks">
 <li>
+<a href="#">Ignored tests</a>
+</li>
+<li>
 <a href="#">Tests</a>
 </li>
 <li>
 <a href="#">Standard error</a>
 </li>
 </ul>
+<div class="tab">
+<h2>Ignored tests</h2>
+<div class="test">
+<a name="feedCardsHavePostLinks(String)"></a>
+<h3 class="skipped">feedCardsHavePostLinks(String)</h3>
+</div>
+<div class="test">
+<a name="feedCardsHavePostLinks(String)[1]"></a>
+<h3 class="skipped">UC-1 TC-03 Карточки содержат ссылки</h3>
+</div>
+<div class="test">
+<a name="feedHasPostCards(String)"></a>
+<h3 class="skipped">feedHasPostCards(String)</h3>
+</div>
+<div class="test">
+<a name="feedHasPostCards(String)[2]"></a>
+<h3 class="skipped">UC-1 TC-01 Лента содержит публикации</h3>
+</div>
+</div>
 <div class="tab">
 <h2>Tests</h2>
 <table>
@@ -79,61 +101,73 @@
 </tr>
 </thead>
 <tr>
-<td class="success">UC-1 TC-03 Карточки содержат ссылки</td>
-<td class="success">feedCardsHavePostLinks(String)[1]</td>
-<td class="success">22.193s</td>
-<td class="success">passed</td>
+<td class="skipped">feedCardsHavePostLinks(String)</td>
+<td class="skipped">feedCardsHavePostLinks(String)</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
+</tr>
+<tr>
+<td class="skipped">UC-1 TC-03 Карточки содержат ссылки</td>
+<td class="skipped">feedCardsHavePostLinks(String)[1]</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
 </tr>
 <tr>
 <td class="success">UC-1 TC-03 Карточки содержат ссылки</td>
 <td class="success">feedCardsHavePostLinks(String)[2]</td>
-<td class="success">43.142s</td>
+<td class="success">30.012s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">UC-1 TC-02 Карточки содержат заголовки</td>
-<td class="success">feedCardsHaveTitles(String)[1]</td>
-<td class="success">18.053s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">UC-1 TC-02 Карточки содержат заголовки</td>
-<td class="success">feedCardsHaveTitles(String)[2]</td>
-<td class="success">31.345s</td>
-<td class="success">passed</td>
+<td class="skipped">feedHasPostCards(String)</td>
+<td class="skipped">feedHasPostCards(String)</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
 </tr>
 <tr>
 <td class="success">UC-1 TC-01 Лента содержит публикации</td>
 <td class="success">feedHasPostCards(String)[1]</td>
-<td class="success">17.718s</td>
+<td class="success">21.119s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">UC-1 TC-01 Лента содержит публикации</td>
-<td class="success">feedHasPostCards(String)[2]</td>
-<td class="success">39.149s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">UC-1 TC-04 Первая публикация открывается</td>
-<td class="success">userCanOpenFirstFeedPost(String)[1]</td>
-<td class="success">31.256s</td>
-<td class="success">passed</td>
-</tr>
-<tr>
-<td class="success">UC-1 TC-04 Первая публикация открывается</td>
-<td class="success">userCanOpenFirstFeedPost(String)[2]</td>
-<td class="success">29.867s</td>
-<td class="success">passed</td>
+<td class="skipped">UC-1 TC-01 Лента содержит публикации</td>
+<td class="skipped">feedHasPostCards(String)[2]</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
 </tr>
 </table>
 </div>
 <div class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>мая 20, 2026 8:43:19 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+<pre>мая 20, 2026 9:57:59 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 8:43:19 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+мая 20, 2026 9:57:59 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 20, 2026 9:57:59 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 20, 2026 9:57:59 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 20, 2026 9:57:59 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 20, 2026 9:57:59 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 20, 2026 9:57:59 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 20, 2026 9:57:59 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 20, 2026 9:58:25 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 20, 2026 9:58:25 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 20, 2026 9:58:26 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 20, 2026 9:58:26 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 20, 2026 9:58:31 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 20, 2026 9:58:31 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 </pre>
 </span>
@@ -146,7 +180,7 @@ WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need t
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.0.0</a> at 20 мая 2026 г., 20:45:57</p>
+<a href="https://www.gradle.org">Gradle 9.0.0</a> at 20 мая 2026 г., 21:58:42</p>
 </div>
 </div>
 </body>

@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">6</div>
+<div class="counter">7</div>
 <p>tests</p>
 </div>
 </td>
@@ -35,13 +35,13 @@
 </td>
 <td>
 <div class="infoBox" id="ignored">
-<div class="counter">0</div>
+<div class="counter">5</div>
 <p>ignored</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">3m13.75s</div>
+<div class="counter">2m5.15s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,7 +50,7 @@
 </div>
 </td>
 <td>
-<div class="infoBox success" id="successRate">
+<div class="infoBox skipped" id="successRate">
 <div class="percent">100%</div>
 <p>successful</p>
 </div>
@@ -61,12 +61,38 @@
 <div class="tab-container">
 <ul class="tabLinks">
 <li>
+<a href="#">Ignored tests</a>
+</li>
+<li>
 <a href="#">Tests</a>
 </li>
 <li>
 <a href="#">Standard error</a>
 </li>
 </ul>
+<div class="tab">
+<h2>Ignored tests</h2>
+<div class="test">
+<a name="leftNavigationContainsFeedAndRubrics(String)"></a>
+<h3 class="skipped">leftNavigationContainsFeedAndRubrics(String)</h3>
+</div>
+<div class="test">
+<a name="leftNavigationContainsFeedAndRubrics(String)[1]"></a>
+<h3 class="skipped">UC-5 TC-19 Левый блок содержит пункты навигации [chrome]</h3>
+</div>
+<div class="test">
+<a name="userCanOpenRubricFromLeftNavigation(String)"></a>
+<h3 class="skipped">userCanOpenRubricFromLeftNavigation(String)</h3>
+</div>
+<div class="test">
+<a name="userCanOpenRubricFromLeftNavigation(String)[1]"></a>
+<h3 class="skipped">UC-5 TC-20 Рубрика открывается из левого меню [chrome]</h3>
+</div>
+<div class="test">
+<a name="userCanOpenRubricFromLeftNavigation(String)[2]"></a>
+<h3 class="skipped">UC-5 TC-20 Рубрика открывается из левого меню [firefox]</h3>
+</div>
+</div>
 <div class="tab">
 <h2>Tests</h2>
 <table>
@@ -81,63 +107,57 @@
 <tr>
 <td class="success">UC-5 TC-18 Левый блок отображается [chrome]</td>
 <td class="success">leftNavigationBlockIsVisible(String)[1]</td>
-<td class="success">20.731s</td>
+<td class="success">13.387s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">UC-5 TC-18 Левый блок отображается [firefox]</td>
 <td class="success">leftNavigationBlockIsVisible(String)[2]</td>
-<td class="success">36.884s</td>
+<td class="success">26.405s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
-<td class="success">UC-5 TC-19 Левый блок содержит пункты навигации [chrome]</td>
-<td class="success">leftNavigationContainsFeedAndRubrics(String)[1]</td>
-<td class="success">21.627s</td>
-<td class="success">passed</td>
+<td class="skipped">leftNavigationContainsFeedAndRubrics(String)</td>
+<td class="skipped">leftNavigationContainsFeedAndRubrics(String)</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
 </tr>
 <tr>
-<td class="success">UC-5 TC-19 Левый блок содержит пункты навигации [firefox]</td>
-<td class="success">leftNavigationContainsFeedAndRubrics(String)[2]</td>
-<td class="success">31.215s</td>
-<td class="success">passed</td>
+<td class="skipped">UC-5 TC-19 Левый блок содержит пункты навигации [chrome]</td>
+<td class="skipped">leftNavigationContainsFeedAndRubrics(String)[1]</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
 </tr>
 <tr>
-<td class="success">UC-5 TC-20 Рубрика открывается из левого меню [chrome]</td>
-<td class="success">userCanOpenRubricFromLeftNavigation(String)[1]</td>
-<td class="success">22.497s</td>
-<td class="success">passed</td>
+<td class="skipped">userCanOpenRubricFromLeftNavigation(String)</td>
+<td class="skipped">userCanOpenRubricFromLeftNavigation(String)</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
 </tr>
 <tr>
-<td class="success">UC-5 TC-20 Рубрика открывается из левого меню [firefox]</td>
-<td class="success">userCanOpenRubricFromLeftNavigation(String)[2]</td>
-<td class="success">1m0.79s</td>
-<td class="success">passed</td>
+<td class="skipped">UC-5 TC-20 Рубрика открывается из левого меню [chrome]</td>
+<td class="skipped">userCanOpenRubricFromLeftNavigation(String)[1]</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
+</tr>
+<tr>
+<td class="skipped">UC-5 TC-20 Рубрика открывается из левого меню [firefox]</td>
+<td class="skipped">userCanOpenRubricFromLeftNavigation(String)[2]</td>
+<td class="skipped">-</td>
+<td class="skipped">ignored</td>
 </tr>
 </table>
 </div>
 <div class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>мая 20, 2026 8:42:58 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+<pre>мая 20, 2026 9:58:24 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 8:42:58 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 8:42:58 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 8:42:58 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 8:42:58 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+мая 20, 2026 9:58:24 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 8:42:58 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 8:42:58 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 8:42:58 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 8:43:36 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+мая 20, 2026 9:58:38 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 8:43:36 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+мая 20, 2026 9:58:38 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 </pre>
 </span>
@@ -150,7 +170,7 @@ WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need t
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.0.0</a> at 20 мая 2026 г., 20:45:57</p>
+<a href="https://www.gradle.org">Gradle 9.0.0</a> at 20 мая 2026 г., 21:58:42</p>
 </div>
 </div>
 </body>
