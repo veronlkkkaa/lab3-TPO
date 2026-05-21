@@ -64,6 +64,12 @@ class MainPage(driver: WebDriver) : BasePage(driver) {
         return SearchResultsPage(driver)
     }
 
+    fun searchPeople(query: String): SearchResultsPage {
+        val encoded = URLEncoder.encode(query, StandardCharsets.UTF_8)
+        openUrl("${URL}search/people/?q=$encoded")
+        return SearchResultsPage(driver)
+    }
+
     fun hasPostCards(): Boolean =
         findAll(POST_CARDS).isNotEmpty()
 

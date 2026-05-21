@@ -28,9 +28,24 @@ class RegistrationTest : BaseTest() {
 
         @JvmStatic
         fun invalidEmailRegistrationData() = listOf(
-            Arguments.of("", "invalid-name-empty@example.com"),
+            Arguments.of("", "valid-test@example.com"),
             Arguments.of("Тест", ""),
-            Arguments.of("Тест", "not-an-email")
+            Arguments.of("Тест", "not-an-email"),
+            Arguments.of("Тест", "test@@example.com"),
+            Arguments.of("Тест", "test @example.com"),
+            Arguments.of("Тест", "@example.com"),
+            Arguments.of("Тест", "test@"),
+            Arguments.of("Тест", "test@.com"),
+            Arguments.of("Тест", ".test@example.com"),
+            Arguments.of("Тест", "test@example..com"),
+            Arguments.of("Тест", "<script>@example.com"),
+            Arguments.of("Тест", "тест@пример.рф"),
+            Arguments.of("Тест", "a".repeat(255) + "@b.com"),
+            Arguments.of("   ", "valid-test@example.com"),
+            Arguments.of("12345", "valid-test@example.com"),
+            Arguments.of("!@#\$%^&*()", "valid-test@example.com"),
+            Arguments.of("<script>alert(1)</script>", "valid-test@example.com"),
+            Arguments.of("А".repeat(300), "valid-test@example.com"),
         )
     }
 

@@ -2,12 +2,25 @@ package ru.tpo.mirtesen.tests
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
 import ru.tpo.mirtesen.pages.MainPage
 import java.net.URLDecoder
 import java.nio.charset.StandardCharsets
 
 class SearchTest : BaseTest() {
+
+    companion object {
+        @JvmStatic
+        fun badSearchQueries() = listOf(
+            Arguments.of("   "),
+            Arguments.of("!@#\$%^&*()[]{}|"),
+            Arguments.of("<script>alert(document.title)</script>"),
+            Arguments.of("'; DROP TABLE posts; --"),
+            Arguments.of("a".repeat(500)),
+            Arguments.of("​‌‍"),
+        )
+    }
 
     @ParameterizedTest(name = "UC-2 TC-05 Поиск возвращает публикации [{0}]")
     @MethodSource("browsers")
@@ -77,6 +90,71 @@ class SearchTest : BaseTest() {
 
         assertTrue(results.resultsHaveNonEmptyTitles(),
             "Найденные публикации должны иметь непустые заголовки")
+    }
+
+    @ParameterizedTest(name = "UC-2 TC-11 Нестандартный ввод не вызывает ошибку сервера: [{0}]")
+    @MethodSource("badSearchQueries")
+    fun malformedSearchQueryHandledWithoutServerError(query: String) {
+        setup("chrome")
+        val results = MainPage(driver).search(query)
+        results.waitForSearchPage()
+
+        assertFalse(results.hasServerError(),
+            "Запрос «${query.take(40)}» не должен приводить к ошибке сервера")
+        assertTrue(results.getUrl().contains("search"),
+            "После нестандартного запроса страница должна остаться в разделе поиска. URL: ${results.getUrl()}")
+    }
+
+    @ParameterizedTest(name = "UC-2 TC-12 XSS в поисковом запросе не исполняется как скрипт [{0}]")
+    @MethodSource("browsers")
+    fun xssInSearchQueryNotExecutedAsScript(browser: String) {
+        setup(browser)
+        val results = MainPage(driver).search("<script>document.title='xss-executed'</script>")
+        results.waitForSearchPage()
+
+        assertFalse(results.hasServerError(),
+            "XSS-запрос не должен вызывать ошибку сервера")
+        assertNotEquals("xss-executed", results.getPageTitle(),
+            "Тег <script> из поискового запроса не должен быть исполнён: заголовок страницы изменился")
+    }
+
+    @ParameterizedTest(name = "UC-2 TC-13 Вкладка «Публикации» показывает посты, а не профили [{0}]")
+    @MethodSource("browsers")
+    fun postsTabShowsBlogPostsNotUserProfiles(browser: String) {
+        setup(browser)
+        val results = MainPage(driver).search("путешествия")
+        results.waitForResults()
+
+        if (results.hasResults()) {
+            assertFalse(results.hasProfileLinksInSearchArea(),
+                "Вкладка «Публикации» не должна содержать ссылки на профили пользователей — только на записи блога")
+        }
+    }
+
+    @ParameterizedTest(name = "UC-2 TC-14 Вкладка «Люди» не показывает записи блога [{0}]")
+    @MethodSource("browsers")
+    fun peopleTabDoesNotContainBlogPostLinks(browser: String) {
+        setup(browser)
+        val results = MainPage(driver).searchPeople("путешествия")
+        results.waitForSearchPage()
+
+        assertFalse(results.hasBlogPostLinksInSearchArea(),
+            "Вкладка «Люди» не должна содержать ссылки на записи блога (.mirtesen.ru/blog/)")
+    }
+
+    @ParameterizedTest(name = "UC-2 TC-15 Страница поиска без результатов не падает [{0}]")
+    @MethodSource("browsers")
+    fun searchPageWithNoResultsDoesNotCrash(browser: String) {
+        setup(browser)
+        val results = MainPage(driver).search("aаёйzz_no_match_unique_tpo_2026_xyz")
+        results.waitForSearchPage()
+
+        assertFalse(results.hasServerError(),
+            "Запрос без результатов не должен приводить к ошибке сервера")
+        assertTrue(results.hasNoResultsMessage() || results.getResultCount() == 0,
+            "Поиск без совпадений должен показать сообщение об отсутствии результатов или пустой список")
+        assertTrue(results.getUrl().contains("search"),
+            "Должны остаться на странице поиска, а не редиректиться. URL: ${results.getUrl()}")
     }
 
     private fun queryValue(url: String): String {

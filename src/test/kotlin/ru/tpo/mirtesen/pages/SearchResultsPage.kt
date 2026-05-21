@@ -9,27 +9,30 @@ import org.openqa.selenium.WebElement
 class SearchResultsPage(driver: WebDriver) : BasePage(driver) {
 
     companion object {
-        private val RESULT_CARDS = By.xpath("//a[contains(@href,'.mirtesen.ru/blog/')]")
+        private val RESULT_CARDS = By.xpath("//a[contains(@class,'article-list-item__text')]")
 
         private val RESULT_TITLES = By.xpath(
-            "//a[contains(@href,'.mirtesen.ru/blog/')]//*[self::h3 or self::h4]"
+            "//a[contains(@class,'article-list-item__text')]//h4"
         )
 
         private val FIRST_RESULT_LINK = By.xpath(
-            "(//a[contains(@href,'.mirtesen.ru/blog/')])[1]"
+            "(//a[contains(@class,'article-list-item__text')])[1]"
         )
 
-        private val NO_RESULTS_MSG = By.xpath(
-            "//*[contains(@class,'empty') or contains(@class,'not-found') or contains(@class,'no-results')]" +
-            " | //*[contains(@data-test,'empty') or contains(@data-testid,'empty')]" +
-            " | //*[contains(@data-test,'no-results') or contains(@data-testid,'no-results')]"
-        )
+        private val NO_RESULTS_MSG = By.xpath("//*[contains(@class,'mt-list__empty')]")
 
         private val BODY = By.xpath("//body")
 
         private val SERVER_ERROR = By.xpath(
-            "//*[contains(@class,'server-error') or contains(@class,'service-error') or contains(@class,'error-page')]" +
-            " | //*[contains(@data-test,'server-error') or contains(@data-testid,'server-error')]"
+            "//*[contains(@class,'server-error') or contains(@class,'service-error') or contains(@class,'error-page')]"
+        )
+
+        private val SEARCH_AREA_BLOG_LINKS = By.xpath(
+            "//*[contains(@class,'mt-search__results')]//a[contains(@class,'article-list-item__text')]"
+        )
+
+        private val SEARCH_AREA_PROFILE_LINKS = By.xpath(
+            "//*[contains(@class,'mt-search__results')]//a[contains(@class,'people-list-item__user')]"
         )
     }
 
@@ -59,6 +62,12 @@ class SearchResultsPage(driver: WebDriver) : BasePage(driver) {
         if (titles.isNotEmpty()) return true
         return textValues(RESULT_CARDS).isNotEmpty()
     }
+
+    fun hasBlogPostLinksInSearchArea(): Boolean = findAll(SEARCH_AREA_BLOG_LINKS).isNotEmpty()
+
+    fun hasProfileLinksInSearchArea(): Boolean = findAll(SEARCH_AREA_PROFILE_LINKS).isNotEmpty()
+
+    fun getPageTitle(): String = driver.title.trim()
 
     fun openFirstResult(): ArticlePage {
         val link = waitClickable(FIRST_RESULT_LINK)
