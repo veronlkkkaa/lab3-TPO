@@ -1,0 +1,1132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ru.tpo.mirtesen.tests.RegistrationTest" tests="23" skipped="1" failures="14" errors="0" timestamp="2026-05-22T17:30:53.286Z" hostname="MacBook-Pro-Nika.local" time="2518.592">
+  <properties/>
+  <testcase name="manualUserCanRegisterByEmailWithConfirmationCode()" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="0.01">
+    <skipped message="Assumption failed: Для ручной регистрации нужен MIRTESEN_MANUAL_REGISTRATION=true" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Для ручной регистрации нужен MIRTESEN_MANUAL_REGISTRATION=true
+	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
+	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
+	at ru.tpo.mirtesen.tests.RegistrationTest.manualUserCanRegisterByEmailWithConfirmationCode(RegistrationTest.kt:81)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</skipped>
+  </testcase>
+  <testcase name="UC-6 TC-23 Повторная регистрация уже занятого email запрещена [chrome]" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="125.234">
+    <failure message="org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.003&#10;  (Session info: chrome=148.0.7778.179)&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [27a71eef7d5ffb1a1730ac51c8bb47e1, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63169}, goog:processID: 33449, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:63169/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 27a71eef7d5ffb1a1730ac51c8bb47e1" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.003
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [27a71eef7d5ffb1a1730ac51c8bb47e1, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63169}, goog:processID: 33449, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:63169/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 27a71eef7d5ffb1a1730ac51c8bb47e1
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openRegistration(AuthPage.kt:132)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openEmailRegistration(AuthPage.kt:141)
+	at app//ru.tpo.mirtesen.tests.RegistrationTest.registeredEmailCannotBeRegisteredAgain(RegistrationTest.kt:107)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-6 TC-23 Повторная регистрация уже занятого email запрещена [firefox]" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="122.941">
+    <failure message="org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.firefox.FirefoxDriver&#10;Command: [af47c9f4-af4c-4c1a-a92f-30365a371e5a, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 33793, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}&#10;Session ID: af47c9f4-af4c-4c1a-a92f-30365a371e5a" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [af47c9f4-af4c-4c1a-a92f-30365a371e5a, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 33793, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: af47c9f4-af4c-4c1a-a92f-30365a371e5a
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openRegistration(AuthPage.kt:132)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openEmailRegistration(AuthPage.kt:141)
+	at app//ru.tpo.mirtesen.tests.RegistrationTest.registeredEmailCannotBeRegisteredAgain(RegistrationTest.kt:107)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-6 TC-21 Форма регистрации по почте доступна" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="121.332">
+    <failure message="org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.004&#10;  (Session info: chrome=148.0.7778.179)&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [2f3cf61c48ecbba6339adc4cba3eca11, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64957}, goog:processID: 34401, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:64957/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 2f3cf61c48ecbba6339adc4cba3eca11" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.004
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2f3cf61c48ecbba6339adc4cba3eca11, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64957}, goog:processID: 34401, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:64957/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 2f3cf61c48ecbba6339adc4cba3eca11
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openRegistration(AuthPage.kt:132)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openEmailRegistration(AuthPage.kt:141)
+	at app//ru.tpo.mirtesen.tests.RegistrationTest.emailRegistrationFormIsAvailable(RegistrationTest.kt:53)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-6 TC-21 Форма регистрации по почте доступна" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="123.648">
+    <failure message="org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.firefox.FirefoxDriver&#10;Command: [6f98b15a-17fd-41df-875a-78789cf8c226, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 34829, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}&#10;Session ID: 6f98b15a-17fd-41df-875a-78789cf8c226" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [6f98b15a-17fd-41df-875a-78789cf8c226, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 34829, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 6f98b15a-17fd-41df-875a-78789cf8c226
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openRegistration(AuthPage.kt:132)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openEmailRegistration(AuthPage.kt:141)
+	at app//ru.tpo.mirtesen.tests.RegistrationTest.emailRegistrationFormIsAvailable(RegistrationTest.kt:53)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=, email=valid-test@example.com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="121.365">
+    <failure message="org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.005&#10;  (Session info: chrome=148.0.7778.179)&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [ec1f9c7a5a89bae4749e244a19021e38, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50295}, goog:processID: 35449, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50295/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: ec1f9c7a5a89bae4749e244a19021e38" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.005
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ec1f9c7a5a89bae4749e244a19021e38, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50295}, goog:processID: 35449, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:50295/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ec1f9c7a5a89bae4749e244a19021e38
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openRegistration(AuthPage.kt:132)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openEmailRegistration(AuthPage.kt:141)
+	at app//ru.tpo.mirtesen.tests.RegistrationTest.invalidEmailRegistrationDataDoesNotSubmit(RegistrationTest.kt:63)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=Тест, email=" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="121.644">
+    <failure message="org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.001&#10;  (Session info: chrome=148.0.7778.179)&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [00e9999ca1170ed1a5548dcad1e1e325, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51222}, goog:processID: 36111, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:51222/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 00e9999ca1170ed1a5548dcad1e1e325" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.001
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [00e9999ca1170ed1a5548dcad1e1e325, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51222}, goog:processID: 36111, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:51222/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 00e9999ca1170ed1a5548dcad1e1e325
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openRegistration(AuthPage.kt:132)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openEmailRegistration(AuthPage.kt:141)
+	at app//ru.tpo.mirtesen.tests.RegistrationTest.invalidEmailRegistrationDataDoesNotSubmit(RegistrationTest.kt:63)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=Тест, email=not-an-email" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="10.836">
+    <failure message="org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection&#10;from disconnected: Unable to receive message from renderer&#10;  (Session info: chrome=148.0.7778.179)&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [0c55a2566ac6a1f03fa4d9ceb7ea868d, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52213}, goog:processID: 36652, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:52213/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 0c55a2566ac6a1f03fa4d9ceb7ea868d" type="org.openqa.selenium.NoSuchSessionException">org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0c55a2566ac6a1f03fa4d9ceb7ea868d, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52213}, goog:processID: 36652, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:52213/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0c55a2566ac6a1f03fa4d9ceb7ea868d
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:34)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openRegistration(AuthPage.kt:132)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openEmailRegistration(AuthPage.kt:141)
+	at app//ru.tpo.mirtesen.tests.RegistrationTest.invalidEmailRegistrationDataDoesNotSubmit(RegistrationTest.kt:63)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=Тест, email=test@@example.com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="114.16">
+    <failure message="org.openqa.selenium.TimeoutException: Expected condition failed: waiting for ru.tpo.mirtesen.pages.BasePage$$Lambda$1784/0x000000030132f620@2486eab4 (tried for 30 second(s) with 200 milliseconds interval)&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52718}, goog:processID: 37001, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:52718/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: c9838ff54213df27f88c17a740046bcb" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for ru.tpo.mirtesen.pages.BasePage$$Lambda$1784/0x000000030132f620@2486eab4 (tried for 30 second(s) with 200 milliseconds interval)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52718}, goog:processID: 37001, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:52718/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c9838ff54213df27f88c17a740046bcb
+	at app//org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at app//org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at app//ru.tpo.mirtesen.pages.BasePage.waitUntil(BasePage.kt:21)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openRegistration(AuthPage.kt:136)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openEmailRegistration(AuthPage.kt:141)
+	at app//ru.tpo.mirtesen.tests.RegistrationTest.invalidEmailRegistrationDataDoesNotSubmit(RegistrationTest.kt:63)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=Тест, email=test @example.com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="121.455">
+    <failure message="org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.002&#10;  (Session info: chrome=148.0.7778.179)&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [45c34e00cac8a3d01d1264d45f285143, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53113}, goog:processID: 37307, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53113/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 45c34e00cac8a3d01d1264d45f285143" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.002
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [45c34e00cac8a3d01d1264d45f285143, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53113}, goog:processID: 37307, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53113/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 45c34e00cac8a3d01d1264d45f285143
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openRegistration(AuthPage.kt:132)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openEmailRegistration(AuthPage.kt:141)
+	at app//ru.tpo.mirtesen.tests.RegistrationTest.invalidEmailRegistrationDataDoesNotSubmit(RegistrationTest.kt:63)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=Тест, email=@example.com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="121.362">
+    <failure message="org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.000&#10;  (Session info: chrome=148.0.7778.179)&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [a59a802f92702049c7242219b9695fe2, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53982}, goog:processID: 37841, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53982/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: a59a802f92702049c7242219b9695fe2" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.000
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a59a802f92702049c7242219b9695fe2, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53982}, goog:processID: 37841, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:53982/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a59a802f92702049c7242219b9695fe2
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openRegistration(AuthPage.kt:132)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openEmailRegistration(AuthPage.kt:141)
+	at app//ru.tpo.mirtesen.tests.RegistrationTest.invalidEmailRegistrationDataDoesNotSubmit(RegistrationTest.kt:63)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=Тест, email=test@" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="1089.7">
+    <failure message="org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection&#10;from disconnected: Unable to receive message from renderer&#10;  (Session info: chrome=148.0.7778.179)&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [d5cf1f8eee5c8307f8a1d04dcdacc34f, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54890}, goog:processID: 38457, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:54890/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: d5cf1f8eee5c8307f8a1d04dcdacc34f" type="org.openqa.selenium.NoSuchSessionException">org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d5cf1f8eee5c8307f8a1d04dcdacc34f, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54890}, goog:processID: 38457, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:54890/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d5cf1f8eee5c8307f8a1d04dcdacc34f
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:34)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openRegistration(AuthPage.kt:132)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openEmailRegistration(AuthPage.kt:141)
+	at app//ru.tpo.mirtesen.tests.RegistrationTest.invalidEmailRegistrationDataDoesNotSubmit(RegistrationTest.kt:63)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=Тест, email=test@.com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="19.866">
+    <failure message="org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection&#10;from disconnected: Unable to receive message from renderer&#10;  (Session info: chrome=148.0.7778.179)&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [8cd1b07edbaabd829804167cc5cb7da0, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55416}, goog:processID: 38699, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55416/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 8cd1b07edbaabd829804167cc5cb7da0" type="org.openqa.selenium.NoSuchSessionException">org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: Unable to receive message from renderer
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [8cd1b07edbaabd829804167cc5cb7da0, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55416}, goog:processID: 38699, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55416/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8cd1b07edbaabd829804167cc5cb7da0
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:34)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openRegistration(AuthPage.kt:132)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openEmailRegistration(AuthPage.kt:141)
+	at app//ru.tpo.mirtesen.tests.RegistrationTest.invalidEmailRegistrationDataDoesNotSubmit(RegistrationTest.kt:63)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=Тест, email=.test@example.com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="271.126">
+    <failure message="org.openqa.selenium.TimeoutException: Expected condition failed: waiting for ru.tpo.mirtesen.pages.BasePage$$Lambda$1784/0x000000030132f620@6f79db6c (tried for 30 second(s) with 200 milliseconds interval)&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55839}, goog:processID: 39053, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55839/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: f336648efaa073d4e2b133ce818fbae5" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for ru.tpo.mirtesen.pages.BasePage$$Lambda$1784/0x000000030132f620@6f79db6c (tried for 30 second(s) with 200 milliseconds interval)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55839}, goog:processID: 39053, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:55839/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f336648efaa073d4e2b133ce818fbae5
+	at app//org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at app//org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at app//ru.tpo.mirtesen.pages.BasePage.waitUntil(BasePage.kt:21)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openRegistration(AuthPage.kt:136)
+	at app//ru.tpo.mirtesen.pages.AuthPage.openEmailRegistration(AuthPage.kt:141)
+	at app//ru.tpo.mirtesen.tests.RegistrationTest.invalidEmailRegistrationDataDoesNotSubmit(RegistrationTest.kt:63)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=Тест, email=test@example..com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="5.941"/>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=Тест, email=&lt;script&gt;@example.com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="2.312"/>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=Тест, email=тест@пример.рф" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="2.541"/>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=Тест, email=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@b.com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="2.662"/>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=   , email=valid-test@example.com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="1.679">
+    <failure message="org.opentest4j.AssertionFailedError: В поле имени должно быть введено тестовое значение ==&gt; expected: &lt;   &gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: В поле имени должно быть введено тестовое значение ==&gt; expected: &lt;   &gt; but was: &lt;&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1156)
+	at app//ru.tpo.mirtesen.tests.RegistrationTest.invalidEmailRegistrationDataDoesNotSubmit(RegistrationTest.kt:66)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=12345, email=valid-test@example.com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="11.992"/>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=!@#$%^&amp;*(), email=valid-test@example.com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="1.918"/>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=&lt;script&gt;alert(1)&lt;/script&gt;, email=valid-test@example.com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="2.038"/>
+  <testcase name="UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name=АААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААААА, email=valid-test@example.com" classname="ru.tpo.mirtesen.tests.RegistrationTest" time="2.819"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[мая 22, 2026 8:39:07 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 8:39:07 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 8:39:07 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 8:39:07 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 8:41:08 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 8:41:08 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 8:41:08 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 8:41:08 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 8:43:10 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 8:43:10 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 8:45:15 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 8:45:15 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 8:47:16 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 8:47:16 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 8:49:18 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 8:49:18 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 9:07:29 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 9:07:29 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 9:07:48 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 9:07:48 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 9:12:18 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 9:12:18 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 9:12:24 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 9:12:24 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 9:12:26 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 9:12:26 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 9:12:29 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 9:12:29 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 9:12:32 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 9:12:32 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 9:12:33 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 9:12:33 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 9:12:45 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 9:12:45 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 9:12:47 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 9:12:47 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 9:12:49 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 9:12:49 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+</testsuite>

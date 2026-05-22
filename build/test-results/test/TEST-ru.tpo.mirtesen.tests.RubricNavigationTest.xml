@@ -1,31 +1,238 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.tpo.mirtesen.tests.RubricNavigationTest" tests="7" skipped="5" failures="0" errors="0" timestamp="2026-05-20T18:57:54.962Z" hostname="MacBook-Air-mac-4.local" time="47.277">
+<testsuite name="ru.tpo.mirtesen.tests.RubricNavigationTest" tests="6" skipped="0" failures="6" errors="0" timestamp="2026-05-22T17:30:53.294Z" hostname="MacBook-Pro-Nika.local" time="371.335">
   <properties/>
-  <testcase name="UC-5 TC-18 Левый блок отображается [firefox]" classname="ru.tpo.mirtesen.tests.RubricNavigationTest" time="26.405"/>
-  <testcase name="UC-5 TC-18 Левый блок отображается [chrome]" classname="ru.tpo.mirtesen.tests.RubricNavigationTest" time="13.387"/>
-  <testcase name="UC-5 TC-19 Левый блок содержит пункты навигации [chrome]" classname="ru.tpo.mirtesen.tests.RubricNavigationTest" time="7.438">
-    <skipped/>
+  <testcase name="UC-5 TC-18 Левый блок отображается [firefox]" classname="ru.tpo.mirtesen.tests.RubricNavigationTest" time="124.79">
+    <failure message="org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.firefox.FirefoxDriver&#10;Command: [c144888f-8962-468b-b84f-1b2cae9d4004, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 33322, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}&#10;Session ID: c144888f-8962-468b-b84f-1b2cae9d4004" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [c144888f-8962-468b-b84f-1b2cae9d4004, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 33322, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: c144888f-8962-468b-b84f-1b2cae9d4004
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.MainPage.open(MainPage.kt:50)
+	at app//ru.tpo.mirtesen.tests.RubricNavigationTest.leftNavigationBlockIsVisible(RubricNavigationTest.kt:15)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:979)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
   </testcase>
-  <testcase name="leftNavigationContainsFeedAndRubrics(String)" classname="ru.tpo.mirtesen.tests.RubricNavigationTest" time="7.48">
-    <skipped/>
+  <testcase name="UC-5 TC-18 Левый блок отображается [chrome]" classname="ru.tpo.mirtesen.tests.RubricNavigationTest" time="121.874">
+    <failure message="org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.004&#10;  (Session info: chrome=148.0.7778.179)&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [800d93eec53f90e1fcd35ef3a4109ff1, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63967}, goog:processID: 33836, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:63967/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 800d93eec53f90e1fcd35ef3a4109ff1" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.004
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [800d93eec53f90e1fcd35ef3a4109ff1, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63967}, goog:processID: 33836, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:63967/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 800d93eec53f90e1fcd35ef3a4109ff1
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.MainPage.open(MainPage.kt:50)
+	at app//ru.tpo.mirtesen.tests.RubricNavigationTest.leftNavigationBlockIsVisible(RubricNavigationTest.kt:15)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:979)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
   </testcase>
-  <testcase name="UC-5 TC-20 Рубрика открывается из левого меню [chrome]" classname="ru.tpo.mirtesen.tests.RubricNavigationTest" time="19.601">
-    <skipped/>
+  <testcase name="UC-5 TC-20 Рубрика открывается из левого меню [firefox]" classname="ru.tpo.mirtesen.tests.RubricNavigationTest" time="122.173">
+    <failure message="org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.firefox.FirefoxDriver&#10;Command: [1bfd7b62-a859-46e1-8612-2a3d829eef65, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 33982, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}&#10;Session ID: 1bfd7b62-a859-46e1-8612-2a3d829eef65" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [1bfd7b62-a859-46e1-8612-2a3d829eef65, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 33982, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 1bfd7b62-a859-46e1-8612-2a3d829eef65
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.MainPage.open(MainPage.kt:50)
+	at app//ru.tpo.mirtesen.tests.RubricNavigationTest.userCanOpenRubricFromLeftNavigation(RubricNavigationTest.kt:33)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:979)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
   </testcase>
-  <testcase name="UC-5 TC-20 Рубрика открывается из левого меню [firefox]" classname="ru.tpo.mirtesen.tests.RubricNavigationTest" time="25.42">
-    <skipped/>
+  <testcase name="UC-5 TC-19 Левый блок содержит пункты навигации [chrome]" classname="ru.tpo.mirtesen.tests.RubricNavigationTest" time="121.858">
+    <failure message="org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.001&#10;  (Session info: chrome=148.0.7778.179)&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [cd1d8133d18f85bc7eac0950c03357ee, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64922}, goog:processID: 34339, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:64922/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: cd1d8133d18f85bc7eac0950c03357ee" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.001
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [cd1d8133d18f85bc7eac0950c03357ee, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64922}, goog:processID: 34339, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:64922/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cd1d8133d18f85bc7eac0950c03357ee
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.MainPage.open(MainPage.kt:50)
+	at app//ru.tpo.mirtesen.tests.RubricNavigationTest.leftNavigationContainsFeedAndRubrics(RubricNavigationTest.kt:24)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:979)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
   </testcase>
-  <testcase name="userCanOpenRubricFromLeftNavigation(String)" classname="ru.tpo.mirtesen.tests.RubricNavigationTest" time="25.423">
-    <skipped/>
+  <testcase name="UC-5 TC-20 Рубрика открывается из левого меню [chrome]" classname="ru.tpo.mirtesen.tests.RubricNavigationTest" time="121.596">
+    <failure message="org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.003&#10;  (Session info: chrome=148.0.7778.179)&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [fafe09653d8edb4aee76f2e284876a56, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65054}, goog:processID: 34535, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:65054/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: fafe09653d8edb4aee76f2e284876a56" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.003
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [fafe09653d8edb4aee76f2e284876a56, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65054}, goog:processID: 34535, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:65054/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fafe09653d8edb4aee76f2e284876a56
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.MainPage.open(MainPage.kt:50)
+	at app//ru.tpo.mirtesen.tests.RubricNavigationTest.userCanOpenRubricFromLeftNavigation(RubricNavigationTest.kt:33)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:979)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-5 TC-19 Левый блок содержит пункты навигации [firefox]" classname="ru.tpo.mirtesen.tests.RubricNavigationTest" time="122.146">
+    <failure message="org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.firefox.FirefoxDriver&#10;Command: [37ded32c-6d21-4718-9024-8cc32815d6f1, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 34529, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}&#10;Session ID: 37ded32c-6d21-4718-9024-8cc32815d6f1" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [37ded32c-6d21-4718-9024-8cc32815d6f1, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 34529, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 37ded32c-6d21-4718-9024-8cc32815d6f1
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.MainPage.open(MainPage.kt:50)
+	at app//ru.tpo.mirtesen.tests.RubricNavigationTest.leftNavigationContainsFeedAndRubrics(RubricNavigationTest.kt:24)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
   </testcase>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[мая 20, 2026 9:58:24 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+  <system-err><![CDATA[мая 22, 2026 8:35:02 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 9:58:24 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 9:58:38 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
-WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 9:58:38 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 8:35:02 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
 </testsuite>

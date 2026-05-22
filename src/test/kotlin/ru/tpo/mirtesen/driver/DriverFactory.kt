@@ -24,11 +24,13 @@ object DriverFactory {
         if (headless) opts.addArguments("--headless=new")
         opts.addArguments(
             "--window-size=1920,1080",
-            "--lang=ru-RU,ru;q=0.9"
+            "--lang=ru-RU,ru;q=0.9",
+            "--disable-renderer-backgrounding",
+            "--disable-backgrounding-occluded-windows"
         )
         opts.setPageLoadStrategy(PageLoadStrategy.EAGER)
         val driver = ChromeDriver(opts)
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30))
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60))
         return driver
     }
 
@@ -39,7 +41,7 @@ object DriverFactory {
         opts.addPreference("intl.accept_languages", "ru-RU, ru, en-US, en")
         opts.setPageLoadStrategy(PageLoadStrategy.EAGER)
         val driver = FirefoxDriver(opts)
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30))
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(60))
         return driver
     }
 }

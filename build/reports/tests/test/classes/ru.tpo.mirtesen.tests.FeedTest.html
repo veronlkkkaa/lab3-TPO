@@ -23,25 +23,25 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">6</div>
+<div class="counter">8</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">8</div>
 <p>failures</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="ignored">
-<div class="counter">4</div>
+<div class="counter">0</div>
 <p>ignored</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">3m8.01s</div>
+<div class="counter">16m22.36s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox skipped" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,7 +61,7 @@
 <div class="tab-container">
 <ul class="tabLinks">
 <li>
-<a href="#">Ignored tests</a>
+<a href="#">Failed tests</a>
 </li>
 <li>
 <a href="#">Tests</a>
@@ -71,22 +71,372 @@
 </li>
 </ul>
 <div class="tab">
-<h2>Ignored tests</h2>
-<div class="test">
-<a name="feedCardsHavePostLinks(String)"></a>
-<h3 class="skipped">feedCardsHavePostLinks(String)</h3>
-</div>
+<h2>Failed tests</h2>
 <div class="test">
 <a name="feedCardsHavePostLinks(String)[1]"></a>
-<h3 class="skipped">UC-1 TC-03 Карточки содержат ссылки</h3>
+<h3 class="failures">UC-1 TC-03 Карточки содержат ссылки</h3>
+<span class="code">
+<pre>org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.001
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [69504b993f25c330945065372d79536f, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63966}, goog:processID: 33835, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:63966/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 69504b993f25c330945065372d79536f
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.MainPage.open(MainPage.kt:50)
+	at app//ru.tpo.mirtesen.tests.FeedTest.feedCardsHavePostLinks(FeedTest.kt:33)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:979)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</pre>
+</span>
 </div>
 <div class="test">
-<a name="feedHasPostCards(String)"></a>
-<h3 class="skipped">feedHasPostCards(String)</h3>
+<a name="feedCardsHavePostLinks(String)[2]"></a>
+<h3 class="failures">UC-1 TC-03 Карточки содержат ссылки</h3>
+<span class="code">
+<pre>org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [31e94bae-e07c-465e-a7c0-899253ecfa38, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 33323, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 31e94bae-e07c-465e-a7c0-899253ecfa38
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.MainPage.open(MainPage.kt:50)
+	at app//ru.tpo.mirtesen.tests.FeedTest.feedCardsHavePostLinks(FeedTest.kt:33)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base@17.0.17/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base@17.0.17/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base@17.0.17/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.17/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="feedCardsHaveTitles(String)[1]"></a>
+<h3 class="failures">UC-1 TC-02 Карточки содержат заголовки</h3>
+<span class="code">
+<pre>org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.005
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [96d94e79190dbe0ea828d2469b28b94d, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64109}, goog:processID: 34025, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:64109/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 96d94e79190dbe0ea828d2469b28b94d
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.MainPage.open(MainPage.kt:50)
+	at app//ru.tpo.mirtesen.tests.FeedTest.feedCardsHaveTitles(FeedTest.kt:24)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:979)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="feedCardsHaveTitles(String)[2]"></a>
+<h3 class="failures">UC-1 TC-02 Карточки содержат заголовки</h3>
+<span class="code">
+<pre>org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [2a9c3055-84ff-4312-8e21-6b312f021742, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 34340, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 2a9c3055-84ff-4312-8e21-6b312f021742
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.MainPage.open(MainPage.kt:50)
+	at app//ru.tpo.mirtesen.tests.FeedTest.feedCardsHaveTitles(FeedTest.kt:24)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.helpJoin(ForkJoinPool.java:1883)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:440)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="feedHasPostCards(String)[1]"></a>
+<h3 class="failures">UC-1 TC-01 Лента содержит публикации</h3>
+<span class="code">
+<pre>org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.004
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [f8008690286db8178f00e2a9ed4497bd, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63196}, goog:processID: 33517, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:63196/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f8008690286db8178f00e2a9ed4497bd
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.MainPage.open(MainPage.kt:50)
+	at app//ru.tpo.mirtesen.tests.FeedTest.feedHasPostCards(FeedTest.kt:15)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:979)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</pre>
+</span>
 </div>
 <div class="test">
 <a name="feedHasPostCards(String)[2]"></a>
-<h3 class="skipped">UC-1 TC-01 Лента содержит публикации</h3>
+<h3 class="failures">UC-1 TC-01 Лента содержит публикации</h3>
+<span class="code">
+<pre>org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [5d56c6d4-8bbf-48df-903d-40eaef468af2, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 33510, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 5d56c6d4-8bbf-48df-903d-40eaef468af2
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.MainPage.open(MainPage.kt:50)
+	at app//ru.tpo.mirtesen.tests.FeedTest.feedHasPostCards(FeedTest.kt:15)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="userCanOpenFirstFeedPost(String)[1]"></a>
+<h3 class="failures">UC-1 TC-04 Первая публикация открывается</h3>
+<span class="code">
+<pre>org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.001
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [9e3ab1180b34fe1c5e2bbfc9f7183493, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64155}, goog:processID: 34035, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:64155/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9e3ab1180b34fe1c5e2bbfc9f7183493
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.MainPage.open(MainPage.kt:50)
+	at app//ru.tpo.mirtesen.tests.FeedTest.userCanOpenFirstFeedPost(FeedTest.kt:42)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:979)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="userCanOpenFirstFeedPost(String)[2]"></a>
+<h3 class="failures">UC-1 TC-04 Первая публикация открывается</h3>
+<span class="code">
+<pre>org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [0a7037ff-8a2f-42af-aed6-de1907128c4b, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 33981, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 0a7037ff-8a2f-42af-aed6-de1907128c4b
+	at jdk.internal.reflect.GeneratedConstructorAccessor16.newInstance(Unknown Source)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.MainPage.open(MainPage.kt:50)
+	at app//ru.tpo.mirtesen.tests.FeedTest.userCanOpenFirstFeedPost(FeedTest.kt:42)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</pre>
+</span>
 </div>
 </div>
 <div class="tab">
@@ -101,74 +451,86 @@
 </tr>
 </thead>
 <tr>
-<td class="skipped">feedCardsHavePostLinks(String)</td>
-<td class="skipped">feedCardsHavePostLinks(String)</td>
-<td class="skipped">-</td>
-<td class="skipped">ignored</td>
+<td class="failures">UC-1 TC-03 Карточки содержат ссылки</td>
+<td class="failures">feedCardsHavePostLinks(String)[1]</td>
+<td class="failures">2m1.30s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
-<td class="skipped">UC-1 TC-03 Карточки содержат ссылки</td>
-<td class="skipped">feedCardsHavePostLinks(String)[1]</td>
-<td class="skipped">-</td>
-<td class="skipped">ignored</td>
+<td class="failures">UC-1 TC-03 Карточки содержат ссылки</td>
+<td class="failures">feedCardsHavePostLinks(String)[2]</td>
+<td class="failures">2m5.37s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">UC-1 TC-03 Карточки содержат ссылки</td>
-<td class="success">feedCardsHavePostLinks(String)[2]</td>
-<td class="success">30.012s</td>
-<td class="success">passed</td>
+<td class="failures">UC-1 TC-02 Карточки содержат заголовки</td>
+<td class="failures">feedCardsHaveTitles(String)[1]</td>
+<td class="failures">2m1.60s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
-<td class="skipped">feedHasPostCards(String)</td>
-<td class="skipped">feedHasPostCards(String)</td>
-<td class="skipped">-</td>
-<td class="skipped">ignored</td>
+<td class="failures">UC-1 TC-02 Карточки содержат заголовки</td>
+<td class="failures">feedCardsHaveTitles(String)[2]</td>
+<td class="failures">2m3.07s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">UC-1 TC-01 Лента содержит публикации</td>
-<td class="success">feedHasPostCards(String)[1]</td>
-<td class="success">21.119s</td>
-<td class="success">passed</td>
+<td class="failures">UC-1 TC-01 Лента содержит публикации</td>
+<td class="failures">feedHasPostCards(String)[1]</td>
+<td class="failures">2m3.48s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
-<td class="skipped">UC-1 TC-01 Лента содержит публикации</td>
-<td class="skipped">feedHasPostCards(String)[2]</td>
-<td class="skipped">-</td>
-<td class="skipped">ignored</td>
+<td class="failures">UC-1 TC-01 Лента содержит публикации</td>
+<td class="failures">feedHasPostCards(String)[2]</td>
+<td class="failures">2m3.09s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">UC-1 TC-04 Первая публикация открывается</td>
+<td class="failures">userCanOpenFirstFeedPost(String)[1]</td>
+<td class="failures">2m1.81s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">UC-1 TC-04 Первая публикация открывается</td>
+<td class="failures">userCanOpenFirstFeedPost(String)[2]</td>
+<td class="failures">2m2.63s</td>
+<td class="failures">failed</td>
 </tr>
 </table>
 </div>
 <div class="tab">
 <h2>Standard error</h2>
 <span class="code">
-<pre>мая 20, 2026 9:57:59 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+<pre>мая 22, 2026 8:30:57 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 9:57:59 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 9:57:59 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+мая 22, 2026 8:30:57 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 8:30:58 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 9:57:59 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 9:57:59 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+мая 22, 2026 8:30:58 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 8:30:59 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 9:57:59 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 9:57:59 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+мая 22, 2026 8:30:59 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 8:30:59 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 9:57:59 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 9:58:25 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+мая 22, 2026 8:30:59 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 8:32:59 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 9:58:25 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 9:58:26 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+мая 22, 2026 8:32:59 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 8:32:59 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 9:58:26 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
-мая 20, 2026 9:58:31 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+мая 22, 2026 8:32:59 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 8:35:01 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 148
-мая 20, 2026 9:58:31 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
-WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+мая 22, 2026 8:35:01 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 </pre>
 </span>
 </div>
@@ -180,7 +542,7 @@ WARNING: Unable to find version of CDP to use for 148.0.7778.169. You may need t
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.0.0</a> at 20 мая 2026 г., 21:58:42</p>
+<a href="https://www.gradle.org">Gradle 9.0.0</a> at 22 мая 2026 г., 21:13:05</p>
 </div>
 </div>
 </body>

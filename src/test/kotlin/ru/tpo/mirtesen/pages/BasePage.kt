@@ -2,6 +2,7 @@ package ru.tpo.mirtesen.pages
 
 import org.openqa.selenium.By
 import org.openqa.selenium.JavascriptExecutor
+import org.openqa.selenium.TimeoutException
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.WebDriverException
@@ -29,7 +30,12 @@ abstract class BasePage(protected val driver: WebDriver) {
     }
 
     protected fun openUrl(url: String) {
-        driver.get(url)
+        try {
+            driver.get(url)
+        } catch (e: TimeoutException) {
+            Thread.sleep(500)
+            driver.get(url)
+        }
         waitUntil { d ->
             val readyState = (d as JavascriptExecutor)
                 .executeScript("return document.readyState")

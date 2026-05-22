@@ -4,10 +4,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Assumptions.assumeTrue
-import org.junit.jupiter.api.MethodOrderer
-import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
-import org.junit.jupiter.api.TestMethodOrder
 import org.junit.jupiter.api.parallel.Execution
 import org.junit.jupiter.api.parallel.ExecutionMode
 import org.junit.jupiter.params.ParameterizedTest
@@ -18,7 +15,6 @@ import java.io.File
 import java.util.Scanner
 
 @Execution(ExecutionMode.SAME_THREAD)
-@TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 class RegistrationTest : BaseTest() {
 
     companion object {
@@ -49,7 +45,6 @@ class RegistrationTest : BaseTest() {
         )
     }
 
-    @Order(1)
     @ParameterizedTest(name = "UC-6 TC-21 Форма регистрации по почте доступна")
     @MethodSource("browsers")
     fun emailRegistrationFormIsAvailable(browser: String) {
@@ -60,8 +55,7 @@ class RegistrationTest : BaseTest() {
         assertTrue(authPage.hasEmailRegistrationForm(), "Форма регистрации по email должна быть доступна")
     }
 
-    @Order(2)
-    @ParameterizedTest(name = "UC-6 TC-23 Некорректные данные регистрации не отправляют форму: name={0}, email={1}")
+    @ParameterizedTest(name = "UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name={0}, email={1}")
     @MethodSource("invalidEmailRegistrationData")
     fun invalidEmailRegistrationDataDoesNotSubmit(name: String, email: String) {
         setup("chrome")
@@ -82,7 +76,6 @@ class RegistrationTest : BaseTest() {
         )
     }
 
-    @Order(3)
     @Test
     fun manualUserCanRegisterByEmailWithConfirmationCode() {
         assumeTrue(manualRegistrationEnabled(), "Для ручной регистрации нужен MIRTESEN_MANUAL_REGISTRATION=true")
@@ -104,8 +97,7 @@ class RegistrationTest : BaseTest() {
         completeRegistrationByEmailLink(authPage, email)
     }
 
-    @Order(4)
-    @ParameterizedTest(name = "UC-6 TC-22 Повторная регистрация уже занятого email запрещена [{0}]")
+    @ParameterizedTest(name = "UC-6 TC-23 Повторная регистрация уже занятого email запрещена [{0}]")
     @MethodSource("browsers")
     fun registeredEmailCannotBeRegisteredAgain(browser: String) {
         setup(browser)

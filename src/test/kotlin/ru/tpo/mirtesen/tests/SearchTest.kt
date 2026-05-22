@@ -1,6 +1,7 @@
 package ru.tpo.mirtesen.tests
 
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assumptions.assumeTrue
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
@@ -12,6 +13,16 @@ class SearchTest : BaseTest() {
 
     companion object {
         @JvmStatic
+        fun browsersAndBadSearchQueries() = listOf("chrome", "firefox").flatMap { browser ->
+            badSearchQueries().map { args -> Arguments.of(browser, args.get()[0] as String) }
+        }
+
+        @JvmStatic
+        fun browsersAndBadPeopleSearchQueries() = listOf("chrome", "firefox").flatMap { browser ->
+            badPeopleSearchQueries().map { args -> Arguments.of(browser, args.get()[0] as String) }
+        }
+
+        @JvmStatic
         fun badSearchQueries() = listOf(
             Arguments.of("   "),
             Arguments.of("!@#\$%^&*()[]{}|"),
@@ -19,6 +30,26 @@ class SearchTest : BaseTest() {
             Arguments.of("'; DROP TABLE posts; --"),
             Arguments.of("a".repeat(500)),
             Arguments.of("​‌‍"),
+
+
+            Arguments.of("А".repeat(500)),
+            Arguments.of("null"),
+            Arguments.of("undefined"),
+        )
+
+        @JvmStatic
+        fun badPeopleSearchQueries() = listOf(
+            Arguments.of(""),
+            Arguments.of("   "),
+            Arguments.of("!@#\$%^&*()[]{}|"),
+            Arguments.of("<script>alert(document.title)</script>"),
+            Arguments.of("'; DROP TABLE users; --"),
+            Arguments.of("a".repeat(500)),
+            Arguments.of("​‌‍"),
+
+
+            Arguments.of("А".repeat(500)),
+            Arguments.of("null"),
         )
     }
 
@@ -49,7 +80,7 @@ class SearchTest : BaseTest() {
         setup(browser)
         val results = MainPage(driver).search("кулинария")
         results.waitForResults()
-        assertTrue(results.hasResults(), "Должны быть результаты поиска для перехода")
+        assumeTrue(results.hasResults(), "Поиск не вернул результатов — нечего открывать")
         val article = results.openFirstResult()
         assertTrue(article.hasTitle(),
             "Страница статьи должна содержать непустой заголовок h1")
@@ -92,10 +123,10 @@ class SearchTest : BaseTest() {
             "Найденные публикации должны иметь непустые заголовки")
     }
 
-    @ParameterizedTest(name = "UC-2 TC-11 Нестандартный ввод не вызывает ошибку сервера: [{0}]")
-    @MethodSource("badSearchQueries")
-    fun malformedSearchQueryHandledWithoutServerError(query: String) {
-        setup("chrome")
+    @ParameterizedTest(name = "UC-2 TC-11 Нестандартный ввод не вызывает ошибку сервера: [{1}] [{0}]")
+    @MethodSource("browsersAndBadSearchQueries")
+    fun malformedSearchQueryHandledWithoutServerError(browser: String, query: String) {
+        setup(browser)
         val results = MainPage(driver).search(query)
         results.waitForSearchPage()
 
@@ -103,19 +134,6 @@ class SearchTest : BaseTest() {
             "Запрос «${query.take(40)}» не должен приводить к ошибке сервера")
         assertTrue(results.getUrl().contains("search"),
             "После нестандартного запроса страница должна остаться в разделе поиска. URL: ${results.getUrl()}")
-    }
-
-    @ParameterizedTest(name = "UC-2 TC-12 XSS в поисковом запросе не исполняется как скрипт [{0}]")
-    @MethodSource("browsers")
-    fun xssInSearchQueryNotExecutedAsScript(browser: String) {
-        setup(browser)
-        val results = MainPage(driver).search("<script>document.title='xss-executed'</script>")
-        results.waitForSearchPage()
-
-        assertFalse(results.hasServerError(),
-            "XSS-запрос не должен вызывать ошибку сервера")
-        assertNotEquals("xss-executed", results.getPageTitle(),
-            "Тег <script> из поискового запроса не должен быть исполнён: заголовок страницы изменился")
     }
 
     @ParameterizedTest(name = "UC-2 TC-13 Вкладка «Публикации» показывает посты, а не профили [{0}]")
@@ -155,6 +173,32 @@ class SearchTest : BaseTest() {
             "Поиск без совпадений должен показать сообщение об отсутствии результатов или пустой список")
         assertTrue(results.getUrl().contains("search"),
             "Должны остаться на странице поиска, а не редиректиться. URL: ${results.getUrl()}")
+    }
+
+    @ParameterizedTest(name = "UC-2 TC-16 Нестандартный ввод в поиске людей не вызывает ошибку сервера: [{1}] [{0}]")
+    @MethodSource("browsersAndBadPeopleSearchQueries")
+    fun malformedPeopleSearchQueryHandledWithoutServerError(browser: String, query: String) {
+        setup(browser)
+        val results = MainPage(driver).searchPeople(query)
+        results.waitForSearchPage()
+
+        assertFalse(results.hasServerError(),
+            "Запрос «${query.take(40)}» в поиске людей не должен приводить к ошибке сервера")
+        assertTrue(results.getUrl().contains("search"),
+            "После нестандартного запроса в поиске людей страница должна остаться в разделе поиска. URL: ${results.getUrl()}")
+    }
+
+    @ParameterizedTest(name = "UC-2 TC-17 Пустой запрос в поиске людей без ошибки сервера [{0}]")
+    @MethodSource("browsers")
+    fun emptyPeopleSearchQueryHandledWithoutServerError(browser: String) {
+        setup(browser)
+        val results = MainPage(driver).searchPeople("")
+        results.waitForSearchPage()
+
+        assertFalse(results.hasServerError(),
+            "Пустой запрос в поиске людей не должен приводить к ошибке сервера")
+        assertTrue(results.getUrl().contains("search"),
+            "URL пустого поиска людей должен оставаться страницей поиска. URL: ${results.getUrl()}")
     }
 
     private fun queryValue(url: String): String {

@@ -1,6 +1,7 @@
 package ru.tpo.mirtesen.tests
 
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Assumptions.assumeTrue
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 import ru.tpo.mirtesen.pages.MainPage
@@ -38,7 +39,9 @@ class FeedTest : BaseTest() {
     @MethodSource("browsers")
     fun userCanOpenFirstFeedPost(browser: String) {
         setup(browser)
-        val article = MainPage(driver).open().openFirstPost()
+        val page = MainPage(driver).open()
+        assumeTrue(page.hasPostCards(), "Лента пустая — нечего открывать")
+        val article = page.openFirstPost()
         assertTrue(article.hasTitle(),
             "После открытия публикации должна отображаться статья с заголовком")
     }

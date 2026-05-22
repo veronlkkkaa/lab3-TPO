@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.tpo.mirtesen.tests.AuthTest" tests="9" skipped="8" failures="0" errors="0" timestamp="2026-05-20T18:57:54.963Z" hostname="MacBook-Air-mac-4.local" time="47.276">
+<testsuite name="ru.tpo.mirtesen.tests.AuthTest" tests="8" skipped="6" failures="0" errors="0" timestamp="2026-05-22T18:12:51.879Z" hostname="MacBook-Pro-Nika.local" time="4.378">
   <properties/>
-  <testcase name="UC-3 TC-14 Пользователь может выйти из аккаунта" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.07">
+  <testcase name="UC-3 TC-14 Пользователь может выйти из аккаунта" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.0">
     <skipped message="Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -57,7 +57,7 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-3 TC-14 Пользователь может выйти из аккаунта" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.004">
+  <testcase name="UC-3 TC-14 Пользователь может выйти из аккаунта" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.001">
     <skipped message="Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -113,7 +113,7 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-3 TC-13 Неверный пароль не авторизует пользователя" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.003">
+  <testcase name="UC-3 TC-13 Неверный пароль не авторизует пользователя" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.0">
     <skipped message="Assumption failed: Нужен MIRTESEN_LOGIN" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужен MIRTESEN_LOGIN
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -169,7 +169,7 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-3 TC-13 Неверный пароль не авторизует пользователя" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.002">
+  <testcase name="UC-3 TC-13 Неверный пароль не авторизует пользователя" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.0">
     <skipped message="Assumption failed: Нужен MIRTESEN_LOGIN" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужен MIRTESEN_LOGIN
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -225,7 +225,7 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-3 TC-12 Успешная авторизация" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.002">
+  <testcase name="UC-3 TC-12 Успешная авторизация" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.0">
     <skipped message="Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -281,7 +281,7 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-3 TC-12 Успешная авторизация" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.003">
+  <testcase name="UC-3 TC-12 Успешная авторизация" classname="ru.tpo.mirtesen.tests.AuthTest" time="0.0">
     <skipped message="Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -337,13 +337,12 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-3 TC-11 Форма входа доступна" classname="ru.tpo.mirtesen.tests.AuthTest" time="20.068"/>
-  <testcase name="UC-3 TC-11 Форма входа доступна" classname="ru.tpo.mirtesen.tests.AuthTest" time="27.111">
-    <skipped/>
-  </testcase>
-  <testcase name="loginFormIsAvailable(String)" classname="ru.tpo.mirtesen.tests.AuthTest" time="47.182">
-    <skipped/>
-  </testcase>
+  <testcase name="UC-3 TC-11 Форма входа доступна" classname="ru.tpo.mirtesen.tests.AuthTest" time="1.769"/>
+  <testcase name="UC-3 TC-11 Форма входа доступна" classname="ru.tpo.mirtesen.tests.AuthTest" time="2.606"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+  <system-err><![CDATA[мая 22, 2026 9:12:52 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 148
+мая 22, 2026 9:12:52 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 148.0.7778.179. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.18.1` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
 </testsuite>

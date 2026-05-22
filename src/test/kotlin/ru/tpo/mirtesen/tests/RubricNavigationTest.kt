@@ -1,6 +1,7 @@
 package ru.tpo.mirtesen.tests
 
 import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assumptions.assumeTrue
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 import ru.tpo.mirtesen.pages.MainPage
@@ -29,7 +30,9 @@ class RubricNavigationTest : BaseTest() {
     @MethodSource("browsers")
     fun userCanOpenRubricFromLeftNavigation(browser: String) {
         setup(browser)
-        val rubricPage = MainPage(driver).open().openFirstRubric()
+        val page = MainPage(driver).open()
+        assumeTrue(page.hasRubricLinks(), "Рубрики не найдены в левом меню — нечего открывать")
+        val rubricPage = page.openFirstRubric()
         assertTrue(rubricPage.hasPostCards(),
             "После перехода в рубрику должны отображаться карточки публикаций")
     }

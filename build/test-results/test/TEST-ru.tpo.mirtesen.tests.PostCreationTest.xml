@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.tpo.mirtesen.tests.PostCreationTest" tests="6" skipped="4" failures="0" errors="0" timestamp="2026-05-20T18:57:54.963Z" hostname="MacBook-Air-mac-4.local" time="27.672">
+<testsuite name="ru.tpo.mirtesen.tests.PostCreationTest" tests="6" skipped="4" failures="2" errors="0" timestamp="2026-05-22T17:30:53.294Z" hostname="MacBook-Pro-Nika.local" time="126.555">
   <properties/>
-  <testcase name="UC-4 TC-17 Публикация тестовой записи" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="0.066">
+  <testcase name="UC-4 TC-17 Публикация тестовой записи" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="0.006">
     <skipped message="Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -23,7 +23,7 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-4 TC-17 Публикация тестовой записи" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="0.003">
+  <testcase name="UC-4 TC-17 Публикация тестовой записи" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="0.001">
     <skipped message="Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -45,7 +45,7 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-4 TC-16 Авторизованный пользователь заполняет публикацию" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="0.002">
+  <testcase name="UC-4 TC-16 Авторизованный пользователь заполняет публикацию" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="0.001">
     <skipped message="Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -67,7 +67,7 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-4 TC-16 Авторизованный пользователь заполняет публикацию" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="0.003">
+  <testcase name="UC-4 TC-16 Авторизованный пользователь заполняет публикацию" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="0.001">
     <skipped message="Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD" type="org.opentest4j.TestAbortedException">org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGIN и MIRTESEN_PASSWORD
 	at org.junit.jupiter.api.Assumptions.throwAssumptionFailed(Assumptions.java:316)
 	at org.junit.jupiter.api.Assumptions.assumeTrue(Assumptions.java:115)
@@ -89,8 +89,81 @@
 	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
 </skipped>
   </testcase>
-  <testcase name="UC-4 TC-15 Создание публикации требует входа" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="21.297"/>
-  <testcase name="UC-4 TC-15 Создание публикации требует входа" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="27.585"/>
+  <testcase name="UC-4 TC-15 Создание публикации требует входа" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="124.897">
+    <failure message="org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.firefox.FirefoxDriver&#10;Command: [92bbf343-0324-4b38-a7b1-9f567a9f94fe, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 33324, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}&#10;Session ID: 92bbf343-0324-4b38-a7b1-9f567a9f94fe" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [92bbf343-0324-4b38-a7b1-9f567a9f94fe, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 33324, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 92bbf343-0324-4b38-a7b1-9f567a9f94fe
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.PostEditorPage.openFromMainPage(PostEditorPage.kt:34)
+	at app//ru.tpo.mirtesen.tests.PostCreationTest.anonymousUserMustLoginBeforeCreatingPost(PostCreationTest.kt:16)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:979)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
+  <testcase name="UC-4 TC-15 Создание публикации требует входа" classname="ru.tpo.mirtesen.tests.PostCreationTest" time="124.351">
+    <failure message="org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.004&#10;  (Session info: chrome=148.0.7778.179)&#10;Build info: version: '4.18.1', revision: 'b1d3319b48'&#10;System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [ee35f7ce02c6037f241ad4711de252ce, get {url=https://mirtesen.ru/}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63223}, goog:processID: 33547, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:63223/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: ee35f7ce02c6037f241ad4711de252ce" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.004
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee35f7ce02c6037f241ad4711de252ce, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63223}, goog:processID: 33547, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:63223/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee35f7ce02c6037f241ad4711de252ce
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.PostEditorPage.openFromMainPage(PostEditorPage.kt:34)
+	at app//ru.tpo.mirtesen.tests.PostCreationTest.anonymousUserMustLoginBeforeCreatingPost(PostCreationTest.kt:16)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</failure>
+  </testcase>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

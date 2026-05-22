@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">0</div>
+<div class="counter">2</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">48.956s</div>
+<div class="counter">4m9.26s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox skipped" id="successRate">
-<div class="percent">100%</div>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,12 +61,101 @@
 <div class="tab-container">
 <ul class="tabLinks">
 <li>
+<a href="#">Failed tests</a>
+</li>
+<li>
 <a href="#">Ignored tests</a>
 </li>
 <li>
 <a href="#">Tests</a>
 </li>
 </ul>
+<div class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="anonymousUserMustLoginBeforeCreatingPost(String)[1]"></a>
+<h3 class="failures">UC-4 TC-15 Создание публикации требует входа</h3>
+<span class="code">
+<pre>org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: -0.004
+  (Session info: chrome=148.0.7778.179)
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ee35f7ce02c6037f241ad4711de252ce, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 148.0.7778.179, chrome: {chromedriverVersion: 148.0.7778.178 (d096af1c9e9..., userDataDir: /var/folders/xb/fkc__f8950q...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63223}, goog:processID: 33547, networkConnectionEnabled: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:63223/devtoo..., se:cdpVersion: 148.0.7778.179, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ee35f7ce02c6037f241ad4711de252ce
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.PostEditorPage.openFromMainPage(PostEditorPage.kt:34)
+	at app//ru.tpo.mirtesen.tests.PostCreationTest.anonymousUserMustLoginBeforeCreatingPost(PostCreationTest.kt:16)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="anonymousUserMustLoginBeforeCreatingPost(String)[2]"></a>
+<h3 class="failures">UC-4 TC-15 Создание публикации требует входа</h3>
+<span class="code">
+<pre>org.openqa.selenium.TimeoutException: Navigation timed out after 60000 ms
+Build info: version: '4.18.1', revision: 'b1d3319b48'
+System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.5', java.version: '17.0.17'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [92bbf343-0324-4b38-a7b1-9f567a9f94fe, get {url=https://mirtesen.ru/}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 150.0.3, moz:accessibilityChecks: false, moz:buildID: 20260511200624, moz:geckodriverVersion: 0.36.0, moz:headless: false, moz:platformVersion: 25.5.0, moz:processID: 33324, moz:profile: /var/folders/xb/fkc__f8950q..., moz:shutdownTimeout: 60000, moz:webdriverClick: true, moz:windowless: false, pageLoadStrategy: eager, platformName: mac, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, userAgent: Mozilla/5.0 (Macintosh; Int...}
+Session ID: 92bbf343-0324-4b38-a7b1-9f567a9f94fe
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base@17.0.17/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base@17.0.17/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base@17.0.17/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at app//org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at app//org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at app//org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at app//org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at app//org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:301)
+	at app//ru.tpo.mirtesen.pages.BasePage.openUrl(BasePage.kt:37)
+	at app//ru.tpo.mirtesen.pages.PostEditorPage.openFromMainPage(PostEditorPage.kt:34)
+	at app//ru.tpo.mirtesen.tests.PostCreationTest.anonymousUserMustLoginBeforeCreatingPost(PostCreationTest.kt:16)
+	at java.base@17.0.17/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.get(ForkJoinTask.java:979)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.awaitDone(ForkJoinTask.java:436)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.join(ForkJoinTask.java:670)
+	at java.base@17.0.17/java.util.concurrent.RecursiveAction.exec(RecursiveAction.java:194)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base@17.0.17/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+</pre>
+</span>
+</div>
+</div>
 <div class="tab">
 <h2>Ignored tests</h2>
 <div class="test">
@@ -194,16 +283,16 @@ org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGI
 </tr>
 </thead>
 <tr>
-<td class="success">UC-4 TC-15 Создание публикации требует входа</td>
-<td class="success">anonymousUserMustLoginBeforeCreatingPost(String)[1]</td>
-<td class="success">21.297s</td>
-<td class="success">passed</td>
+<td class="failures">UC-4 TC-15 Создание публикации требует входа</td>
+<td class="failures">anonymousUserMustLoginBeforeCreatingPost(String)[1]</td>
+<td class="failures">2m4.35s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
-<td class="success">UC-4 TC-15 Создание публикации требует входа</td>
-<td class="success">anonymousUserMustLoginBeforeCreatingPost(String)[2]</td>
-<td class="success">27.585s</td>
-<td class="success">passed</td>
+<td class="failures">UC-4 TC-15 Создание публикации требует входа</td>
+<td class="failures">anonymousUserMustLoginBeforeCreatingPost(String)[2]</td>
+<td class="failures">2m4.90s</td>
+<td class="failures">failed</td>
 </tr>
 <tr>
 <td class="skipped">UC-4 TC-16 Авторизованный пользователь заполняет публикацию</td>
@@ -239,7 +328,7 @@ org.opentest4j.TestAbortedException: Assumption failed: Нужны MIRTESEN_LOGI
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="https://www.gradle.org">Gradle 9.0.0</a> at 20 мая 2026 г., 21:58:42</p>
+<a href="https://www.gradle.org">Gradle 9.0.0</a> at 22 мая 2026 г., 21:13:05</p>
 </div>
 </div>
 </body>
