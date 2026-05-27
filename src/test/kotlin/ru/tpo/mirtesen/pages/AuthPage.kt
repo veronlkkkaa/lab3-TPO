@@ -37,6 +37,12 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
             "contains(@class,'email') or contains(@class,'mail') or contains(@href,'email') or contains(@href,'mail')]"
         )
 
+        private val PHONE_LOGIN_BUTTON = By.xpath(
+            "//*[contains(@class,'auth-form')]" +
+                "//*[contains(@class,'auth-form__form__submit-secondary')]" +
+                "//*[self::button or self::a][normalize-space()='Вход по телефону']"
+        )
+
         private val EMAIL_INPUT = By.xpath(
             "//*[contains(@class,'auth-form')]//input[@type='email' or @name='email']"
         )
@@ -47,6 +53,10 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
 
         private val PASSWORD_INPUT = By.xpath(
             "//*[contains(@class,'auth-form')]//input[@type='password' or @name='password']"
+        )
+
+        private val PHONE_INPUT = By.xpath(
+            "//*[contains(@class,'auth-form')]//input[@name='phone' or @id='authFormRegPhone']"
         )
 
         private val LOGIN_SUBMIT = By.xpath(
@@ -90,6 +100,12 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
 
         private val REGISTRATION_EMAIL_SENT_ADDRESS = By.xpath(
             "//*[contains(@class,'auth-form__form__body')]//a[starts-with(@href,'mailto:')]"
+        )
+
+        private val PHONE_REGISTRATION_BUTTON = By.xpath(
+            "//*[contains(@class,'auth-form')]" +
+                "//*[contains(@class,'auth-form__form__submit-secondary')]" +
+                "//*[self::button or self::a][normalize-space()='Регистрация по телефону']"
         )
     }
 
@@ -144,6 +160,20 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
         return this
     }
 
+    fun openPhoneLogin(): AuthPage {
+        open()
+        switchToPhoneLoginMode()
+        waitUntil { d -> d.findElements(PHONE_INPUT).isNotEmpty() }
+        return this
+    }
+
+    fun openPhoneRegistration(): AuthPage {
+        openRegistration()
+        switchToPhoneMode()
+        waitUntil { d -> d.findElements(PHONE_INPUT).isNotEmpty() }
+        return this
+    }
+
     fun hasEmailRegistrationForm(): Boolean = isPresent(AUTH_FORM) && isPresent(EMAIL_INPUT)
 
     fun fillEmailRegistration(name: String, email: String): AuthPage {
@@ -166,6 +196,20 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
     fun registrationNameValue(): String = visibleInputValue(NAME_INPUT)
 
     fun registrationEmailValue(): String = visibleInputValue(EMAIL_INPUT)
+
+    fun fillRegistrationPhone(phone: String): AuthPage {
+        type(PHONE_INPUT, phone)
+        return this
+    }
+
+    fun registrationPhoneValue(): String = visibleInputValue(PHONE_INPUT)
+
+    fun fillLoginPhone(phone: String): AuthPage {
+        type(PHONE_INPUT, phone)
+        return this
+    }
+
+    fun loginPhoneValue(): String = visibleInputValue(PHONE_INPUT)
 
     fun submitRegistration(): AuthPage {
         jsClick(AUTH_SUBMIT)
@@ -288,6 +332,26 @@ class AuthPage(driver: WebDriver) : BasePage(driver) {
         if (isPresent(EMAIL_LOGIN_TAB)) {
             try {
                 jsClick(EMAIL_LOGIN_TAB)
+            } catch (e: TimeoutException) {
+            }
+        }
+    }
+
+    private fun switchToPhoneMode() {
+        if (isPresent(PHONE_INPUT)) return
+        if (isPresent(PHONE_REGISTRATION_BUTTON)) {
+            try {
+                jsClick(PHONE_REGISTRATION_BUTTON)
+            } catch (e: TimeoutException) {
+            }
+        }
+    }
+
+    private fun switchToPhoneLoginMode() {
+        if (isPresent(PHONE_INPUT)) return
+        if (isPresent(PHONE_LOGIN_BUTTON)) {
+            try {
+                jsClick(PHONE_LOGIN_BUTTON)
             } catch (e: TimeoutException) {
             }
         }

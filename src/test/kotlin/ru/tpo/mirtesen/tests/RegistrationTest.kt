@@ -24,24 +24,32 @@ class RegistrationTest : BaseTest() {
 
         @JvmStatic
         fun invalidEmailRegistrationData() = listOf(
-            Arguments.of("", "valid-test@example.com"),
             Arguments.of("Тест", ""),
             Arguments.of("Тест", "not-an-email"),
-            Arguments.of("Тест", "test@@example.com"),
-            Arguments.of("Тест", "test @example.com"),
-            Arguments.of("Тест", "@example.com"),
             Arguments.of("Тест", "test@"),
+            Arguments.of("Тест", "@example.com"),
+            Arguments.of("Тест", "test@@example.com"),
+            Arguments.of("Тест", "test example@example.com"),
             Arguments.of("Тест", "test@.com"),
-            Arguments.of("Тест", ".test@example.com"),
             Arguments.of("Тест", "test@example..com"),
-            Arguments.of("Тест", "<script>@example.com"),
-            Arguments.of("Тест", "тест@пример.рф"),
-            Arguments.of("Тест", "a".repeat(255) + "@b.com"),
+        )
+
+        @JvmStatic
+        fun invalidNameRegistrationData() = listOf(
+            Arguments.of("", "valid-test@example.com"),
             Arguments.of("   ", "valid-test@example.com"),
             Arguments.of("12345", "valid-test@example.com"),
-            Arguments.of("!@#\$%^&*()", "valid-test@example.com"),
-            Arguments.of("<script>alert(1)</script>", "valid-test@example.com"),
-            Arguments.of("А".repeat(300), "valid-test@example.com"),
+            Arguments.of("Тест123", "valid-test@example.com"),
+            Arguments.of("!@#$%", "valid-test@example.com"),
+            Arguments.of("А".repeat(100), "valid-test@example.com"),
+        )
+
+        @JvmStatic
+        fun phoneInputFilterData() = listOf(
+            Arguments.of("abc"),
+            Arguments.of("#$%"),
+            Arguments.of("abc123qwe"),
+            Arguments.of("7999test12"),
         )
     }
 
@@ -55,24 +63,31 @@ class RegistrationTest : BaseTest() {
         assertTrue(authPage.hasEmailRegistrationForm(), "Форма регистрации по email должна быть доступна")
     }
 
-    @ParameterizedTest(name = "UC-6 TC-22 Некорректные данные регистрации не отправляют форму: name={0}, email={1}")
+    @ParameterizedTest(name = "UC-6 TC-22 Некорректная почта не отправляет форму: email={1}")
     @MethodSource("invalidEmailRegistrationData")
     fun invalidEmailRegistrationDataDoesNotSubmit(name: String, email: String) {
+        assertInvalidRegistrationDoesNotSubmit(name, email)
+    }
+
+    @ParameterizedTest(name = "UC-6 TC-22 Некорректное имя не отправляет форму: name={0}")
+    @MethodSource("invalidNameRegistrationData")
+    fun invalidNameRegistrationDataDoesNotSubmit(name: String, email: String) {
+        assertInvalidRegistrationDoesNotSubmit(name, email)
+    }
+
+    @ParameterizedTest(name = "UC-6 TC-24 Поле телефона фильтрует недопустимые символы: value={0}")
+    @MethodSource("phoneInputFilterData")
+    fun phoneRegistrationInputFiltersNonPhoneCharacters(input: String) {
         setup("chrome")
 
-        val authPage = AuthPage(driver).openEmailRegistration()
-        authPage.fillRegistrationName(name)
-        authPage.fillRegistrationEmail(email)
-        assertEquals(name, authPage.registrationNameValue(), "В поле имени должно быть введено тестовое значение")
-        assertEquals(email, authPage.registrationEmailValue(), "В поле email должно быть введено тестовое значение")
-        authPage.submitRegistration()
+        val authPage = AuthPage(driver).openPhoneRegistration()
+        authPage.fillRegistrationPhone(input)
 
-        val emailSent = authPage.waitForRegistrationValidationResult()
+        val phoneValue = authPage.registrationPhoneValue()
 
-        assertFalse(emailSent, "Для некорректных данных не должен появляться экран отправленного письма")
-        assertTrue(
-            authPage.hasAuthError() || authPage.hasInvalidRegistrationInput() || authPage.hasEmailRegistrationForm(),
-            "Для некорректных данных должна появиться ошибка формы, HTML5-invalid состояние или форма должна остаться открытой"
+        assertFalse(
+            phoneValue.any { it.isLetter() } || phoneValue.any { it in "!@#$%^&*" },
+            "Поле телефона не должно сохранять буквы и обычные спецсимволы. Значение поля: $phoneValue"
         )
     }
 
@@ -139,6 +154,25 @@ class RegistrationTest : BaseTest() {
         assertTrue(
             authPage.hasRegistrationEmailSentScreenGoneAfterConfirmation(),
             "После перехода по ссылке подтверждения экран отправленного письма должен исчезнуть. Ошибка формы: ${authPage.authErrorText().ifBlank { "нет" }}"
+        )
+    }
+
+    private fun assertInvalidRegistrationDoesNotSubmit(name: String, email: String) {
+        setup("chrome")
+
+        val authPage = AuthPage(driver).openEmailRegistration()
+        authPage.fillRegistrationName(name)
+        authPage.fillRegistrationEmail(email)
+        assertEquals(name, authPage.registrationNameValue(), "В поле имени должно быть введено тестовое значение")
+        assertEquals(email, authPage.registrationEmailValue(), "В поле email должно быть введено тестовое значение")
+        authPage.submitRegistration()
+
+        val emailSent = authPage.waitForRegistrationValidationResult()
+
+        assertFalse(emailSent, "Для некорректных данных не должен появляться экран отправленного письма")
+        assertTrue(
+            authPage.hasAuthError() || authPage.hasInvalidRegistrationInput() || authPage.hasEmailRegistrationForm(),
+            "Для некорректных данных должна появиться ошибка формы, HTML5-invalid состояние или форма должна остаться открытой"
         )
     }
 

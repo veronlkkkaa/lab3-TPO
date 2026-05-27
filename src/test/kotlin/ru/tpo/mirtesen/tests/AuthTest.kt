@@ -6,11 +6,22 @@ import org.junit.jupiter.api.Assumptions.assumeTrue
 import org.junit.jupiter.api.parallel.Execution
 import org.junit.jupiter.api.parallel.ExecutionMode
 import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
 import org.junit.jupiter.params.provider.MethodSource
 import ru.tpo.mirtesen.pages.AuthPage
 
 @Execution(ExecutionMode.SAME_THREAD)
 class AuthTest : BaseTest() {
+
+    companion object {
+        @JvmStatic
+        fun phoneInputFilterData() = listOf(
+            Arguments.of("abc"),
+            Arguments.of("!@#$%"),
+            Arguments.of("abc123qwe"),
+            Arguments.of("+7999test-12"),
+        )
+    }
 
     @ParameterizedTest(name = "UC-3 TC-11 Форма входа доступна")
     @MethodSource("browsers")
@@ -49,6 +60,22 @@ class AuthTest : BaseTest() {
         assertTrue(
             authPage.hasAuthError() || authPage.hasLoginForm(),
             "При неверном пароле должна отображаться ошибка авторизации или форма входа должна остаться открытой"
+        )
+    }
+
+    @ParameterizedTest(name = "UC-3 TC-15 Поле телефона при входе фильтрует недопустимые символы: value={0}")
+    @MethodSource("phoneInputFilterData")
+    fun phoneLoginInputFiltersNonPhoneCharacters(input: String) {
+        setup("chrome")
+
+        val authPage = AuthPage(driver).openPhoneLogin()
+        authPage.fillLoginPhone(input)
+
+        val phoneValue = authPage.loginPhoneValue()
+
+        assertFalse(
+            phoneValue.any { it.isLetter() } || phoneValue.any { it in "!@#$%^&*" },
+            "Поле телефона при входе не должно сохранять буквы и обычные спецсимволы. Значение поля: $phoneValue"
         )
     }
 
